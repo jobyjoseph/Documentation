@@ -39,6 +39,50 @@ Seeing a `false` is assuring. Let us believe that something unique is stored and
 
 Symbols are unique. But we are not able to figure out why did JavaScript brought such a primitive type. What is the purpose?
 
+### Manipulate third party objects
+
+Say, we have installed Google Analytics(third party) in our site. It tracks the number of page views, current page url and so on using a `dataLayer` object. It might look something like this.
+
+```javascript
+const dataLayer = {
+  pageViews: 8,
+  currentPageUrl: "/aboutus"
+};
+```
+
+Since already `dataLayer` object is created and maintained by Google Analytics, all page related information is present in this object. Now, the business team is requesting to log analytics data in our database also. They need one more field to track, which is `event`. We are planning to reuse `dataLayer` object. We add the event information to `dataLayer` object.
+
+```javascript
+dataLayer.event = "BIG_SALE";
+```
+
+After adding new property, our `dataLayer` looks like this.
+
+```javascript
+const dataLayer = {
+  pageViews: 8,
+  currentPageUrl: "/aboutus",
+  event: "BIG_SALE"
+};
+```
+
+We then pass this updated `dataLayer` object to our logging server.
+
+After few months, we are facing an issue. When checked the value coming in `event` property is something else. After debugging, we find that another developer is updating `event` property with DOM events. Something like
+
+```javascript
+dataLayer.event = "buttonClick";
+```
+
+When the property names of an object are just strings, this overiding can happen. But situations like this can be prevented using _Symbols_. Instead of just assigning the event value, it can be refactored like below.
+
+```javascript
+const eventSymbol = Symbol("event");
+dataLayer[eventSymbol] = "BIG_SALE";
+```
+
+Now, the other developer cannot override. Because, he uses another Symbol as key, which will be unique. Therefore, Symbols are designed to _avoid collisions_.
+
 ## Symbols do not auto-convert to a string
 
 ## References
