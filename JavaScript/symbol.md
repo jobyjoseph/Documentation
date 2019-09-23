@@ -39,9 +39,9 @@ Seeing a `false` is assuring. Let us believe that something unique is stored and
 
 Symbols are unique. But we are not able to figure out why did JavaScript brought such a primitive type. What is the purpose?
 
-### Manipulate third party objects
+### Unique key for objects
 
-Say, we have installed Google Analytics(third party) in our site. It tracks the number of page views, current page url and so on using a `dataLayer` object. It might look something like this.
+To understand, let us assume, we are the developers of Google Analytics team. Google Analytics JavaScript file(gtag.js) might be reading different attributes of a page and writing to a `dataLayer` object. Later this `dataLayer` object is send from the user's browser to Google Analytics server. The `dataLayer` object might look like this.
 
 ```javascript
 const dataLayer = {
@@ -50,10 +50,10 @@ const dataLayer = {
 };
 ```
 
-Since already `dataLayer` object is created and maintained by Google Analytics, all page related information is present in this object. Now, the business team is requesting to log analytics data in our database also. They need one more field to track, which is `event`. We are planning to reuse `dataLayer` object. We add the event information to `dataLayer` object.
+Say Walmart.com is using Google Analytics. Now, the Walmart business team is requesting to log analytics data in Walmart database also. But they need `currentPageUrl` in a different format. For that, Walmart developers do following updation.
 
 ```javascript
-dataLayer.event = "BIG_SALE";
+dataLayer.currentPageUrl = "http://example.com/aboutus";
 ```
 
 After adding new property, our `dataLayer` looks like this.
@@ -61,27 +61,24 @@ After adding new property, our `dataLayer` looks like this.
 ```javascript
 const dataLayer = {
   pageViews: 8,
-  currentPageUrl: "/aboutus",
-  event: "BIG_SALE"
+  currentPageUrl: "http://example.com/aboutus"
 };
 ```
 
-We then pass this updated `dataLayer` object to our logging server.
+This change results in wrong url information passed to Google Analytics. Basically, Google Analytics is not able to restrict manual overriding of object value.
 
-After few months, we are facing an issue. When checked the value coming in `event` property is something else. After debugging, we find that another developer is updating `event` property with DOM events. Something like
-
-```javascript
-dataLayer.event = "buttonClick";
-```
-
-When the property names of an object are just strings, this overiding can happen. But situations like this can be prevented using _Symbols_. Instead of just assigning the event value, it can be refactored like below.
+When the property names of an object are just strings, this overiding can happen. But situations like this can be prevented using _Symbols_. Now we change the code in _gtag.js_ to something like below.
 
 ```javascript
-const eventSymbol = Symbol("event");
-dataLayer[eventSymbol] = "BIG_SALE";
+const pageViewsSymbol = Symbol("pageViews");
+const currentPageUrlSymbol = Symbol("currentPageUrl");
+const dataLayer = {
+  pageViewsSymbol: 8,
+  currentPageUrlSymbol: "/aboutus"
+};
 ```
 
-Now, the other developer cannot override. Because, he uses another Symbol as key, which will be unique. Therefore, Symbols are designed to _avoid collisions_.
+## Symbols are ignored in object inspection
 
 ## Symbols do not auto-convert to a string
 
