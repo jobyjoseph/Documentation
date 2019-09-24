@@ -9,7 +9,7 @@ console.log(typeof s1); // "symbol"
 
 ## Symbols are unique
 
-Every symbol value returned from `Symbol()` is unique. We can consider `Symbol()` function as a magic box which throws out a unique toy each time when we open it.
+Every symbol value returned from `Symbol()` is anonymous and unique. We can consider `Symbol()` function as a magic box which throws out a unique toy each time when we open it.
 
 Let us create 2 symbols.
 
@@ -25,7 +25,7 @@ console.log(symbol1); // Symbol()
 console.log(symbol2); // Symbol()
 ```
 
-Both statements print `Symbol()` in console. Did you expect a random string? If yes, that is not happening. So, is there any way to see the contents of both variables? No.
+Both statements print `Symbol()` in console. Did you expect a random string? If yes, that is not happening. So, is there any way to see the contents of both variables? No. That is why they say `Symbol()` produces anonymous and unique values.
 
 In that case, how can we make sure that both the variables are unique? We can believe that it is unique because that is what JavaScript promises. Now for our relief, at least we can try comparing them.
 
@@ -34,49 +34,6 @@ console.log(symbol1 == symbol2); // false
 ```
 
 Seeing a `false` is assuring. Let us believe that something unique is stored and managed by JavaScript.
-
-## Purpose of Symbols
-
-Symbols are unique. But we are not able to figure out why did JavaScript brought such a primitive type. What is the purpose?
-
-### Unique key for objects
-
-To understand, let us assume, we are the developers of Google Analytics team. Google Analytics JavaScript file(gtag.js) might be reading different attributes of a page and writing to a `dataLayer` object. Later this `dataLayer` object is send from the user's browser to Google Analytics server. The `dataLayer` object might look like this.
-
-```javascript
-const dataLayer = {
-  pageViews: 8,
-  currentPageUrl: "/aboutus"
-};
-```
-
-Say Walmart.com is using Google Analytics. Now, the Walmart business team is requesting to log analytics data in Walmart database also. But they need `currentPageUrl` in a different format. For that, Walmart developers do following updation.
-
-```javascript
-dataLayer.currentPageUrl = "http://example.com/aboutus";
-```
-
-After adding new property, our `dataLayer` looks like this.
-
-```javascript
-const dataLayer = {
-  pageViews: 8,
-  currentPageUrl: "http://example.com/aboutus"
-};
-```
-
-This change results in wrong url information passed to Google Analytics. Basically, Google Analytics is not able to restrict manual overriding of object value.
-
-When the property names of an object are just strings, this overiding can happen. But situations like this can be prevented using _Symbols_. Now we change the code in _gtag.js_ to something like below.
-
-```javascript
-const pageViewsSymbol = Symbol("pageViews");
-const currentPageUrlSymbol = Symbol("currentPageUrl");
-const dataLayer = {
-  pageViewsSymbol: 8,
-  currentPageUrlSymbol: "/aboutus"
-};
-```
 
 ## Symbols are ignored in object inspection
 
