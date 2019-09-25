@@ -97,11 +97,43 @@ obj[Symbol("id")] = 1234;
 console.log(Object.keys(obj)); // ["name", "age"]
 ```
 
-Here also the symbol keys are omitted.
-
-## Symbols are ignored in object inspection
+Here also the symbol keys are omitted. Only the string property names `name` and `age` are printed.
 
 ## Symbols do not auto-convert to a string
+
+In JavaScript, we can explicitly convert one data type to another using various techniques. One common conversion is converting a data type to string. All data types have `.toString()` method which makes this job easy. Here are few examples.
+
+```javascript
+console.log(true.toString()); // "true"
+console.log(Number(123).toString()); // "123"
+console.log([3, 5, 8].toString()); // "3,5,8"
+```
+
+In similar manner, we can convert a symbol to a string using `.toString()` method.
+
+```javascript
+const symbol1 = Symbol("Token");
+console.log(symbol1.toString());
+("Symbol(Token)");
+```
+
+A symbol when converted to a string, outputs the `Symbol()` function which created it, along with the symbol description(`Token`). There is no provision to output more information like the unique value stored in the symbol variable.
+
+There are cases where JavaScript implicitly convert a data type to string. Here are two examples.
+
+```javascript
+console.log(1 + "2"); // "12"
+alert([3, 4, 5]); // alerts "3,4,5"
+```
+
+What if we try to alert the value of a symbol? It throws an error. Let us try.
+
+```javascript
+const symbol1 = Symbol("Token");
+alert(symbol1); // TypeError: Cannot convert a Symbol value to a string
+```
+
+This says that, if we want to convert a symbol to string, we need to explicitly use `.toString()` method. Otherwise, implicit conversion to string value results in _TypeError_.
 
 ## References
 
