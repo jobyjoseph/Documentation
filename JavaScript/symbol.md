@@ -37,7 +37,43 @@ Seeing a `false` is assuring. Let us believe that something unique is stored and
 
 ## Symbols as object keys
 
-In JavaScript, an object key should be either a string or a symbol. Other data types are not supported as object keys.
+In JavaScript, an object key should be either a string or a symbol. Other data types are not supported as object keys. Here is an example of an object literal.
+
+```javascript
+const obj = {
+  name: "John Doe",
+  age: 23
+};
+```
+
+Now let us add a new Symbol key to `obj`.
+
+```javascript
+obj[Symbol("id")] = 1234;
+```
+
+What is the use of having a Symbol key?
+
+### Symbol keys in `for..in`
+
+`obj` object which we created above now have 3 keys(2 strings and 1 symbol). Now let us log the key names using `for..in` loop.
+
+```javascript
+for (key in obj) {
+  console.log(key);
+}
+```
+
+And the output is
+
+```console
+"name"
+"age"
+```
+
+We cannot see `Symbol("id")` in the list. Symbol keys act like private properties(in reality, they are not). They are not looped through when used with `for..in` loop.
+
+So, is this hiding behaviour applicable for all loops on objects?
 
 ## Symbols are ignored in object inspection
 
