@@ -20,7 +20,7 @@ const id = Symbol("UserId");
 const name = Symbol("UserName");
 ```
 
-`"UserId"` and `"UserName"` are the descriptions.
+`"UserId"` and `"UserName"` are the descriptions. Descriptions help in debugging. Other than that, there is no impact for description strings.
 
 ## Symbols are unique
 
