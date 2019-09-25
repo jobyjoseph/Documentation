@@ -159,6 +159,10 @@ alert(symbol1); // TypeError: Cannot convert a Symbol value to a string
 
 This says that, if we want to convert a symbol to string, we need to explicitly use `.toString()` method. Otherwise, implicit conversion to string value results in _TypeError_.
 
+## Well-known symbols
+
+## Global symbol registry
+
 ## References
 
 Symbol - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol
