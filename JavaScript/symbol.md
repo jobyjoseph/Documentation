@@ -1,11 +1,26 @@
 # Symbol
 
-JavaScript was first standardized in 1997. Since then, till ES6, there were only 6 data types. They are _Undefined_, _Null_, _Boolean_, _Number_, _String_ and _Object_. **Symbol** is a new primitive data type introduced in ES6. A variable of _Symbol_ type is created using `Symbol()` function.
+**Symbol** is a new primitive data type introduced in ES6.
+
+JavaScript was first standardized in 1997. Until ES6, there were only 6 data types. They are _Undefined_, _Null_, _Boolean_, _Number_, _String_ and _Object_. With the new addition of _Symbol_, there are 7 data types in JavaScript.
+
+## Creating symbol variable
+
+A variable of _Symbol_ type is created using `Symbol()` function.
 
 ```javascript
 const s1 = Symbol();
 console.log(typeof s1); // "symbol"
 ```
+
+While creating a symbol variable, we can optionally pass a description.
+
+```javascript
+const id = Symbol("UserId");
+const name = Symbol("UserName");
+```
+
+`"UserId"` and `"UserName"` are the descriptions.
 
 ## Symbols are unique
 
