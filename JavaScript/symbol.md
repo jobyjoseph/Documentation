@@ -42,13 +42,23 @@ console.log(symbol2); // Symbol()
 
 Both statements print `Symbol()` in console. Did you expect a random string? If yes, that is not happening. So, is there any way to see the contents of both variables? No. That is why they say `Symbol()` produces anonymous and unique values.
 
-In that case, how can we make sure that both the variables are unique? We can believe that it is unique because that is what JavaScript promises. Now for our relief, at least we can try comparing them.
+In that case, how can we make sure that both the variables are unique? That is a guarantee by JavaScript. Now for our relief, at least we can try comparing them.
 
 ```javascript
 console.log(symbol1 == symbol2); // false
 ```
 
-Seeing a `false` is assuring. Let us believe that something unique is stored and managed by JavaScript.
+Seeing a `false` is assuring. It means `symbol1` and `symbol2` are unique.
+
+Having same description, does not create identical symbols. Descriptions are purely for debugging purpose. It does not have any impact on uniquness of generated symbols.
+
+```javascript
+const s1 = Symbol("Disney");
+const s2 = Symbol("Disney");
+console.log(s1 == s2); // false
+```
+
+`s1` is not equal to `s2`, even though their Symbol description is same.
 
 ## Symbols as object keys
 
