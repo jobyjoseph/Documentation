@@ -52,6 +52,12 @@ Now let us add a new Symbol key to `obj`.
 obj[Symbol("id")] = 1234;
 ```
 
+> We need to use square bracket`[]` syntax to add a Symbol key property to an object. Dot(`.`) notation is not allowed to add Symbols to objects. Following code is invalid.
+>
+> ```javascript
+> obj.Symbol("id") = 1234;
+> ```
+
 What is the use of having a Symbol key?
 
 ### Symbol keys in `for..in`
