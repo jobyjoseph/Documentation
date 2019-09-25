@@ -81,6 +81,24 @@ We cannot see `Symbol("id")` in the list. Symbol keys act like private propertie
 
 So, is this hiding behaviour applicable for all loops on objects?
 
+### Symbol keys with `Object.keys()`
+
+The `Object.keys()` method returns an **array** of a given object's own enumerable property names, in the same order as we get with a normal loop.
+
+Let us try `Object.keys()` on `obj` object. Here is the full code from object creation to printing property names.
+
+```javascript
+const obj = {
+  name: "John Doe",
+  age: 23
+};
+obj[Symbol("id")] = 1234;
+
+console.log(Object.keys(obj)); // ["name", "age"]
+```
+
+Here also the symbol keys are omitted.
+
 ## Symbols are ignored in object inspection
 
 ## Symbols do not auto-convert to a string
