@@ -1,6 +1,6 @@
 # Symbol
 
-JavaScript was first standardized in 1997. Since then till ES6, there were only 6 data types. They are _Undefined_, _Null_, _Boolean_, _Number_, _String_ and _Object_. **symbol** is a new primitive data type introduced in ES6, just like number, string or boolean. It is created using `Symbol()` function.
+JavaScript was first standardized in 1997. Since then, till ES6, there were only 6 data types. They are _Undefined_, _Null_, _Boolean_, _Number_, _String_ and _Object_. **Symbol** is a new primitive data type introduced in ES6. A variable of _Symbol_ type is created using `Symbol()` function.
 
 ```javascript
 const s1 = Symbol();
@@ -35,6 +35,10 @@ console.log(symbol1 == symbol2); // false
 
 Seeing a `false` is assuring. Let us believe that something unique is stored and managed by JavaScript.
 
+## Symbols as object keys
+
+In JavaScript, an object key should be either a string or a symbol. Other data types are not supported as object keys.
+
 ## Symbols are ignored in object inspection
 
 ## Symbols do not auto-convert to a string
@@ -48,3 +52,5 @@ ES6 In Depth - https://hacks.mozilla.org/2015/06/es6-in-depth-symbols/
 Symbol - https://developer.mozilla.org/en-US/docs/Glossary/Symbol
 
 Metaprogramming in ES6: Symbols and why they're awesome - https://www.keithcirkel.co.uk/metaprogramming-in-es6-symbols/
+
+The Symbol Type - https://tc39.es/ecma262/#sec-ecmascript-language-types-symbol-type
