@@ -116,7 +116,7 @@ const symbol1 = Symbol("Token");
 console.log(symbol1.toString()); //"Symbol(Token)";
 ```
 
-A symbol when converted to a string, outputs the `Symbol()` function which created it, along with the symbol description(`Token`). There is no provision to output more information like the unique value stored in the symbol variable.
+A symbol when converted to a string, outputs the `Symbol()` function which created it, along with the symbol description(`Token`).
 
 There are cases where JavaScript implicitly convert a data type to string. Here are two examples.
 
