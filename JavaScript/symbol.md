@@ -179,6 +179,8 @@ So far we learned how to create custom symbols. There are a set of built-in symb
 
 We can find all these constant symbols, by going to browser console and type `Symbol.`. Browser will show above symbols in the auto complete.
 
+![](assets/well-known-symbols.png)
+
 ## Global symbol registry
 
 ## References
