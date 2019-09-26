@@ -159,7 +159,25 @@ alert(symbol1); // TypeError: Cannot convert a Symbol value to a string
 
 This says that, if we want to convert a symbol to string, we need to explicitly use `.toString()` method. Otherwise, implicit conversion to string value results in _TypeError_.
 
-## Well-known symbols
+## Well-Known symbols
+
+So far we learned how to create custom symbols. There are a set of built-in symbols in JavaScript called as Well-Known symbols. We can find these symbols as constants of `Symbol` class. There are 13 such symbols.
+
+1. `Symbol.asyncIterator`
+2. `Symbol.hasInstance`
+3. `Symbol.isConcatSpreadable`
+4. `Symbol.iterator`
+5. `Symbol.match`
+6. `Symbol.matchAll`
+7. `Symbol.replace`
+8. `Symbol.search`
+9. `Symbol.species`
+10. `Symbol.split`
+11. `Symbol.toPrimitive`
+12. `Symbol.toStringTag`
+13. `Symbol.unscopables`
+
+We can find all these constant symbols, by going to browser console and type `Symbol.`. Browser will show above symbols in the auto complete.
 
 ## Global symbol registry
 
