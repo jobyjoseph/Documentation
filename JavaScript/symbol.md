@@ -181,6 +181,42 @@ We can find all these constant symbols, by going to browser console and type `Sy
 
 ![](assets/well-known-symbols.png)
 
+Well-known symbols are used by various algorithms(like `for..of` loop) within JavaScript specification. To understand it better, let us take `Symbol.iterator`. This symbol will be present as a key in any iterable object. Let us verify it.
+
+An array in JavaScript is an iterable object. Whereas an object literal is not iterable.
+
+```javascript
+// Iterable object
+const arr = [2, 4, 6];
+
+// Non iterable
+const obj = {
+  name: "John",
+  age: 20
+};
+```
+
+Now let us see the value present in the `Symbol.iterator` key.
+
+```javascript
+console.log(arr[Symbol.iterator]); // function values() { [native code] }
+
+console.log(obj[Symbol.iterator]); // undefined
+```
+
+Above statements show that, there is a `Symbol.iterator` key in an array, but not present in an object. We can therefore test if an object is an iterable object by checking for `Symbol.iterator` key.
+
+Now let us go little more in depth. We now know, the `Symbol.iterator` key inside `arr` contains a function. If we execute that function, it returns an _iterator_ object. Just for users who are new to iterators, an iterator object contains a `next()` method which returns values one by one upon each invocation. Let us try it.
+
+```javascript
+const arrayIteratorObject = arr[Symbol.iterator]();
+
+console.log(arrayIteratorObject.next().value); // 2
+console.log(arrayIteratorObject.next().value); // 4
+console.log(arrayIteratorObject.next().value); // 6
+console.log(arrayIteratorObject.next().value); // undefined
+```
+
 ## Global symbol registry
 
 ## References
