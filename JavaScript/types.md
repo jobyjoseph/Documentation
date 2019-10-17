@@ -1,4 +1,4 @@
-JavaScript is a **loosely typed** or **dynamic** language. It means, when a new variable is declared in JavaScript, it is not associated with any type.
+JavaScript is a **loosely typed** and **dynamic** language. It means, when a new variable is declared in JavaScript, it is not associated with any type.
 
 ```javascript
 var a; // Just a declared variable
