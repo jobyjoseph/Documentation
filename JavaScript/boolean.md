@@ -30,3 +30,9 @@ Here the output is `"hello is true"`. It is because, JavaScript automatically co
 - `NaN`
 - `undefined`
 - `""` Empty string
+
+All other values in JavaScript are truthy values.
+
+> An empty object `{}` and empty array `[]` are truthy values. It is not falsy like an empty string.
+
+> The string "false" is a non-empty string. So when it is converted to boolean, it is a truthy value.
