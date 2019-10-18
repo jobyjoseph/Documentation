@@ -36,3 +36,34 @@ All other values in JavaScript are truthy values.
 > An empty object `{}` and empty array `[]` are truthy values. It is not falsy like an empty string.
 
 > The string "false" is a non-empty string. So when it is converted to boolean, it is a truthy value.
+
+## Converting any values to boolean
+
+We can convert any value in JavaScript to boolean type. This can be done using 2 techniques.
+
+### `Boolean` function
+
+We can use `Boolean` function to convert any values to boolean type.
+
+```javascript
+console.log(Boolean("A string")); // true
+console.log(Boolean(""));         // false
+console.log(Boolean(0));          // false
+console.log(Boolean({}));         // true
+```
+
+### `!!` Double negation
+
+In JavaScript `!` can be used as a NOT operator. In Mathematics, if we have a number `23`, negating it results in `-23`. Again negating it reverts it back to `23`. In similar way, in JavaScript when using `!`, it negates the value and the output is a boolean value.
+
+Here is an example. We know that, a non-empty string is a truthy value. Let us do a single negation first.
+
+```javascript
+console.log(!"hello"); // false
+```
+
+We use this behaviour of `!` to convert a value to boolean type by negating again.
+
+```javascript
+console.log(!!"hello"); // true
+```
