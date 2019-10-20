@@ -37,7 +37,7 @@ All other values in JavaScript are truthy values.
 
 > The string "false" is a non-empty string. So when it is converted to boolean, it is a truthy value.
 
-## Converting any values to boolean
+## Converting any value to boolean
 
 We can convert any value in JavaScript to boolean type. This can be done using 2 techniques.
 

@@ -1,0 +1,1 @@
+`null` is a primitive data type in JavaScript. There is only one value in JavaScript that is of `null` type. So here, there is a `null` data type and `null` value in JavaScript.
