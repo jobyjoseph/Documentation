@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Backbencher.dev`,
     description: `Learn JavaScript, Node.js and NPM packages in depth`,
+    siteUrl: `https://backbencher.dev`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -60,5 +61,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-remove-trailing-slashes`,
+    `gatsby-plugin-sitemap`,
   ],
 }
