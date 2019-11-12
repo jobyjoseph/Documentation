@@ -1,0 +1,20 @@
+header {
+  padding: 0 15px;
+  display: flex;
+  height: 60px;
+  align-items: center;
+  border-bottom: 1px solid #f4f4f4;
+  margin-bottom: 40px;
+}
+
+.logo {
+  height: 18px;
+  margin-bottom: 0;
+  margin-right: 5px;
+}
+
+a .logoText {
+  font-weight: 600;
+  font-size: 22px;
+  color: #000;
+}

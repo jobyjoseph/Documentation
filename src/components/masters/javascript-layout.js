@@ -1,0 +1,36 @@
+/**
+ * Layout component that queries for data
+ * with Gatsby's useStaticQuery component
+ *
+ * See: https://www.gatsbyjs.org/docs/use-static-query/
+ */
+
+import React from "react"
+import { Link } from "gatsby"
+import PropTypes from "prop-types"
+
+const Layout = ({ children }) => {
+  return (
+    <div className="container">
+      <div className="grid-2">
+        <div className="col-1">
+          <div className="sidebarMenu">
+            <h3>JavaScript</h3>
+            <ul>
+              <li><Link to="/javascript/variables">Variables</Link></li>
+              <li><Link to="/javascript/boolean-data-type">Boolean Data Type</Link></li>
+              <li><Link to="/javascript/symbol-data-type">Symbol Data Type</Link></li>
+            </ul>
+          </div>
+        </div>
+        <div className="col-2">{children}</div>
+      </div>
+    </div>
+  )
+}
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+}
+
+export default Layout
