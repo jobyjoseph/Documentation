@@ -31,12 +31,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        extensions: ['.mdx', '.md'],
+        extensions: [".mdx", ".md"],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              classPrefix: 'language-',
+              classPrefix: "language-",
               inlineCodeMarker: null,
               aliases: {},
             },
@@ -53,14 +53,18 @@ module.exports = {
         bucketName: "backbencher.dev",
       },
     },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        // replace "UA-XXXXXXXXX-X" with your own Tracking ID
-        trackingId: "UA-152056684-1",
-      },
-    },
     `gatsby-plugin-remove-trailing-slashes`,
     `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-gtag`,
+      options: {
+        // your google analytics tracking id
+        trackingId: `UA-152056684-1`,
+        // Puts tracking script in the head instead of the body
+        head: true,
+        // enable ip anonymization
+        anonymize: false,
+      },
+    },
   ],
 }
