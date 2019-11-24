@@ -92,5 +92,31 @@ Here we make an AJAX call. If the AJAX response come successfully, we execute `c
 
 So in case of callbacks, we are blindly trusting some code and ask that code to execute a callback when ready. There happens an **inversion of control** in this place. There can be some times when things wont work as expected and create a hell like situation.
 
+### Myth: Callback hell due to indentation
+
+Many developers believe that callback hell is caused due to a series of nested callbacks.
+
+```javascript
+setTimeout(() => {
+  console.log("I am from first callback");
+  setTimeout(() => {
+    console.log("I am from second callback");
+    setTimeout(() => {
+      console.log("I am from third callback");
+      setTimeout(() => {
+        console.log("I am from fourth callback");
+        setTimeout(() => {
+          console.log("I am from fifth callback");
+        }, 1000);
+      }, 1000);
+    }, 1000);
+  }, 1000);
+}, 1000);
+```
+
+We can observe a pyramid structure formed due to indentation. In a big program, this pyramid of nested callbacks affects the readability of code in a negative way. Even though it affects the readability, it does not create a hell like situation. There are various ways to avoid indentation of above program and make things better.
+
+So we can conclude that callback hell is due to inversion of control in callbacks. The JavaScript community came up with a solution for inversion of control problem and that is _Promises_.
+
 </JSLayout>
 </Layout>
