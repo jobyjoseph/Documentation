@@ -10,6 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Helmet from "react-helmet"
 import Header from "./header/header"
+import Footer from "./footer/footer";
 import styles from "./layout.module.scss"
 
 const Layout = ({ children }) => {
@@ -32,6 +33,7 @@ const Layout = ({ children }) => {
       <div className={styles.container}>
         <main>{children}</main>
       </div>
+      <Footer/>
     </>
   )
 }
