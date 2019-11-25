@@ -17,6 +17,7 @@ const Layout = ({ children }) => {
           <div className="sidebarMenu">
             <h3>JavaScript</h3>
             <ul>
+              <li><Link to="/javascript/introduction">Introduction</Link></li>
               <li><Link to="/javascript/variables">Variables</Link></li>
               <li><Link to="/javascript/boolean-data-type">Boolean Data Type</Link></li>
               <li><Link to="/javascript/symbol-data-type">Symbol Data Type</Link></li>

@@ -13,6 +13,9 @@ const IndexPage = () => (
       <h3 className={styles.sectionHeader}>JavaScript</h3>
       <div className={styles.grid}>
         <div className={styles.gridItem}>
+          <Link to="/javascript/introduction">Introduction</Link>
+        </div>
+        <div className={styles.gridItem}>
           <Link to="/javascript/variables">Variables</Link>
         </div>
         <div className={styles.gridItem}>

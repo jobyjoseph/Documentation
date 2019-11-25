@@ -1,0 +1,17 @@
+.wrapper {
+  width: 100%;
+  border: 1px solid #eee;
+  padding: 5px;
+  background: #f1f1f1;
+
+  img {
+    width: 100%;
+    display: block;
+  }
+
+  .caption {
+    padding: 4px;
+    text-align: center;
+    font-size: 14px;
+  }
+}

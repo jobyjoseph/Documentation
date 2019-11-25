@@ -1,7 +1,10 @@
 import SEO from "../../components/seo.js";
 import Layout from "../../components/layout.js";
 import JSLayout from "../../components/masters/javascript-layout.js";
-
+import imageBrendan from "../../images/brendan-eich.jpg";
+import imageMosaic from "../../images/mosaic-browser.webp";
+import imageMosaicNetscape from "../../images/mosaic-netscape.webp";
+import Image from "../../components/utils/image/image.js";
 
 <Layout>
 <SEO title="Introduction to JavaScript" />
@@ -9,9 +12,27 @@ import JSLayout from "../../components/masters/javascript-layout.js";
 
 # Introduction
 
-JavaScript is a high level, scripting language.
+JavaScript is a high level, scripting language. JavaScript is now very popular and known as the language of the web.
 
-JavaScript was created by __Brendan Eich__ in 1995. He was working with Netscape Communications at that time.
+It requires an environment like a browser or Node.js to run. Programming languages like Java can be compiled and an executable file can be created out of it. But, scripting language like JavaScript requires the support of its hosting environment to work.
+
+# History
+
+In 1993, the National Center for Supercomputing Applications(NCSA) released __NCSA Mosaic browser__. It was the first popular graphical web browser.
+
+<Image src={imageMosaic} alt="NCSA Mosaic Browser" caption="NCSA Mosaic Browser" />
+
+In 1994, a new company called Mosaic Communications was founded in Mountain View, California. They hired many original NCSA Mosaic authors to create a new browser called __Mosaic Netscape__. The internal codename of the browser was __Mozilla__, which is a combination of Mosaic and Godzilla. The new web browser, Mosaic Netscape 0.9 was released in 1994. 
+
+<Image src={imageMosaicNetscape} alt="Mosaic Netscape Browser" caption="Mosaic Netscape Browser" />
+
+Within 4 months, Mosaic Netscape took 75% of browser market. To avoid trademark problem with NCSA, the browser was renamed to __Netscape Navigator__ and Mosaic Communications was renamed to Netscape Communications.
+
+Netscape Communications realized the browser needed a language to make it more dynamic. In 1995, company recruited __Brendan Eich__ with the goal of embedding _Scheme_ programming language to Netscape Navigator.
+
+<Image src={imageBrendan} alt="Brendan Eich" caption="Brendan Eich" style={{maxWidth: "300px"}}/>
+
+Before starting his work, Netscape Communications collaborated with Sun Microsystems to compete with Microsoft. So then the plan was to create a language complementing Java. Based on that, JavaScript was created by __Brendan Eich__ in 1995. He took inspiration from 3 languages, Java, Self and Scheme to create JavaScript.
 
 </JSLayout>
 </Layout>
