@@ -4,6 +4,7 @@ import JSLayout from "../../components/masters/javascript-layout.js";
 import imageBrendan from "../../images/brendan-eich.jpg";
 import imageMosaic from "../../images/mosaic-browser.webp";
 import imageMosaicNetscape from "../../images/mosaic-netscape.webp";
+import imageJSTrademark from "../../images/javascript-trademark.png";
 import Image from "../../components/utils/image/image.js";
 
 <Layout>
@@ -32,17 +33,17 @@ Netscape Communications realized the browser needed a language to make it more d
 
 <Image src={imageBrendan} alt="Brendan Eich" caption="Brendan Eich" style={{maxWidth: "300px"}}/>
 
-Before starting his work, Netscape Communications collaborated with Sun Microsystems to compete with Microsoft. So then the plan was to create a language complementing Java. Based on that, JavaScript was created by __Brendan Eich__ in 1995. He took inspiration from 3 languages, Java, Self and Scheme to create JavaScript.
+Before starting his work, Netscape Communications collaborated with Sun Microsystems to compete with Microsoft. So then the plan was to create a language complementing Java. Based on that, JavaScript was created by __Brendan Eich__ in 1995. He took inspiration from 3 languages, Java, Self and Scheme to create JavaScript. JavaScript derives its syntax from Java, its first-class functions from Scheme and its prototype based inheritance from Self.
 
 ## ECMAScript
 
-When Brendan Eich developed JavaScript, it was initially called _Mocha_. Later renamed to _LiveScript_ and then _JavaScript_. Netscape Navigator 2.0 was released with JavaScript. Later Microsoft
+When Brendan Eich developed JavaScript, it was initially called _Mocha_. Later renamed to _LiveScript_ and then _JavaScript_. Netscape Navigator 2.0 was released with JavaScript. Later Microsoft came up with their own version of the language, _jScript_. The non-standardized way of JavaScript feature enhancement by different browser owners was creating a lot of problem for cross-browser compatibility.
 
-## JavaScript Engine
+In November 1996, Netscape submitted the language for standardization to ECMA(European Computer Manufacturer's Association). The standardized version of the language was called _ECMAScript_. They could not take the name of _JavaScript_, due to [trademark](http://tmsearch.uspto.gov/bin/showfield?f=doc&state=4810:qxy3u1.2.6) issues with Sun Microsystems at that time. Now the term _JavaScript_ is owned by Oracle.
 
-We all know that JavaScript is mainly used in the context of web. If a browser can recognize and execute JavaScript, it means there is a __JavaScript Engine__ inside that browser.
+<Image src={imageJSTrademark} alt="JavaScript Trademark Information" caption="JavaScript Trademark Information" />
 
-In case of a programming language like Java, we know that the Java compiler is written and maintained by Oracle. For the same reason, Java developers can blindly use a feature available in a certain version of Java. But in case of JavaScript, the engine used by different browsers are created by the browser owners. So, there can be some features that work only in certain browsers. That being said, all major browsers today provide good support.
+
 
 </JSLayout>
 </Layout>
