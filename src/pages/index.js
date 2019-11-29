@@ -13,16 +13,19 @@ const IndexPage = () => (
       <h3 className={styles.sectionHeader}>JavaScript</h3>
       <div className={styles.grid}>
         <div className={styles.gridItem}>
-          <Link to="/javascript/introduction">Introduction</Link>
+          1. <Link to="/javascript/introduction">Introduction</Link>
         </div>
         <div className={styles.gridItem}>
-          <Link to="/javascript/variables">Variables</Link>
+          2. <Link to="/javascript/variables">Variables</Link>
         </div>
         <div className={styles.gridItem}>
-          <Link to="/javascript/boolean-data-type">Boolean Data Type</Link>
+          3. <Link to="/javascript/boolean-data-type">Boolean Data Type</Link>
         </div>
         <div className={styles.gridItem}>
-          <Link to="/javascript/symbol-data-type">Symbol Data Type</Link>
+          4. <Link to="/javascript/symbol-data-type">Symbol Data Type</Link>
+        </div>
+        <div className={styles.gridItem}>
+          5. <Link to="/javascript/spread-operator">Spread Operator</Link>
         </div>
       </div>
     </div>
