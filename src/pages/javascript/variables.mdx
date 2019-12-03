@@ -9,19 +9,24 @@ import JSLayout from "../../components/masters/javascript-layout.js";
 
 # Variables
 
-In JavaScript `var` is used to declare a variable. When JavaScript sees a variable declaration, it tags a memory location for that variable to store some value.
+Variables are named memory locations in JavaScript. These memory locations can contain values of any type recognized by JavaScript. Such a named memory location is created by declaring a variable. In JavaScript `var`, `let` and `const` are used to declare a variable.
 
 ```javascript
 var a;
+let b;
+const c = 3; // Assignment is mandatory for const
 ```
 
 ## Default Value
 
-If we just declare a variable using `var` and does not assign any value to it, the default value is `undefined`.
+If we declare a variable using `var` or `let` and do not assign any value to it, the default value is `undefined`.
 
 ```javascript
 var a;
 console.log(a); // undefined
+
+let b;
+console.log(b); // undefined
 ```
 
 So, if we need to check if a variable is not initialized, we can do following conditional check.
@@ -33,8 +38,30 @@ if (a !== undefined) {
 }
 ```
 
-In the above case, if condition is falsy. That means the log output is not printed.
+In case of `const`, it is mandatory to assign a value at the time of declaration. Otherwise it will throw an error.
 
+```javascript
+const a; // SyntaxError: Missing initializer in const declaration
+```
+
+## Variables are untyped
+
+A variable declared in JavaScript does not hold any particular type. We can assign value of any type to a variable and later it can be reassigned with a variable of another type.
+
+```javascript
+var a = "Hello" // Type of `a` is string
+a = 10 // Type of `a` is not number
+
+let b = true // Type of `b` is boolean
+b = null // Type of `b` is now null
+```
+
+A variable declared using `const` is meant to be a constant. So, reassigning with another value throws an error.
+
+```javascript
+const a = 5;
+a = "Hi"; // TypeError: Assignment to constant variable.
+```
 
 </JSLayout>
 </Layout>
