@@ -27,6 +27,9 @@ const IndexPage = () => (
         <div className={styles.gridItem}>
           5. <Link to="/javascript/spread-operator">Spread Operator</Link>
         </div>
+        <div className={styles.gridItem}>
+          6. <Link to="/javascript/objects">Objects</Link>
+        </div>
       </div>
     </div>
   </Layout>
