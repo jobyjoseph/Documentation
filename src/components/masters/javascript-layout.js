@@ -23,6 +23,7 @@ const Layout = ({ children }) => {
               <li><Link to="/javascript/symbol-data-type">Symbol Data Type</Link></li>
               <li><Link to="/javascript/spread-operator">Spread Operator</Link></li>
               <li><Link to="/javascript/objects">Objects</Link></li>
+              <li><Link to="/javascript/prototypes">Prototypes</Link></li>
             </ul>
           </div>
         </div>
