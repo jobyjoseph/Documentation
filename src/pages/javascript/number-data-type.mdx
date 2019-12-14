@@ -13,7 +13,29 @@ In most of the programming languages, integer values and floating-point(numbers 
 
 ## Memory and Range
 
-In JavaScript, both integer and floating-point values are treated in the same way. Therefore, considering the worst case, the memory allocation for a number type should consider floating-point values. Each number in JavaScript occupies __64 bit__ of memory.
+In JavaScript, both integer and floating-point values are treated in the same way. Therefore, considering the worst case, the memory allocation for a number type should consider floating-point values. Each number in JavaScript occupies __64 bit__ of memory. The numbers are stored in _Double-precision floating-point_ format as per [IEEE 754](https://en.wikipedia.org/wiki/Double-precision_floating-point_format) standard.
+
+In case of integers, JavaScript can accurately represent all integers between -9007199254740992(-2<sup>53</sup>) and 9007199254740992(2<sup>53</sup>), inclusive. Beyond this range, the precision might lose. Let us try adding one to the maximum range.
+
+```javascript
+console.log(9007199254740992+1); // 9007199254740992
+```
+
+The expected output is 9007199254740993. But the actual output is 9007199254740992.
+
+## Numeric literal
+
+When a number appears directly in a program, it is called a _numeric literal_. JavaScript supports numeric literals in several formats.
+
+```javascript
+12      // Base 10 integer literal
+0xFF    // Base 16 integer literal
+0377    // Base 8 integer literal
+3.14    // Floating-Point literal
+6.73e5  // Floating-Point literal
+```
+
+
 
 </JSLayout>
 </Layout>
