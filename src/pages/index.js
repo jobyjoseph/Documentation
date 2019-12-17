@@ -33,6 +33,9 @@ const IndexPage = () => (
         <div className={styles.gridItem}>
           7. <Link to="/javascript/prototypes">Prototypes</Link>
         </div>
+        <div className={styles.gridItem}>
+          8. <Link to="/javascript/callbacks">Callbacks</Link>
+        </div>
       </div>
     </div>
   </Layout>
