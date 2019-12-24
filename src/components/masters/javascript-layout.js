@@ -25,6 +25,7 @@ const Layout = ({ children }) => {
               <li><Link to="/javascript/objects">Objects</Link></li>
               <li><Link to="/javascript/prototypes">Prototypes</Link></li>
               <li><Link to="/javascript/callbacks">Callbacks</Link></li>
+              <li><Link to="/javascript/promises">Promises</Link></li>
             </ul>
           </div>
         </div>

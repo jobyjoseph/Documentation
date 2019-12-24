@@ -1,10 +1,7 @@
 import SEO from "../../components/seo.js";
 import Layout from "../../components/layout.js";
 import JSLayout from "../../components/masters/javascript-layout.js";
-import imagePrototypeProperty from "../../images/prototype-property.png";
-import imageDuntoProto from "../../images/__proto__.png";
-import imageDuntoProto1 from "../../images/__proto__1.png";
-import imageDuntoProto2 from "../../images/__proto__2.png";
+import imagePromise from "../../images/promises-1.png";
 import Image from "../../components/utils/image/image.js";
 
 
@@ -59,7 +56,7 @@ var pizzaPromise = orderPizza();
 
 Firstly, since `orderPizza()` function returns a `new Promise()`, `pizzaPromise` is an instance of `Promise` constructor function. So `pizzaPromise` have a set of properties and methods defined by `Promise` constructor function. If we type `pizzaPromise.` in browser console, we can see the list of keys present in it.
 
-![Contents of promise instance](assets/images/promises-1.png)
+<Image src={imagePromise} alt="Contents of promise instance" caption="Contents of promise instance" style={{maxWidth: "300px"}}/>
 
 As we can see `pizzaPromise` is an object with several methods. The methods which we are interested are `.then()` and `.catch()`. These are event listeners of a promise, just like a button object have `onclick()`, `onblur()` and so on. We will cover more in the coming sections.
 
@@ -132,10 +129,10 @@ The difference is only in the syntax. Internally `.catch()` calls `.then()` and 
 
 ## Passing Data in `resolve()` or `reject()`
 
-Say we are using promises to fetch data from an API. For demo purpose let us take a public API available on web. Anyone can search for users in Github using their public API. There is no signup process. Here is the API link to search for `jobyjoseph` in users.
+Say we are using promises to fetch data from an API. For demo purpose let us take a public API available on web. Anyone can search for users in Github using their public API. There is no signup process. Here is the API link to search for `facebook` in users.
 
 ```
-https://api.github.com/search/users?q=jobyjoseph
+https://api.github.com/search/users?q=facebook
 ```
 
 ## Multiple `resolve()` Invocation
