@@ -28,16 +28,19 @@ const IndexPage = () => (
           5. <Link to="/javascript/spread-operator">Spread Operator</Link>
         </div>
         <div className={styles.gridItem}>
-          6. <Link to="/javascript/objects">Objects</Link>
+          6. <Link to="/javascript/destructuring">Destructuring</Link>
         </div>
         <div className={styles.gridItem}>
-          7. <Link to="/javascript/prototypes">Prototypes</Link>
+          7. <Link to="/javascript/objects">Objects</Link>
         </div>
         <div className={styles.gridItem}>
-          8. <Link to="/javascript/callbacks">Callbacks</Link>
+          8. <Link to="/javascript/prototypes">Prototypes</Link>
         </div>
         <div className={styles.gridItem}>
-          9. <Link to="/javascript/promises">Promises</Link>
+          9. <Link to="/javascript/callbacks">Callbacks</Link>
+        </div>
+        <div className={styles.gridItem}>
+          10. <Link to="/javascript/promises">Promises</Link>
         </div>
       </div>
     </div>
