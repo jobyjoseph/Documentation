@@ -40,6 +40,31 @@ We can easily do a shallow copy of one array to another.
 const cardsCopy = [...cards];
 ```
 
+Above code just copies the contents of `cards` array to `cardsCopy` array.
+
+### Merge 2 arrays
+
+Above code snippets might give you a hint to use spread operator to merge two arrays.
+
+```javascript
+const arr1 = [1, 3, 5];
+const arr2 = [5, 3, 9];
+const arr = [ ...arr1, ...arr2];
+console.log(arr); // [1, 3, 5, 5, 3, 9];
+```
+
+### Function arguments
+
+Spread operator can easily pass the elements of an array as separate arguments to a function.
+
+```javascript
+const numbers = [2, 9, 5];
+const max = Math.max(...numbers);
+console.log(max); // 9
+```
+
+
+
 ## Spreading Objects
 
 Spread operator when used with objects helps to extract the different elements of an object. At the time of writing, this is a new feature. Spread operator with objects was added in ES9. We can do many tasks quickly using spread operator like copying objects and adding new properties.
@@ -63,6 +88,34 @@ const newCar = { ...car };
 ```
 
 Here `...car` picks all elements of `car` and distributes it to form the different elements of new object. The newly created object is then assigned to `newCar`.
+
+### Add properties conditionally
+
+In some cases, we need to add a property to an object based on a condition.
+
+```javascript
+const obj = {
+  name: "George",
+  age: 65
+};
+
+const data = {
+  ...obj,
+  ...( obj.age > 60 ? { retired: true} : {})
+};
+
+console.log(data);
+
+/* Output:
+{
+  age: 65,
+  name: "George",
+  retired: true
+}
+*/
+```
+
+This conditional way of adding new properties will help when using JSX syntax.
 
 > Since it is a new feature at the time of writing, my Babel is not able to understand the syntax and throwing an error. When webpack compiled, it throwed an error saying "Module build failed: SyntaxError: Unexpected token" and is pointing to the line containing `...car`.
 
