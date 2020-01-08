@@ -20,6 +20,7 @@ const Layout = ({ children }) => {
               <li><Link to="/javascript/introduction">Introduction</Link></li>
               <li><Link to="/javascript/variables">Variables</Link></li>
               <li><Link to="/javascript/boolean-data-type">Boolean Data Type</Link></li>
+              <li><Link to="/javascript/number-data-type">Number Data Type</Link></li>
               <li><Link to="/javascript/symbol-data-type">Symbol Data Type</Link></li>
               <li><Link to="/javascript/spread-operator">Spread Operator</Link></li>
               <li><Link to="/javascript/destructuring">Destructuring</Link></li>
