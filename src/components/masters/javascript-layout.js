@@ -28,6 +28,7 @@ const Layout = ({ children }) => {
               <li><Link to="/javascript/prototypes">Prototypes</Link></li>
               <li><Link to="/javascript/callbacks">Callbacks</Link></li>
               <li><Link to="/javascript/promises">Promises</Link></li>
+              <li><Link to="/javascript/es2020-new-features">ES2020 New Features</Link></li>
             </ul>
           </div>
         </div>
