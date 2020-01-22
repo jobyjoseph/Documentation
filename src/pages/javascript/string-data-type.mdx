@@ -1,0 +1,32 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+
+
+<Layout>
+<SEO title="String Data Type in JavaScript" />
+<JSLayout>
+
+# String Data Type
+
+In JavaScript, _String_ is a primitive data type. It is used in JavaScript to work with texts.
+
+Here is an example of a string.
+
+```javascript
+"backbencher!"
+```
+
+Each character in a string occupy __16 bits__. Number of 16-bit values in a string forms the length of the string. The length of above string is 12.
+
+## Unicode Support
+
+Each character in a string occupies 16 bits to consider Unicode characters. Since JavaScript supports unicode characters, we can use unicodes in our texts. Here we are going to assign a malayalam language word to a variable.
+
+```javascript
+const fruit = "ആപ്പിൾ";
+console.log(fruit); // "ആപ്പിൾ"
+```
+
+</JSLayout>
+</Layout>

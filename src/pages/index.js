@@ -25,28 +25,31 @@ const IndexPage = () => (
           4. <Link to="/javascript/number-data-type">Number Data Type</Link>
         </div>
         <div className={styles.gridItem}>
-          5. <Link to="/javascript/symbol-data-type">Symbol Data Type</Link>
+          5. <Link to="/javascript/string-data-type">String Data Type</Link>
         </div>
         <div className={styles.gridItem}>
-          6. <Link to="/javascript/spread-operator">Spread Operator</Link>
+          6. <Link to="/javascript/symbol-data-type">Symbol Data Type</Link>
         </div>
         <div className={styles.gridItem}>
-          7. <Link to="/javascript/destructuring">Destructuring</Link>
+          7. <Link to="/javascript/spread-operator">Spread Operator</Link>
         </div>
         <div className={styles.gridItem}>
-          8. <Link to="/javascript/objects">Objects</Link>
+          8. <Link to="/javascript/destructuring">Destructuring</Link>
         </div>
         <div className={styles.gridItem}>
-          9. <Link to="/javascript/prototypes">Prototypes</Link>
+          9. <Link to="/javascript/objects">Objects</Link>
         </div>
         <div className={styles.gridItem}>
-          10. <Link to="/javascript/callbacks">Callbacks</Link>
+          10. <Link to="/javascript/prototypes">Prototypes</Link>
         </div>
         <div className={styles.gridItem}>
-          11. <Link to="/javascript/promises">Promises</Link>
+          11. <Link to="/javascript/callbacks">Callbacks</Link>
         </div>
         <div className={styles.gridItem}>
-          12. <Link to="/javascript/es2020-new-features">ES2020 New Features</Link>
+          12. <Link to="/javascript/promises">Promises</Link>
+        </div>
+        <div className={styles.gridItem}>
+          13. <Link to="/javascript/es2020-new-features">ES2020 New Features</Link>
         </div>
       </div>
     </div>
