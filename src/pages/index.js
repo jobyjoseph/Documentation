@@ -51,6 +51,9 @@ const IndexPage = () => (
         <div className={styles.gridItem}>
           13. <Link to="/javascript/es2020-new-features">ES2020 New Features</Link>
         </div>
+        <div className={styles.gridItem}>
+          14. <Link to="/javascript/interview-questions-1">JavaScript Interview Questions</Link>
+        </div>
       </div>
     </div>
   </Layout>

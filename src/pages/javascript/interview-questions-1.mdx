@@ -1,0 +1,38 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+
+
+<Layout>
+<SEO title="JavaScript Interview Questions - Part 1" />
+<JSLayout>
+
+# JavaScript Interview Questions - Part 1
+
+## #1
+
+What is the output?
+
+```javascript
+function baz() {
+  console.log(a);
+  console.log(b);
+  var a = "Backbencher";
+  let b = 1;
+}
+baz();
+```
+
+A. `"Backbencher"` and `1`
+
+B. Reference error
+
+C. `undefined` and Reference error
+
+D. null and null
+
+__Answer: C__
+
+
+</JSLayout>
+</Layout>
