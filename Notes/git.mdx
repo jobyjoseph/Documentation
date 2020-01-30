@@ -1,0 +1,29 @@
+# Git
+
+Git is a popular __version control system__. It helps to manage our project files easily.
+
+## How Git helps us?
+
+__History Management__
+
+Git keeps track of all changes done to a file. So at any point we can go back to a previous version of a file. Git is also smart to show us at a given point of time, what line was removed and what was added.
+
+__Collaboration__
+
+When working in a team, more than one person might work on same file. Git can track the changes made and does a file merging to take the changes of both users. In case 2 users worked on the same line, Git can notify us to do manual conflict resolution.
+
+__Branching__
+
+This is a very helpful feature in Git. We can create branches in a Git project. If the production code is in _master_ branch, all developers can create new branches from _master_ and work on new features. Unless and until we merge the feature branch to _master_ branch, the production ready code is not affected.
+
+Branching helps to test and push only the perfect code to production.
+
+## Understand Git Terms
+
+__Repository__ : A Git enabled project, which stores all the change history and branch information.
+
+__Staging__ : Say, we might work on 10 files. But we want to record or save the changes happened to 3 files at this moment. For that, we need to stage the 3 files first. Only the staged files will be considered in the next commit step.
+
+__Commit__ : This is another action in Git. Unless and until, we commit a code change, Git will not save the change history. During commit, all the change history of staged files will be saved.
+
+__Push__ : In Git, staging and committing happens locally. All the history changes are recorded in a hidden `.git` folder. Now if our laptop harddisk is destroyed, all our work it gone. To prevent that, we need to _push_ the changes to a remote Git server like Bitbucket or Github.
