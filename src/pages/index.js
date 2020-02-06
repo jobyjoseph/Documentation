@@ -16,46 +16,46 @@ const IndexPage = () => (
             <Link to="/create-react-app-setuptests-js-not-working">SOLVED: setupTests.js not working in CreateReactApp</Link>
           </li>
           <li>
-            <Link to="/javascript/interview-questions-1">JavaScript Interview Questions</Link>
+            <Link to="/javascript-interview-questions">JavaScript Interview Questions</Link>
           </li>
           <li>
-            <Link to="/javascript/es2020-new-features">ES2020 New Features</Link>
+            <Link to="/es2020-new-features">ES2020 New Features</Link>
           </li>
           <li>
-            <Link to="/javascript/promises">Promises in JavaScript</Link>
+            <Link to="/promises-in-javascript">Promises in JavaScript</Link>
           </li>
           <li>
-            <Link to="/javascript/callbacks">Callbacks in JavaScript</Link>
+            <Link to="/callbacks-in-javascript">Callbacks in JavaScript</Link>
           </li>
           <li>
-            <Link to="/javascript/prototypes">Prototypes in JavaScript</Link>
+            <Link to="/prototypes-in-javascript">Prototypes in JavaScript</Link>
           </li>
           <li>
-            <Link to="/javascript/objects">Objects in JavaScript</Link>
+            <Link to="/objects-in-javascript">Objects in JavaScript</Link>
           </li>
           <li>
-            <Link to="/javascript/destructuring">Destructuring in JavaScript</Link>
+            <Link to="/destructuring-in-javascript">Destructuring in JavaScript</Link>
           </li>
           <li>
-            <Link to="/javascript/spread-operator">Spread Operator in JavaScript</Link>
+            <Link to="/spread-operator-in-javascript">Spread Operator in JavaScript</Link>
           </li>
           <li>
-            <Link to="/javascript/symbol-data-type">Symbol Data Type in JavaScript</Link>
+            <Link to="/symbol-data-type-in-javascript">Symbol Data Type in JavaScript</Link>
           </li>
           <li>
-            <Link to="/javascript/string-data-type">String Data Type in JavaScript</Link>
+            <Link to="/string-data-type-in-javascript">String Data Type in JavaScript</Link>
           </li>
           <li>
-            <Link to="/javascript/number-data-type">Number Data Type in JavaScript</Link>
+            <Link to="/number-data-type-in-javascript">Number Data Type in JavaScript</Link>
           </li>  
           <li>
-            <Link to="/javascript/boolean-data-type">Boolean Data Type in JavaScript</Link>
+            <Link to="/boolean-data-type-in-javascript">Boolean Data Type in JavaScript</Link>
           </li>
           <li>
-            <Link to="/javascript/variables">Variables in JavaScript</Link>
+            <Link to="/variables-in-javascript">Variables in JavaScript</Link>
           </li>
           <li>
-            <Link to="/javascript/introduction">Introduction to JavaScript</Link>
+            <Link to="/introduction-to-javascript">Introduction to JavaScript</Link>
           </li>
         </ol>
       </div>
