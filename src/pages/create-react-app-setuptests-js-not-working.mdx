@@ -1,3 +1,14 @@
+import SEO from "../components/seo.js";
+import Layout from "../components/layout.js";
+import JSLayout from "../components/masters/javascript-layout.js";
+import Image from "../components/utils/image/image.js";
+import imageJestError from "../images/articles/2020/jest-error.png";
+
+
+<Layout>
+<SEO title="SOLVED: setupTests.js not working in create-react-app" />
+<JSLayout>
+
 # SOLVED: setupTests.js not working in CreateReactApp
 
 To use enzyme with React 16, I need to use an enzyme adapter. To setup the adapter before any Jest tests, I wrote the code in `src/setupTests.js`. For some reasons, that file is not being called by CreateReactApp. Instead, I am getting an error like this:
@@ -11,7 +22,7 @@ corresponding to the library currently being tested. For example:
           import Adapter from 'enzyme-adapter-react-15';
 ```
 
-[Image]
+<Image src={imageJestError} alt="Enzyme error" caption="Enzyme error in Create React App" />
 
 __Solution:__
 
@@ -22,3 +33,6 @@ react-scripts test --setupFiles ./src/setupTests.js
 ```
 
 Then I ran `npm run test` again and it worked.
+
+</JSLayout>
+</Layout>
