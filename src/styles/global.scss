@@ -1,11 +1,11 @@
 html, body {
-  font-family: Tahoma, Geneva, sans-serif;
+  font-family: 'Lora', serif;
   margin: 0;
   padding: 0;
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 18px;
+  line-height: 1.7;
   background: #eeeeee;
-  color: #333;
+  color: rgba(0,0,0,.8);
 }
 
 /*** Headers ***/
@@ -13,15 +13,17 @@ h1, h2 {
   margin: 0;
 }
 h1 {
-  font-size: 26px;
-  margin-bottom: 20px;
-  line-height: 1.3;
-  font-weight: 600;
+  font-size: 400%;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0 0 .75em;
+  line-height: 1.02;
+  font-weight: 700;
 }
 h2 {
-  font-size: 30px;
-  font-weight: 400;
-  margin-top: 50px;
+  font-size: 250%;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 1em 0 .5em;
+  line-height: 1.02;
 
   code {
     font-size: 30px;
@@ -40,7 +42,7 @@ img {
 
 /* Common elements */
 p {
-  margin-top: 10px;
+  margin-top: 1em;
 }
 
 blockquote {
@@ -54,7 +56,7 @@ blockquote {
 
 /*** Container ***/
 .container {
-  max-width: 800px;
+  max-width: 920px;
   width: 100%;
   padding: 0 15px;
   box-sizing: border-box;
@@ -64,6 +66,7 @@ blockquote {
 .contentBox {
   padding: 20px;
   background: #fff;
+  box-shadow: 0 0 3px #aaa;
 
   @media screen and (min-width: 768px) {
     padding: 60px;
@@ -134,12 +137,12 @@ code[class*="language-"], pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"] {
   border: none;
-  padding: .05em .5em;
   font-size: .9em;
-  color: #333;
+  color: #FD2D74;
   box-shadow: none;
   border-radius: 3px;
   font-weight: 300;
+  background: none;
 }
 
 .token {

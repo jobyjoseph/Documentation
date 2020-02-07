@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Helmet>
-        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700&display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Lora:700,400|Source+Sans+Pro:700,400&display=swap" rel="stylesheet"/>
       </Helmet>
       <Header/>
       <div className={styles.container}>

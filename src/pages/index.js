@@ -10,8 +10,10 @@ const IndexPage = () => (
     <SEO title="Learn JavaScript and Node.js" />
     <div className="container">
       <div className="contentBox">
-        <h1>Articles</h1>
         <ol reversed className={styles.articleList}>
+          <li>
+            <Link to="/write-your-first-react-app">Write Your First React App</Link>
+          </li>
           <li>
             <Link to="/create-react-app-setuptests-js-not-working">SOLVED: setupTests.js not working in CreateReactApp</Link>
           </li>
