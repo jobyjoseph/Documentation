@@ -4,6 +4,7 @@ import JSLayout from "../components/masters/javascript-layout.js";
 import Image from "../components/utils/image/image.js";
 import imgFirstComponent from "../images/articles/2020/first-react-component.png";
 import imgComponentWithStyle from "../images/articles/2020/component-with-style.png";
+import imgComponentWithJSX from "../images/articles/2020/component-using-jsx.png";
 
 
 <Layout>
@@ -178,15 +179,33 @@ npm --version
 
 My NPM version number is _v6.13.4_. We download and install required tools from NPM repository.
 
-### Setup package.json
+### Install Babel
 
-So far we had only two files in our project folder, `index.html` and `component.jsx`. We need to create another file `package.json`. This file keeps the information about the project and it maintains any NPM package dependency in future. To create a `package.json` file with default values, run the following command in terminal.
+Babel is a transpiler. It means it can convert one type of code to another type. Eg: Babel can convert ES6 code to ES5. Babel can also convert JSX code to React.js code.
+
+We now need Babel to convert `component.jsx` to `component.js` file. To use `babel` command in terminal, we need to install Babel globally. Run this command in terminal.
+
+```
+sudo npm install -g babel-cli
+```
+
+`-g` command is used to install any package globally. Only if a command is installed globally, we can use `babel` as a command in terminal. We can test if Babel is installed successfully by typing following command in terminal.
+
+```
+babel --version
+```
+
+In my machine, I have already installed v7.4.3 sometime back.
+
+Now `babel-cli` is like a robot. But it does not have knowledge to convert JSX to JavaScript. We need to teach Babel how to do that. This is by installing `@babel/preset-react` package. If `babel-cli` was installed globally, `@babel/preset-react` is installed within the project boundary.
+
+Before installing `@babel/preset-react`, we need to create a file in our project with name _package.json_. This file maintains the package dependencies of our project. `npm` has an `init` command to create _package.json_ file. In the terminal, from the root of our project, run below command.
 
 ```
 npm init -y
 ```
 
-`-y` is a flag which tells `npm` to initialize a _package.json_ file with default values. Now you can see a _package.json_ file with following content.
+`-y` is to accept all the default values while creating the _package.json_ file. Now the file is created with default content that looks like this.
 
 ```javascript
 {
@@ -203,15 +222,27 @@ npm init -y
 }
 ```
 
-So far, we installed and setup Nodejs, NPM and package.json. Now we can start installing and use other build tools in our project. First one is Babel.
+Now we can start with `@babel/preset-react` package installation. In the command prompt, type:
 
-### Install Babel
+```
+npm install --save-dev @babel/preset-react 
+```
 
-Babel is a transpiler. It means it can convert one type of code to another type. Eg: Babel can convert ES6 code to ES5. Babel can also convert JSX code to React.js code.
+### Transpiling JSX to JS
 
-We now need Babel to convert `component.jsx` to `component.js` file.
+From the root project folder in terminal, run this command.
 
+```
+babel --presets @babel/preset-react component.jsx -o component.js
+```
 
+Here we are telling `babel` to use `@babel/preset-react` to convert _component.jsx_ to _component.js_. If we open the _component.js_ file, we can see the transpiled pure JavaScript code.
+
+If we open the _index.html_ in a browser, we can see the output.
+
+<Image src={imgComponentWithJSX} alt="Component using JSX" />
+
+Now we saw how to create a React component using JSX. Our project is a very simple one as of now with only one component file. That is why it is ok to go to terminal and run babel command everytime. But as the project grows bigger, we need to automize some tasks.
 
 </JSLayout>
 </Layout>
