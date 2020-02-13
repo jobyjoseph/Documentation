@@ -1,0 +1,53 @@
+import SEO from "../components/seo.js";
+import Layout from "../components/layout.js";
+import JSLayout from "../components/masters/javascript-layout.js";
+import Image from "../components/utils/image/image.js";
+
+
+<Layout>
+<SEO title="React App CI/CD from Bitbucket Using AWS CodePipeline and CodeDeploy" />
+<JSLayout>
+
+# React App CI/CD from Bitbucket Using AWS CodePipeline and CodeDeploy
+
+React applications are either created using packages like [create-react-app](https://github.com/facebook/create-react-app) or using custom tech stack. The tech stack usually involves [Babel](https://babeljs.io/) to transpile the ES6 and JSX code to JavaScript. The stack also might have [Webpack](https://webpack.js.org/) to bundle the code.
+
+When it comes to CI/CD(Continous Integration / Continous Deployment), we need to think about a system which can do the following things whenever a change in code happens.
+- CI: Perform validations, code quality checks, code formatting, notifying developers
+- CI: Run automated tests
+- CI: Build the code and generate files which can be deployed
+- CD: If CI goes smoothly, deploy the code to web server automatically
+
+To understand how AWS CodePipeline, AWS CodeDeploy, Bitbucket gel together, we are completing following steps.
+
+1. Launch an AWS EC2 instance
+2. Setup nginx web server in the instance
+3. Create a React project using create-react-app
+4. Push the React project to a Bitbucket repository
+5. Configure AWS CodeDeploy
+6. Configure AWS CodePipeline to automate the process
+
+## Launch AWS EC2 Instance
+
+We want our React website to be hosted in a public server. Then only any public user can access our website using a url. We depend on [AWS EC2](https://aws.amazon.com/ec2/) Instance to host our website. We can think of EC2 instance as a computer to store our website files.
+
+> AWS stands for Amazon Web Services. It is a cloud solution from Amazon. It has got many services to launch instances, store data in database, CDNs and lot more. Elastic Compute Cloud(EC2) is one of that services that allows us to launch our own Virtual Machine in cloud. You can read [here](https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-1-launch-instance.html), the steps in detail to launch an EC2 instance.
+
+Read the steps in the link above to launch a __t2.micro__ instance with default configurations and Ubuntu operating system.
+
+## Install nginx
+
+```
+chmod 400 bopis-web-litmus7.pem
+ssh -i bopis-web-litmus7.pem ubuntu@address.com
+sudo apt-get update
+sudo apt-get install nginx
+```
+
+## Configure Security Group
+
+
+
+
+</JSLayout>
+</Layout>

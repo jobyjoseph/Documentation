@@ -12,6 +12,9 @@ const IndexPage = () => (
       <div className="contentBox">
         <ol reversed className={styles.articleList}>
           <li>
+            <Link to="/deploy-react-app-from-bitbucket-aws-codepipeline-codedeploy">React App CI/CD from Bitbucket Using AWS CodePipeline and CodeDeploy</Link>
+          </li>
+          <li>
             <Link to="/write-your-first-react-app">Write Your First React App</Link>
           </li>
           <li>

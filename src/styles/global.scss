@@ -18,6 +18,7 @@ h1 {
   margin: 0 0 .75em;
   line-height: 1.02;
   font-weight: 700;
+  color: rgba(0, 0, 0, .9);
 }
 h2 {
   font-size: 250%;
@@ -77,7 +78,8 @@ blockquote {
 
 /*** Links ***/
 a {
-  color: #1e88e5;
+  color: rgba(0,0,0,.8);
+  border-bottom:1px dashed #FD2D74;
   text-decoration: none;
 }
 

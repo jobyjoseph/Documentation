@@ -7,7 +7,7 @@ import styles from "./header.module.scss";
 const Header = (props) => (
   <header>
     <div className="container">
-      <Link to="/">
+      <Link to="/" className={styles.logoLink}>
         <img src={logo} alt="Backbencher.dev" className={styles.logo}/>
         <span className={styles.logoText}>backbencher.dev</span>
       </Link>
