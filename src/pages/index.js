@@ -12,6 +12,9 @@ const IndexPage = () => (
       <div className="contentBox">
         <ol reversed className={styles.articleList}>
           <li>
+            <Link to="/react-bootstrap-controllabel-warning">SOLVED: ControlLabel from React Bootstrap throws Warning</Link>
+          </li>
+          <li>
             <Link to="/create-react-starter-webpack-babel">Create React Starter App using React 16, Webpack 4 and Babel 7</Link>
           </li>
           <li>
@@ -52,7 +55,7 @@ const IndexPage = () => (
           </li>
           <li>
             <Link to="/number-data-type-in-javascript">Number Data Type in JavaScript</Link>
-          </li>  
+          </li>
           <li>
             <Link to="/boolean-data-type-in-javascript">Boolean Data Type in JavaScript</Link>
           </li>
