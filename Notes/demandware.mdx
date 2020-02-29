@@ -1,0 +1,78 @@
+## Getting Started
+
+Demandware provides 2 reference applications:
+- StoreFront Reference Architecture(SFRA)
+- SiteGenesis JavaScript Controllers(SGJC)
+
+To select the version of a site:
+```
+Administration > Code Deployment
+```
+
+_Storefront_ stands for the ecommerce site which customers view and use.
+
+A customer _realm_ includes a primary instance group and a secondary instance group. Primary instance group can contain _Development_, _Staging_ and _Production_ sites. Secondary instance group contains the sandbox environments. The minimum number of sandboxes in a secondary instance is 3 and maximum is 47.
+
+PIG - Primary Instance Group
+SIG - Secondary Instance Group
+
+pipelines?
+
+BM - Business Manager
+
+## Development Components
+
+- Cartridges - Business functionality in B2C Commerce. It is a mechanism for packaging and deploying program code and data.
+- Controllers - Server side scripts that handle storefront requests
+- Scripts
+- Templates - B2C Commerce uses ISML(Internet Store Markup Language) templates to generate dynamic storefront pages.
+- Forms
+
+### Cartridge
+
+Generic Cartridge - It contains reusable business functionality that can be deployed to many sites.
+Application-specific cartridge - It is built for a specific site.
+
+pipelets?
+
+## Data Types in B2C Commerce Scripts
+
+- String - for a word or sentence
+- Text - For large amounts of Text
+- Html
+- Integer
+- Number
+- Boolean
+- Date
+- Date+Time
+- Image
+- Email
+- Password
+- Set of String
+- Set of Integer
+- Set of Number
+- Enum of String
+- Enum of Integer
+
+SFRA provides an `app_storefront_base` cartridge and a `server` module.
+
+## Code Example
+
+Controller path that allows only HTTPS, authentication check, url redirection.
+
+```javascript
+server.get('Show', server.middleware.https, function (req, res, next) {
+    var accountModel = getModel(req);
+    if (accountModel) {
+        res.render('account/accountdashboard', {
+            account: accountModel,
+            accountlanding: true
+        });
+    } else {
+        res.redirect(URLUtils.url('Login-Show'));
+    }
+    next();
+});
+```
+
+Query string values can be read from `req.querystring`.
