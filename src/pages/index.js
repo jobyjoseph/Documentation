@@ -15,7 +15,7 @@ const IndexPage = () => (
             <Link to="/salesforce-demandware-useful-links">Salesforce Demandware Useful Links</Link>
           </li>
           <li>
-            <Link to="/terms-salesforce-demandware-project">Salesforce Demandware Glossary</Link>
+            <Link to="/salesforce-demandware-glossary">Salesforce Demandware Glossary</Link>
           </li>
           <li>
             <Link to="/salesforce-demandware-interview-questions">Salesforce Demandware Interview Questions</Link>
