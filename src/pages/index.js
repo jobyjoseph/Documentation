@@ -12,6 +12,15 @@ const IndexPage = () => (
       <div className="contentBox">
         <ol reversed className={styles.articleList}>
           <li>
+            <Link to="/salesforce-demandware-useful-links">Salesforce Demandware Useful Links</Link>
+          </li>
+          <li>
+            <Link to="/terms-salesforce-demandware-project">Salesforce Demandware Glossary</Link>
+          </li>
+          <li>
+            <Link to="/salesforce-demandware-interview-questions">Salesforce Demandware Interview Questions</Link>
+          </li>
+          <li>
             <Link to="/react-bootstrap-controllabel-warning">SOLVED: ControlLabel from React Bootstrap throws Warning</Link>
           </li>
           <li>
