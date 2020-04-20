@@ -1,0 +1,69 @@
+import SEO from "../components/seo.js";
+import Layout from "../components/layout.js";
+import JSLayout from "../components/masters/javascript-layout.js";
+
+
+<Layout>
+<SEO title="React Basic Interview Questions" />
+<JSLayout>
+
+# React Basic Interview Questions
+
+**Question**
+
+In a React project, we add reference to 2 files. One is _react.js_ and other one is _react-dom.js_. Why we have two include 2 files, instead of one?
+
+**Solution**
+
+React component library is used in websites and also to create mobile apps using React Native. React.js file is a small file which does the job of creating components. Therefore it is used in both web and React-Native projects. In web, the components are then rendered in browser using react-dom.js. So the 2 files are separated for reusability.
+
+**Question**
+
+We have a JSX code snippet below.
+
+```javascript
+const content = (
+  <div>
+    <h1>Backbencher</h1>
+  </div>
+);
+```
+
+Write the pure JavaScript code after JSX is converted to JavaScript.
+
+**Solution**
+
+```javascript
+const content = React.createElement(
+  "div",
+  {},
+  React.createElement("h1", {}, "Backbencher")
+);
+```
+
+**Question**
+
+Explain the parameters of `React.createElement()` method.
+
+**Solution**
+
+`React.createElement()` accepts three arguments.
+
+```javascript
+createElement(tag, attributes, children)
+```
+
+The fist parameter is tag or component to be rendered. Second parameter accepts an object. The key value pair of the object forms the attribute list of the tag. Third parameter can be a string or other component to be nested inside current tag or component. Here is an example.
+
+```javascript
+React.createElement("div", {id: "hello"}, "Backbencher")
+```
+
+turns out to be
+
+```html
+<div id="hello">Backbencher</div>
+```
+
+</JSLayout>
+</Layout>
