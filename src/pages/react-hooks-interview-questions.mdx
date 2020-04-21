@@ -1,0 +1,43 @@
+import SEO from "../components/seo.js";
+import Layout from "../components/layout.js";
+import JSLayout from "../components/masters/javascript-layout.js";
+
+
+<Layout>
+<SEO title="React Hooks Interview Questions" />
+<JSLayout>
+
+# React Hooks Interview Questions
+
+**Question**
+
+What are hooks in React?
+
+**Answer**
+
+Hooks are a new feature added in React v16.8. It allows to use all React features without writing class components. For example, before version 16.8, we need a class component to manage state of a component. Now we can keep state in a functional component using hooks.
+
+**Question**
+
+Will React hooks work inside class components?
+
+**Answer**
+
+No
+
+**Question**
+
+Why React hooks was introduced?
+
+**Answer**
+
+One reason to introduce hooks was the complexity in dealing with `this` keyword inside class components. If not handled properly, `this` will take some other value. That will result in breaking lines like `this.setState()` and other event handlers. Using hooks, we avoid that complexity when working with functional components.
+
+Class components do not minify very well and also make hot reloading unreliable. That is another inspiration to bring hooks.
+
+Another reason is that, there is no specific way to reuse stateful component logic. Even though HOC and render props patterns address this problem, that asks for modifying the class component code. Hooks allow to share stateful logic without changing the component hierarchy.
+
+Fourth reason is, in a complex class component, related code are scattered in different lifecycle methods. Example, in case of a data fetching, we do that mainly in `componentDidMount()` and `componentDidUpdate()`. Another example is, in case of event listeners, we use `componentDidMount()` to bind an event and `componentWillUnmount()` to unbind. Hooks instead helps to place related code together.
+
+</JSLayout>
+</Layout>
