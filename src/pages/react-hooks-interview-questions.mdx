@@ -267,5 +267,201 @@ The setter function of `useState()` does not automatically merge if an object is
 
 Here we are merging object properties with the help of JavaScript spread operator.
 
+**Question**
+
+What are the differences in using hooks and class components with respect to state management?
+
+**Solution**
+
+When using `setState()` in class components, always the state variable is an object. Where as, the state variable in hooks can be of any type like number, string, boolean, object or array.
+
+When state variable is an object, `setState()` in class components automatically merges the new value to the state object. But in case of setter function in `useState()`, we need to explicitly merge the updated object property using spread operator.
+
+**Question**
+
+What is the purpose of `useEffect` hook?
+
+**Solution**
+
+The Effect hook lets us to perform side effects in functional components. It helps us to avoid redundant code in different lifecycle methods of a class component. It helps to group related code.
+
+**Question**
+
+Here is a class component that prints _Boom_ in console whenever it is mounted or updated.
+
+```javascript
+export class Banner extends Component {
+  state = {
+    count: 0,
+  };
+
+  updateState = () => {
+    this.setState({
+      count: this.state.count + 1,
+    });
+  };
+
+  componentDidMount() {
+    console.log("Boom");
+  }
+
+  componentDidUpdate() {
+    console.log("Boom");
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.updateState}>State: {this.state.count}</button>
+      </div>
+    );
+  }
+}
+```
+
+Remove the redundant console.log statement using React hooks.
+
+**Solution**
+
+`componentDidMount()` and `componentDidUpdate()` are lifecycle methods. Such side effects can be done using `useEffect` hook. `useEffect` hook is a function which accepts a callback function. That callback function is called every time render happens.
+
+The code can be rewritten as:
+
+```javascript
+import React, { useState, useEffect } from "react";
+
+function Banner() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log("Boom");
+  });
+
+  const updateState = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <div>
+      <button onClick={updateState}>State: {count}</button>
+    </div>
+  );
+}
+```
+
+**Question**
+
+Understand the code below:
+
+```javascript
+function Banner() {
+  const [count, setCount] = useState(0);
+  const [name, setName] = useState("");
+
+  useEffect(() => {
+    console.log("Count is updated");
+  });
+
+  return (
+    <div>
+      <button onClick={() => setCount(count + 1)}>State: {count}</button>
+      <input
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+    </div>
+  );
+}
+```
+
+It logs "Count is updated" message even when updating the value in textbox. How can we show the log message only when the count state is updated?
+
+**Solution**
+
+`useEffect` function accepts a second parameter which should be an array. Within this array, we need to pass the props or state we need to watch for. Only if those props or state mentioned in the array change, the effect is executed. So in our code, we add the second argument and specify only `count` value in the array.
+
+Here is the udpated `useEffect` code:
+
+```javascript
+useEffect(() => {
+  console.log("Count is updated");
+}, [count]);
+```
+
+**Question**
+
+We have got a class component that updates time every second. It uses `componentDidMount()` to set the timer.
+
+```javascript
+export class Clock extends Component {
+  state = {
+    date: new Date(),
+  };
+
+  componentDidMount() {
+    setInterval(() => {
+      this.setState({
+        date: new Date(),
+      });
+    }, 1000);
+  }
+
+  render() {
+    return <div>{this.state.date.toString()}</div>;
+  }
+}
+```
+
+Convert the above code to React hooks.
+
+**Solution**
+
+`componentDidMount()` is a lifecycle method that executes only once in a component lifecycle. We use `useEffect` to bring effects of `componentDidMount()`. But `useEffect` runs on every props or state updation. To prevent it, we make use of second array argument of `useState`. We keep that array empty. So for React, there are no props or state to watch for. Therefore `useEffect` runs only once like `componentDidMount()`.
+
+Here is the code using React hooks.
+
+```javascript
+function Clock() {
+  const [date, setDate] = useState(new Date());
+
+  useEffect(() => {
+    setInterval(() => {
+      setDate(new Date());
+    }, 1000);
+  }, []);
+
+  return <div>{date.toString()}</div>;
+}
+```
+
+**Question**
+
+We have a code snippet from a class component which registers and remove an event listener.
+
+```javascript
+componentDidMount() {
+  window.addEventListener("mousemove", this.handleMousePosition);
+}
+
+componentWillUnmount() {
+  window.removeEventListener("mousemove", this.handleMousePosition);
+}
+```
+
+Convert this code to React hooks format.
+
+**Solution**
+
+```javascript
+useEffect(() => {
+  window.addEventListener("mousemove", handleMousePosition);
+
+  return () => {
+    window.removeEventListener("mousemove", handleMousePosition);
+  }
+}, []);
+```
+
 </JSLayout>
 </Layout>
