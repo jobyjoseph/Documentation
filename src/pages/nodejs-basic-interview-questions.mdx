@@ -1,0 +1,23 @@
+import SEO from "../components/seo.js";
+import Layout from "../components/layout.js";
+import JSLayout from "../components/masters/javascript-layout.js";
+
+
+<Layout>
+<SEO title="Node.js Basic Interview Questions" />
+<JSLayout>
+
+# Node.js Basic Interview Questions
+
+**Question**
+
+What is the significance of _package-lock.json_ file?
+
+**Solution**
+
+When we install a NPM package and saving the dependency in _package.json_, a _package-lock.json_ file is automatically created. It helps during production deployment. Let us see how.
+
+Say, as part of our project, when we install _react_, the version installed is _^16.8.0_. After 3 months, when we deploy the code in production, if run `npm install`, the react version might be _16.8.1_. Because `^` says it can accept bug fixes. So in production deployment we need to run `npm ci` to install exactly the same versions used while development. This avoids issues to due version mismatch.
+
+</JSLayout>
+</Layout>
