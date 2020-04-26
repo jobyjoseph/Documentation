@@ -463,5 +463,52 @@ useEffect(() => {
 }, []);
 ```
 
+**Question**
+
+Here is a code snippet from a Context consumer component.
+
+```javascript
+import { NameContext, AgeContext } from "./ProviderComponent";
+
+export class ConsumerComponent extends Component {
+  render() {
+    return (
+      <NameContext.Consumer>
+        {(name) => {
+          return (
+            <AgeContext.Consumer>
+              {(age) => (
+                <div>
+                  Name: {name}, Age: {age}
+                </div>
+              )}
+            </AgeContext.Consumer>
+          );
+        }}
+      </NameContext.Consumer>
+    );
+  }
+}
+```
+
+Rewrite the `ConsumerComponent` using `useContext` React hook.
+
+**Solution**
+
+Hooks can be used only in a functional component. The `ConsumerComponent` can be re-written as:
+
+```javascript
+function ConsumerComponent() {
+  const name = useContext(NameContext);
+  const age = useContext(AgeContext);
+
+  return (
+    <div>
+      Name: {name}, Age: {age}
+    </div>
+  );
+}
+```
+
 </JSLayout>
 </Layout>
