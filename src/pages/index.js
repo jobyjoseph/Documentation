@@ -10,7 +10,22 @@ const IndexPage = () => (
     <SEO title="Learn JavaScript and Node.js" />
     <div className="container">
       <div className="contentBox">
-        <ol reversed className={styles.articleList}>
+
+        <h3>JavaScript Interview Questions</h3>
+        <ul className={styles.articleList}>
+          <li>
+            <Link to="/javascript-execution-thread-interview-questions">JavaScript Execution Thread Interview Questions</Link>
+          </li>
+          <li>
+            <Link to="/javascript-closures-interview-questions">JavaScript Closures Interview Questions</Link>
+          </li>
+          <li>
+            <Link to="/javascript-async-await-interview-questions">JavaScript Async Await Interview Questions</Link>
+          </li>
+        </ul>
+
+        <h3>Articles</h3>
+        <ul className={styles.articleList}>
           <li>
             <Link to="/salesforce-demandware-useful-links">Salesforce Demandware Useful Links</Link>
           </li>
@@ -74,7 +89,7 @@ const IndexPage = () => (
           <li>
             <Link to="/introduction-to-javascript">Introduction to JavaScript</Link>
           </li>
-        </ol>
+        </ul>
       </div>
     </div>
   </Layout>

@@ -1,0 +1,47 @@
+import SEO from "../components/seo.js";
+import Layout from "../components/layout.js";
+import JSLayout from "../components/masters/javascript-layout.js";
+
+
+<Layout>
+<SEO title="JavaScript Closures Interview Questions" />
+<JSLayout>
+
+# JavaScript Closures Interview Questions
+
+**Question**
+
+What is a closure?
+
+**Solution**
+
+Here is a definition given by Kyle Simpson in Advanced JavaScript course.
+
+> Closure is when a function "remembers" its lexical scope even when the function is executed outside that lexical scope.
+
+One of the easy way to meet this condition is when a function returns another function. That is why usually during interviews, when asked about closures, candidates say "When a function returns another function, that is a closure.".
+
+Example of a closure.
+
+```javascript{numberLines: true}
+function a(){
+  const name = "Backbencher";
+
+  function b() {
+    console.log(name);
+  }
+
+  return b;
+}
+
+const c = a();
+c(); // "Backbencher"
+```
+
+Here is how we explain Kyle's definition with above example.
+
+Closure is when a function(`b()`) remembers its lexical scope(`name` is part of the scope) even when the function is executed outside(global scope) that lexical scope(scope of `a()`).
+
+
+</JSLayout>
+</Layout>
