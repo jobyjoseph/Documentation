@@ -42,6 +42,26 @@ Here is how we explain Kyle's definition with above example.
 
 Closure is when a function(`b()`) remembers its lexical scope(`name` is part of the scope) even when the function is executed outside(global scope) that lexical scope(scope of `a()`).
 
+**Question**
+
+Here is a code snippet:
+
+```javascript
+setTimeout(function(){
+    console.log("Backbencher");
+}, 2000);
+```
+
+Above code, does it form a closure?
+
+**Solution**
+
+Yes. It is a closure.
+
+So here is the technique to findout if there is a closure in the code. Go through the code and identify all the function definitions and the scope where those functions are defined. Now findout in which scope those functions are called. If any function is defined and called in a different scope, a closure is formed.
+
+In our code, the callback function accepted by `setTimeout` is local to `setTimeout` function. So the scope of the callback function definition is `setTimeout` function. Now after 2000 milliseconds, the callback function is executed in the global scope by JavaScript engine. Since the function definition scope is `setTimeout` and function invocation scope is `global`, a closure is formed.
+
 
 </JSLayout>
 </Layout>
