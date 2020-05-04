@@ -1,0 +1,60 @@
+import SEO from "../components/seo.js";
+import Layout from "../components/layout.js";
+import JSLayout from "../components/masters/javascript-layout.js";
+
+
+<Layout>
+<SEO title="Redux Basic Interview Questions" />
+<JSLayout>
+
+# Redux Basic Interview Questions
+
+**Question**
+
+What is Redux?
+
+**Solution**
+
+Redux is a package for efficient and easy state management.
+
+**Question**
+
+What is a store in Redux? How can we create a store in Redux?
+
+**Solution**
+
+Store is a JavaScript object maintained by Redux to store and manage state.
+
+In Redux we can create a store using `createStore()` method inside Redux package.
+
+```javascript
+const store = createStore(rootReducer);
+```
+
+Here `rootReducer` is a function that is used by redux to update the store state.
+
+**Question**
+
+How can we get the state stored in a redux store?
+
+**Solution**
+
+We can use `getState()` method of store to pull the state.
+
+**Question**
+
+What is an action in redux?
+
+**Solution**
+
+An action is a JavaScript object, which has a key named `type`. There can be other properties also in action object. Here is an example of an action.
+
+```javascript
+{
+  type: "UPDATE_COUNTER",
+  value: 10
+}
+```
+
+</JSLayout>
+</Layout>

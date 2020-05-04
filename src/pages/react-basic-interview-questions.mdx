@@ -11,6 +11,16 @@ import JSLayout from "../components/masters/javascript-layout.js";
 
 **Question**
 
+What is virtual DOM? How virtual DOM boosts React performance?
+
+**Solution**
+
+Like the actual DOM, the virtual DOM is a node tree that lists elements, their attributes and content as objects and properties. `render()` method in ReactDOM creates a node tree from React components and updates this tree in response to mutations in the data model caused by actions.
+
+Whenever anything is changed, the entire UI is first re-rendered in virtual DOM representation. The difference between earlier virtual DOM representation and current one is calculated. The real DOM is updated with what has actually changed. Updating virtual DOM is very fast compared to real browser re-render. Hence performance is improved.
+
+**Question**
+
 In a React project, we add reference to 2 files. One is _react.js_ and other one is _react-dom.js_. Why we have two include 2 files, instead of one?
 
 **Solution**
