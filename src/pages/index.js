@@ -20,6 +20,9 @@ const IndexPage = () => (
             <Link to="/javascript-closures-interview-questions">JavaScript Closures Interview Questions</Link>
           </li>
           <li>
+            <Link to="/javascript-destructuring-interview-questions">JavaScript Destructuring Interview Questions</Link>
+          </li>
+          <li>
             <Link to="/javascript-async-await-interview-questions">JavaScript Async Await Interview Questions</Link>
           </li>
         </ul>
