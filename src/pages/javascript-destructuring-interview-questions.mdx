@@ -50,7 +50,92 @@ Refactor this code using destructuring.
 
 ```javascript
 var arr = ["B", "a", "c", "k"];
+var [
+  first,
+  second
+] = arr;
+```
+
+**Question**
+
+What is the output of following code snippet?
+
+```javascript
+var arr = ["B",, "c", "k"];
 var [first, second] = arr;
+
+console.log(second);
+```
+
+**Solution**
+
+The output printed is `undefined`. Here the second element of the array holds `undefined` and that is assigned to `second`.
+
+**Question**
+
+What is the output of following code snippet?
+
+```javascript
+var arr = ["B", null, "c", "k"];
+var [first, second] = arr;
+
+console.log(second);
+```
+
+**Solution**
+
+The output is `null`. `null` is not strictly equal to `undefined`.
+
+**Question**
+
+What is the output of following code snippet?
+
+```javascript
+var arr = ["B",, "c", "k"];
+var [first, second = 10 ] = arr;
+
+console.log(second);
+```
+
+**Solution**
+
+It prints `10`. Since `second` evaluates to `undefined`, JavaScript assigns the default value of `10`.
+
+**Question**
+
+What is the output of following code snippet?
+
+```javascript
+var arr = ["B", null, "c", "k"];
+var [first, second = 10 ] = arr;
+
+console.log(second);
+```
+
+**Solution**
+
+It prints `null`. `second` will take the default value of 10 only if it evaluates to `undefined`, not any other falsy values.
+
+**Question**
+
+How can we refactor below code using destructuring?
+
+```javascript
+var arr = ["B", "a", "c", "k", "b", "e", "n", "c", "h", "e", "r"];
+var first = arr[0];
+var second = arr[1];
+var rest = arr.slice(2);
+```
+
+**Solution**
+
+```javascript
+var arr = ["B", "a", "c", "k", "b", "e", "n", "c", "h", "e", "r"];
+var [
+  first,
+  second,
+  ...rest
+] = arr;
 ```
 
 </JSLayout>
