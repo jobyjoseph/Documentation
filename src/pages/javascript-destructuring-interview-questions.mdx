@@ -15,7 +15,24 @@ What is destructuring in JavaScript?
 
 **Solution**
 
-Destructuring in JavaScript enables breaking down a larger structure and assign the individual elements to variables or properties. It is a feature that came as part of ES6.
+Destructuring in JavaScript enables breaking down a larger data structure and assign the individual elements to variables or properties. It is a feature that came as part of ES6.
+
+**Question**
+
+Here is a JavaScript code snippet.
+
+```javascript
+var name = obj.name;
+var age = obj.age !== undefined ? obj.age : 0;
+```
+
+Refactor above code using JavaScript destructuring.
+
+**Solution**
+
+```javascript
+var {name, age = 0} = obj;
+```
 
 
 </JSLayout>
