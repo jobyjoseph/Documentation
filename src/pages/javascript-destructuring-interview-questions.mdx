@@ -138,5 +138,146 @@ var [
 ] = arr;
 ```
 
+**Question**
+
+What is the output of following code snippet?
+
+```javascript
+var arr = ["B", "a"];
+var [
+  first,
+  second,
+  ...rest
+] = arr;
+
+console.log(rest);
+```
+
+**Solution**
+
+It prints `[]`. Note: it does not print `undefined`.
+
+**Question**
+
+Is this code valid?
+
+```javascript
+var arr = ["B", "a", "c", "k"];
+var first, second, third;
+[
+  first,
+  second,
+  third
+] = arr;
+```
+
+**Solution**
+
+Yes. It is valid. Destructuring is all about assignment. So we can declare the variables first separately and then assign it using destructuring.
+
+**Question**
+
+Here is a JavaScript code snippet.
+
+```javascript
+var arr = ["Joe", 23, "Male"];
+var profile = {};
+profile.name = arr[0];
+profile.age = arr[1];
+profile.gender = arr[2];
+console.log(profile);
+```
+
+Refactor above code using destructuring.
+
+**Solution**
+
+```javascript
+var arr = ["Joe", 23, "Male"];
+var profile = {};
+[
+  profile.name,
+  profile.age,
+  profile.gender
+] = arr;
+console.log(profile);
+```
+
+**Question**
+
+Here we have a code that copies first two elements of an array to another array.
+
+```javascript
+var arr = ["Joe", 23, "Male"];
+var newArr = [];
+newArr[0] = arr[0];
+newArr[1] = arr[1];
+console.log(newArr);
+```
+
+Refactor it using destructuring.
+
+**Solution**
+
+```javascript
+var arr = ["Joe", 23, "Male"];
+var newArr = [];
+[
+  newArr[0],
+  newArr[1]
+] = arr;
+console.log(newArr);
+```
+
+**Question**
+
+Here is an array.
+
+```javascript
+var arr = ["B", "a", "c", "k"];
+```
+
+How to pick only `"B"` and `"k"` from `arr` using destructuring?
+
+**Solution**
+
+```javascript
+var arr = ["B", "a", "c", "k"];
+var [
+  first,
+  ,
+  ,
+  fourth
+] = arr;
+```
+
+We can skip elements by simply putting comma separator.
+
+**Question**
+
+Here is a JavaScript code snippet to swap two numbers.
+
+```javascript
+var a = 2;
+var b = 5;
+var temp = a;
+a = b;
+b = temp;
+console.log(a);
+console.log(b);
+```
+
+Refactor the code without using `temp` variable.
+
+**Solution**
+
+```javascript
+var a = 2;
+var b = 5;
+[b, a] = [a, b]
+console.log(a);
+console.log(b);
+```
+
 </JSLayout>
 </Layout>
