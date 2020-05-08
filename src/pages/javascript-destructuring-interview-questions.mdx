@@ -279,5 +279,373 @@ console.log(a);
 console.log(b);
 ```
 
+**Question**
+
+We have a function that extracts values from its parameter array.
+
+```javascript
+function sum(numbers) {
+  var num1 = numbers[0];
+  var num2 = numbers[1];
+  return num1 + num2;
+}
+```
+
+Refactor the code using destructuring.
+
+**Solution**
+
+```javascript
+function sum([num1, num2]) {
+  return num1 + num2;
+}
+```
+
+**Question**
+
+Write the ES5 equivalent of following code.
+
+```javascript
+function sum([
+  num1 = 1,
+  num2 = 1
+] = []) {
+  return num1 + num2;
+}
+```
+
+**Solution**
+
+```javascript
+function sum(numbers) {
+  numbers = numbers !== undefined? numbers : [];
+  var num1 = numbers[0] ? numbers[0] : 1;
+  var num2 = numbers[1] ? numbers[1] : 1;
+  return num1 + num2;
+}
+```
+
+**Question**
+
+How can we refactor the below code using destructuring?
+
+```javascript
+var arr = [1, 2, [3, 4]];
+var a = arr[0];
+var b = arr[1];
+var c = arr[2][0];
+var d = arr[2][1];
+
+console.log(a, b, c, d);
+```
+
+**Solution**
+
+```javascript
+var arr = [1, 2, [3, 4]];
+var [
+  a,
+  b,
+  [
+    c,
+    d
+  ]
+] = arr;
+```
+
+**Question**
+
+Refactor below code using destructuring.
+
+```javascript
+var obj = {
+  name: "Backbencher",
+  age: 23,
+  planet: "Earth"
+}
+
+var objName = obj.name;
+var objAge = obj.age;
+var objPlanet = obj.planet;
+
+console.log(objName, objAge, objPlanet);
+```
+
+**Solution**
+
+```javascript
+var obj = {
+  name: "Backbencher",
+  age: 23,
+  planet: "Earth"
+}
+
+var {
+  name: objName,
+  age: objAge,
+  planet: objPlanet
+} = obj;
+
+console.log(objName, objAge, objPlanet);
+```
+
+**Question**
+
+Here we have an object and 3 variables.
+
+```javascript
+var obj = {
+  a: "Apple",
+  b: "Boy",
+  c: "Cat",
+  d: "Dog",
+  e: "Elephant"
+}
+```
+
+We want `obj.a` to be assigned to a variable `first`, `obj.b` to be assigned to a variable `second` and rest of the object assigned to a variable `rest`. Write the code for it.
+
+**Solution**
+
+```javascript
+var obj = {
+  a: "Apple",
+  b: "Boy",
+  c: "Cat",
+  d: "Dog",
+  e: "Elephant"
+}
+
+var {
+  a: first,
+  b: second,
+  ...rest
+} = obj;
+
+console.log(first);
+console.log(second);
+console.log(rest);
+```
+
+**Question**
+
+Here we have an object destructuring code that looks perfectly fine.
+
+```javascript
+var obj = {
+  a: "Apple",
+  b: "Boy",
+  c: "Cat",
+  d: "Dog",
+  e: "Elephant"
+}
+
+var first, second;
+
+{
+  a: first,
+  b: second,
+} = obj;
+
+console.log(first);
+console.log(second);
+```
+
+But when executed, it throws an error saying:
+
+```
+SyntaxError: Unexpected token ':'
+```
+
+What is the problem? And how can it be fixed?
+
+**Solution**
+
+When JavaScript parser sees `{}`, it is treated as a new block, not as a syntax for object destructuring. Writing a statement like `a:first` is not valid inside a block. That is why it throws a syntax error with unexpected token `:`.
+
+To solve this, we can wrap `{}` with brackets`(), like:
+
+```javascript
+({
+  a: first,
+  b: second,
+} = obj);
+```
+
+**Question**
+
+We have an ES5 code to assign object properties to variables.
+
+```javascript
+var obj = {
+  fruit: "Apple",
+  vegetable: "carrot"
+}
+
+var fruit = obj.fruit;
+var vegetable = obj.vegetable;
+
+console.log(fruit);
+console.log(vegetable);
+```
+
+Refactor above code using destructuring.
+
+**Solution**
+
+```javascript
+var obj = {
+  fruit: "Apple",
+  vegetable: "carrot"
+}
+
+var {
+  fruit,
+  vegetable
+} = obj;
+
+console.log(fruit);
+console.log(vegetable);
+```
+
+Since variable name and object property name are same, we do not have to explicitly mention the variable name in the destructuring code.
+
+**Question**
+
+Here we have an object nested inside another object.
+
+```javascript
+var profile = {
+  name: "Backbencher",
+  age: 34,
+  address: {
+    state: "Kerala",
+    country: "India",
+    pincode: 682037
+  }
+}
+
+var name = profile.name;
+var state = profile.address.state;
+var country = profile.address.country;
+
+console.log(name);
+console.log(state);
+console.log(country);
+```
+
+Refactor this code using destructuring.
+
+**Solution**
+
+```javascript
+var profile = {
+  name: "Backbencher",
+  age: 34,
+  address: {
+    state: "Kerala",
+    country: "India",
+    pincode: 682037
+  }
+}
+
+var {
+  name,
+  address : {
+    state,
+    country
+  }
+} = profile;
+
+console.log(name);
+console.log(state);
+console.log(country);
+```
+
+**Question**
+
+What is the value printed in the console?
+
+```javascript
+var obj = {
+  a: {
+    b: 10
+  }
+};
+
+var {
+  a: {
+    b,
+    c
+  } = {
+    b: 10,
+    c: 15
+  }
+} = obj;
+
+console.log(c);
+```
+
+**Solution**
+
+It prints `undefined`, not 15. The default object with b, 10 and c, 15 is taken only if `a` is not defined. Here `a` is present, but only with one property `b`.
+
+**Question**
+
+What is the output printed?
+
+```javascript
+var obj = {
+  username: "backbencher",
+  social: {
+    likes: 245,
+    tweets: 42,
+    shares: 600
+  }
+}
+
+var {
+  username,
+  social,
+  social: {
+    likes,
+    tweets
+  }
+} = obj;
+
+console.log(social); // 1
+console.log(likes);  // 2
+console.log(tweets); // 3
+```
+
+**Solution**
+
+1. `social` object
+2. 245
+3. 42
+
+Here value from `social` is taken more than once within destructuring operation. That is allowed for object destructuring. We can map a property to a variable multiple times.
+
+**Question**
+
+How can we bring named argument support to JavaScript using destructuring?
+
+**Solution**
+
+Named argument support means, we can pass arguments to a function as name-value pair. This allows developer to pass arguments in any order. In JavaScript, we can bring this feature using object destructuring.
+
+```javascript
+function getDetails({id, options}) {
+  // ...
+}
+
+getDetails({
+  options: {},
+  id: 123
+});
+```
+
+As long as the variable name and property name in argument matches, things will work. The order of properties in the object does not matter.
+
 </JSLayout>
 </Layout>
