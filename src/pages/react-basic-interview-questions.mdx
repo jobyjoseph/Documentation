@@ -75,5 +75,71 @@ turns out to be
 <div id="hello">Backbencher</div>
 ```
 
+**Question**
+
+What is JSX? What is the advantage of using it?
+
+**Solution**
+
+JSX is a syntax extension for JavaScript. It is created to write React components easily. Without JSX, it is very difficult to write big React components in pure JavaScript.
+
+**Question**
+
+Write an example of React functional component.
+
+**Solution**
+
+In React, functional component is a JavaScript function that returns a React element.
+
+```javascript
+function Banner() {
+  return (
+    <h1>Backbencher</h1>
+  )
+}
+```
+
+**Question**
+
+What are `props` in a component?
+
+**Solution**
+
+When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single object. That object, we address as `props`.
+
+**Question**
+
+What is a pure function?
+
+**Solution**
+
+A pure function does not alter its input. It always return the same value for the same input. In React, a component needs to be a pure function with respect to its props. That means for a particular props, the rendered component will always be same.
+
+**Question**
+
+We have a function component here.
+
+```javascript
+function Banner(props) {
+  return (
+    <h1>{props.name}</h1>
+  )
+}
+```
+
+Convert above code to class component.
+
+**Solution**
+
+```javascript
+class Banner extends React.Component {
+  render() {
+    return (
+      <h1>{this.props.name}</h1>
+    )
+  }
+}
+```
+
 </JSLayout>
 </Layout>
