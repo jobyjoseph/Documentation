@@ -141,5 +141,111 @@ class Banner extends React.Component {
 }
 ```
 
+**Question**
+
+Here we have a class component.
+
+```javascript
+class Banner extends React.Component {
+
+  state = {
+    text: ""
+  }
+
+  incrementCount = () => {
+    this.state.text = "Backbencher";
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.incrementCount}>Click</button>
+        <h1>{this.state.text}</h1>
+      </div>
+    )
+  }
+}
+```
+
+Here when the button is clicked, it should display "Backbencher" text. But that is not happening. What is the cause?
+
+**Solution**
+
+Here `state` is updated in wrong way. `state` value needs to be updated using `this.setState()`. Only then the UI will be re-rendered.
+
+The `incrementCount` needs to be updated as
+
+```javascript
+incrementCount = () => {
+  this.setState({
+    text: "Backbencher"
+  })
+}
+```
+
+**Question**
+
+Is `setState()` method synchronous or asynchronous?
+
+**Solution**
+
+`setState()` method is asynchronous.
+
+**Question**
+
+Following code is giving unexpected result.
+
+```javascript
+this.setState({
+  counter: this.state.counter + this.props.increment,
+});
+```
+
+What could be the reason? How can we fix it?
+
+**Solution**
+
+Since `setState()` is asynchronous, setting new state based on previous state can go wrong sometimes. In such scenarios, we can use callback function syntax to set state.
+
+```javascript
+this.setState((prevState, props) => {
+  return {
+    counter: prevState.counter + props.increment
+  }
+})
+```
+
+**Question**
+
+In a class component, we have set initial state as:
+
+```javascript
+state = {
+  name: "Backbencher",
+  age: 23
+}
+```
+
+We then update the state with following code:
+
+```javascript
+this.setState({
+  age: 24
+});
+```
+
+What will be the current value of state object?
+
+**Solution**
+
+States are merged in class components. So the state value will be:
+
+```javascript
+{
+  name: "Backbencher",
+  age: 24
+}
+```
+
 </JSLayout>
 </Layout>
