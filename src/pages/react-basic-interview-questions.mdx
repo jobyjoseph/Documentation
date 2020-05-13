@@ -247,5 +247,117 @@ States are merged in class components. So the state value will be:
 }
 ```
 
+**Question**
+
+Here we have a class component:
+
+```javascript
+class Banner extends React.Component {
+
+  state = {
+    country: "India"
+  }
+
+  constructor(props) {
+    super(props);
+  }
+
+  logMessage() {
+    console.log(this.state.country);
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.logMessage}>Click</button>
+      </div>
+    )
+  }
+}
+```
+
+When the button is clicked, it is showing an error message instead of displaying _India_.
+
+```
+Uncaught TypeError: Cannot read property 'state' of undefined
+```
+
+What is the reason and how we can solve it?
+
+**Solution**
+
+Here `logMessage` function is called when the button is clicked. Since the function is not an arrow function, the value of `this` inside the function is `undefined`. We are trying to extract the value of `state` from `undefined`. That results in TypeError.
+
+We can solve this by explicitly binding `logMessage` to the component class using `bind` method.
+
+```javascript
+constructor(props) {
+  super(props);
+  this.logMessage = this.logMessage.bind(this);
+}
+```
+
+We can also change `logMessage` to an arrow function to solve this issue.
+
+```javascript
+logMessage = () => {
+  console.log(this.state.country);
+}
+```
+
+**Question**
+
+How can we conditionally render JSX in React?
+
+**Solution**
+
+One technique is to use `if` operator. We cannot use `if...else` inside JSX. But we can dynamically return React elements based on a condition.
+
+```javascript
+if(isLoggedIn) {
+  return <Member />
+} else {
+  return <Guest />
+}
+```
+
+Another technique is to use logical operators to implement inline `if`.
+
+```javascript
+<div>
+  {count > 10 && <ShowCount />}
+</div>
+```
+
+We can implement inline `if...else` using JavaScript ternary operator.
+
+```javascript
+{ isLoggedIn ? <Member/> : <Guest /> }
+```
+
+**Question**
+
+If a component need not render anything, what can we do?
+
+**Solution**
+
+`render()` method or the functional component can return `null`.
+
+**Question**
+
+Why we provide a `key` attribute to list of items?
+
+**Solution**
+
+Keys help React to understand which items are changed, added or removed.
+
+**Question**
+
+What is a controlled component in React?
+
+**Solution**
+
+In a controlled component, the value of an input form element is controlled by React.
+
 </JSLayout>
 </Layout>
