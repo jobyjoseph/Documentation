@@ -11,6 +11,13 @@ const IndexPage = () => (
     <div className="container">
       <div className="contentBox">
 
+        <h3>Deno</h3>
+        <ul className={styles.articleList}>
+          <li>
+            <Link to="/how-to-install-deno">How to Install Deno</Link>
+          </li>
+        </ul>
+
         <h3>JavaScript Interview Questions</h3>
         <ul className={styles.articleList}>
           <li>

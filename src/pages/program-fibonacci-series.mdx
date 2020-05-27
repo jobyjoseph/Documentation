@@ -1,0 +1,35 @@
+import SEO from "../components/seo.js";
+import Layout from "../components/layout.js";
+import JSLayout from "../components/masters/javascript-layout.js";
+
+
+<Layout>
+<SEO title="Program: Fibonacci Series" />
+<JSLayout>
+
+# Program: Fibonacci Series
+
+**Question**
+
+Write a function `fibonacci(n)` that prints the first `n` fibonacci numbers.
+
+**Solution**
+
+```javascript
+function f(n) {
+  if(n <= 2) {
+    return 1;
+  } else {
+    return f(n - 1) + f(n - 2);
+  }
+}
+
+function fibonacci(n) {
+  for(var i = 1; i <= n; i++) {
+    console.log(f(i));
+  }
+}
+```
+
+</JSLayout>
+</Layout>
