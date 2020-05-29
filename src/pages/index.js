@@ -5,12 +5,45 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styles from "../styles/index.module.scss";
 
+import Badge from "../components/utils/Badge";
+import jsLogoImage from "../images/javascript-logo.png";
+import reactLogoImage from "../images/react-logo.png";
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Learn JavaScript and Node.js" />
     <div className="container">
       <div className="contentBox">
-
+        <div className="homeGrid">
+          <div className="homeBox">
+            <Badge image={jsLogoImage} name="JavaScript" version="v11 - ES2020"/>
+            <h4>JavaScript Basics</h4>
+            <ul>
+              <li>
+                <Link to="/javascript/introduction-to-javascript">JavaScript Introduction</Link>
+              </li>
+              <li>
+                <Link to="/javascript/types-in-javascript">JavaScript Types</Link>
+              </li>
+            </ul>
+          </div>
+          <div className="homeBox">
+            <Badge image={reactLogoImage} name="React" version="v16.13"/>
+            <h4>React Basics</h4>
+            <ul>
+              <li>
+                <Link to="/react/introduction-to-react">React Introduction</Link>
+              </li>
+              <li>
+                <Link to="/react/hello-world-app">React Hello World</Link>
+              </li>
+              <li>
+                <Link to="/react/write-your-first-react-app">React Getting Started</Link>
+              </li>
+            </ul>
+          </div>
+          <div className="homeBox"></div>
+        </div>
         <h3>Deno</h3>
         <ul className={styles.articleList}>
           <li>

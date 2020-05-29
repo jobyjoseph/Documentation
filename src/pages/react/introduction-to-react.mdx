@@ -1,0 +1,34 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import ReactLayout from "../../components/masters/react-layout.js";
+
+
+<Layout>
+<SEO title="Introduction to React" />
+<ReactLayout>
+
+# Introduction to React
+
+React is a JavaScript library for creating user interfaces. It is an open sourced project developed and maintained by Facebook.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World React App</title>
+</head>
+<body>
+  <div id="myComponent"></div>
+
+  <script>
+    const MyComponent = React.createElement("h1", null, "Hello World!");const MyComponent = React.createElement("h1", null, "Hello World!");
+    ReactDOM.render(MyComponent, document.getElementById("myComponent"));
+  </script>
+</body>
+</html>
+```
+
+</ReactLayout>
+</Layout>

@@ -1,15 +1,15 @@
-import SEO from "../components/seo.js";
-import Layout from "../components/layout.js";
-import JSLayout from "../components/masters/javascript-layout.js";
-import Image from "../components/utils/image/image.js";
-import imgFirstComponent from "../images/articles/2020/first-react-component.png";
-import imgComponentWithStyle from "../images/articles/2020/component-with-style.png";
-import imgComponentWithJSX from "../images/articles/2020/component-using-jsx.png";
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import ReactLayout from "../../components/masters/react-layout.js";
+import Image from "../../components/utils/image/image.js";
+import imgFirstComponent from "../../images/articles/2020/first-react-component.png";
+import imgComponentWithStyle from "../../images/articles/2020/component-with-style.png";
+import imgComponentWithJSX from "../../images/articles/2020/component-using-jsx.png";
 
 
 <Layout>
 <SEO title="Write Your First React App" />
-<JSLayout>
+<ReactLayout>
 
 # Write Your First React App
 
@@ -225,7 +225,7 @@ npm init -y
 Now we can start with `@babel/preset-react` package installation. In the command prompt, type:
 
 ```
-npm install --save-dev @babel/preset-react 
+npm install --save-dev @babel/preset-react
 ```
 
 ### Transpiling JSX to JS
@@ -248,5 +248,5 @@ Now we saw how to create a React component using JSX. Our project is a very simp
 
 React.js is a UI component library. We can write React components using pure JavaScript. But, that can be of huge effort. JSX syntax helps to write React components in HTML kind of syntax. Browsers cannot understand JSX. So we use a transpiler like Babel to convert JSX to pure JavaScript code.
 
-</JSLayout>
+</ReactLayout>
 </Layout>

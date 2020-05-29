@@ -1,0 +1,26 @@
+.badgeWrapper {
+  display: flex;
+  align-items: center;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.imageWrapper {
+  margin-right: 10px;
+  img {
+    width: 80px;
+    height: 80px;
+    border-radius: 3px;
+    display: block;
+  }
+}
+
+.technologyName {
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 28px;
+}
+
+.technologyVersion {
+  font-size: 14px;
+  line-height: 24px;
+}

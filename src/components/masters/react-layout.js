@@ -9,33 +9,27 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import Badge from "../utils/Badge";
-import jsLogoImage from "../../images/javascript-logo.png";
+import reactLogoImage from "../../images/react-logo.png";
 
 const Layout = ({ children }) => {
   return (
     <div className="container">
       <div className="sidebar">
-        <Badge image={jsLogoImage} name="JavaScript" version="v11 - ES2020"/>
-        <h4>JavaScript Basics</h4>
+        <Badge image={reactLogoImage} name="React" version="v16.13"/>
+        <h4>React Basics</h4>
         <ul>
           <li>
-            <Link to="/javascript/introduction-to-javascript">JavaScript Introduction</Link>
+            <Link to="/react/introduction-to-react">React Introduction</Link>
           </li>
           <li>
-            <Link to="/javascript/types-in-javascript">JavaScript Types</Link>
-          </li>
-        </ul>
-        <h4>JavaScript Advanced</h4>
-        <ul>
-          <li>
-            <Link to="#">JavaScript Promises</Link>
+            <Link to="/react/hello-world-app">React Hello World</Link>
           </li>
           <li>
-            <Link to="#">JavaScript Async/Await</Link>
+            <Link to="/react/write-your-first-react-app">React Getting Started</Link>
           </li>
         </ul>
       </div>
-      <div className="contentBox">
+      <div className="contentArea">
         {children}
       </div>
     </div>
