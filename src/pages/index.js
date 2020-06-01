@@ -26,6 +26,12 @@ const IndexPage = () => (
                 <Link to="/javascript/types-in-javascript">JavaScript Types</Link>
               </li>
             </ul>
+            <h4>JavaScript Advanced</h4>
+            <ul>
+              <li>
+                <Link to="/javascript/closures-in-javascript">JavaScript Closures</Link>
+              </li>
+            </ul>
           </div>
           <div className="homeBox">
             <Badge image={reactLogoImage} name="React" version="v16.13"/>

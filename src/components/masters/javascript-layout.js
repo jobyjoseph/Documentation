@@ -28,10 +28,7 @@ const Layout = ({ children }) => {
         <h4>JavaScript Advanced</h4>
         <ul>
           <li>
-            <Link to="#">JavaScript Promises</Link>
-          </li>
-          <li>
-            <Link to="#">JavaScript Async/Await</Link>
+            <Link to="/javascript/closures-in-javascript">JavaScript Closures</Link>
           </li>
         </ul>
       </div>
