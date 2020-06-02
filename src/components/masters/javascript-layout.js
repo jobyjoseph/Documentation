@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
           </li>
         </ul>
       </div>
-      <div className="contentBox">
+      <div className="contentArea">
         {children}
       </div>
     </div>
