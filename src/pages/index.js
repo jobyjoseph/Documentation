@@ -8,6 +8,7 @@ import styles from "../styles/index.module.scss";
 import Badge from "../components/utils/Badge";
 import jsLogoImage from "../images/javascript-logo.png";
 import reactLogoImage from "../images/react-logo.png";
+import denoLogoImage from "../images/deno-logo.jpg";
 
 const IndexPage = () => (
   <Layout>
@@ -24,6 +25,12 @@ const IndexPage = () => (
               </li>
               <li>
                 <Link to="/javascript/types-in-javascript">JavaScript Types</Link>
+              </li>
+              <li>
+                <Link to="/javascript/boolean">JavaScript Boolean</Link>
+              </li>
+              <li>
+                <Link to="/javascript/bigint">JavaScript BigInt</Link>
               </li>
             </ul>
             <h4>JavaScript Advanced</h4>
@@ -48,14 +55,16 @@ const IndexPage = () => (
               </li>
             </ul>
           </div>
-          <div className="homeBox"></div>
+          <div className="homeBox">
+            <Badge image={denoLogoImage} name="Deno" version="v1.0"/>
+            <h4>Deno Basics</h4>
+            <ul>
+              <li>
+                <Link to="/deno/installation">Deno Installation</Link>
+              </li>
+            </ul>
+          </div>
         </div>
-        <h3>Deno</h3>
-        <ul className={styles.articleList}>
-          <li>
-            <Link to="/how-to-install-deno">How to Install Deno</Link>
-          </li>
-        </ul>
 
         <h3>JavaScript Interview Questions</h3>
         <ul className={styles.articleList}>
@@ -86,12 +95,6 @@ const IndexPage = () => (
           </li>
           <li>
             <Link to="/react-bootstrap-controllabel-warning">SOLVED: ControlLabel from React Bootstrap throws Warning</Link>
-          </li>
-          <li>
-            <Link to="/create-react-starter-webpack-babel">Create React Starter App using React 16, Webpack 4 and Babel 7</Link>
-          </li>
-          <li>
-            <Link to="/write-your-first-react-app">Write Your First React App</Link>
           </li>
           <li>
             <Link to="/create-react-app-setuptests-js-not-working">SOLVED: setupTests.js not working in CreateReactApp</Link>

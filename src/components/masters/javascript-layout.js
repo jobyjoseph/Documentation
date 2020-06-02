@@ -24,6 +24,12 @@ const Layout = ({ children }) => {
           <li>
             <Link to="/javascript/types-in-javascript">JavaScript Types</Link>
           </li>
+          <li>
+            <Link to="/javascript/boolean">JavaScript Boolean</Link>
+          </li>
+          <li>
+            <Link to="/javascript/bigint">JavaScript BigInt</Link>
+          </li>
         </ul>
         <h4>JavaScript Advanced</h4>
         <ul>
