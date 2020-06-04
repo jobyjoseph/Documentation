@@ -30,6 +30,9 @@ const Layout = ({ children }) => {
           <li>
             <Link to="/javascript/bigint">JavaScript BigInt</Link>
           </li>
+          <li>
+            <Link to="/javascript/dynamic-import">JavaScript Dynamic Import</Link>
+          </li>
         </ul>
         <h4>JavaScript Advanced</h4>
         <ul>

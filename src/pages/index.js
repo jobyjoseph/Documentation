@@ -18,8 +18,11 @@ const IndexPage = () => (
         <div className="homeGrid">
           <div className="homeBox">
             <Badge image={jsLogoImage} name="JavaScript" version="v11 - ES2020"/>
-            <h4>JavaScript Basics</h4>
+            <h4>JavaScript Recent</h4>
             <ul>
+              <li>
+                <Link to="/javascript/dynamic-import">JavaScript Dynamic Import</Link>
+              </li>
               <li>
                 <Link to="/javascript/introduction-to-javascript">JavaScript Introduction</Link>
               </li>

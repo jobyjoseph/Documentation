@@ -1,0 +1,29 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+
+<Layout>
+<SEO title="Dynamic Import in JavaScript" />
+<JSLayout>
+
+# Dynamic Import in JavaScript
+
+We have seen importing external JavaScript files using `import` statement.
+
+```javascript
+import utils from "./utils.js";
+```
+
+Some of us also have seen how dynamic import is done with the help of Webpack. The same syntax is now part of official JavaScript. Now we do not have to load all dependencies on page load. We can load the modules dynamically.
+
+```javascript
+if(condition) {
+  const utils = await import("./utils.js");
+  utils.myFunction();
+}
+```
+
+`import()` function returns a promise. So we can resolve the Promise using `await` or `.then()` syntax.
+
+</JSLayout>
+</Layout>

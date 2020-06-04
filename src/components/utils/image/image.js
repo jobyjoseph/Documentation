@@ -5,7 +5,7 @@ const Footer = (props) => {
   return (
     <div className={styles.wrapper} style={props.style}>
       <img src={props.src} alt={props.alt} />
-      <div className={styles.caption}>{props.caption}</div>
+      { props.caption? <div className={styles.caption}>{props.caption}</div> : null }
     </div>
   )
 };
