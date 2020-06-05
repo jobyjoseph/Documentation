@@ -33,6 +33,9 @@ const Layout = ({ children }) => {
           <li>
             <Link to="/javascript/dynamic-import">JavaScript Dynamic Import</Link>
           </li>
+          <li>
+            <Link to="/javascript/nullish-coalescing-operator">JavaScript Nullish Coalescing</Link>
+          </li>
         </ul>
         <h4>JavaScript Advanced</h4>
         <ul>
