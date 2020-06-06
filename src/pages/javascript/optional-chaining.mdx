@@ -1,0 +1,52 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+
+<Layout>
+<SEO title="Optional Chaining in JavaScript" />
+<JSLayout>
+
+# Optional Chaining
+
+Optional Chaining operator is `?.`.
+
+When trying to read the value of a deeply nested property of an object, there is a high chance a JavaScript developer might have faced below error.
+
+```
+Uncaught TypeError: Cannot read property 'pincode' of undefined
+```
+
+As an example, What happens is, we thought there will be a property `address` in the API response. Assuming `address` is already there, we try to access `pincode` property of `address` like:
+
+```javascript
+response.address.pincode
+```
+
+Current solution to avoid such problem is checking for `undefined` before digging deep in the property chain.
+
+```javascript
+response.address && response.address.pincode
+```
+
+Optional Chaining saves a lot of code in that respect. With the help of Optional Chaining, we can modify the code to:
+
+```javascript
+response.address?.pincode
+```
+
+This will return `undefined` safely if `address` and there by `pincode` property is not there. If value is present, it will return the original value.
+
+## Optional Chaining with function calls
+
+We need to call a method if it exists. In that case, we can ensure a valid method using `?.` and then call it.
+
+```javascript
+profile.show?.()
+```
+
+If `show` is a property and not a method, above code will throw `TypeError`.
+
+There are few more capabilities for Optional Chaining which you can read [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) in MDN.
+
+</JSLayout>
+</Layout>

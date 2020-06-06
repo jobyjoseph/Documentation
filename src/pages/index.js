@@ -21,6 +21,9 @@ const IndexPage = () => (
             <h4>JavaScript Recent</h4>
             <ul>
               <li>
+                <Link to="/javascript/optional-chaining">JavaScript Optional Chaining</Link>
+              </li>
+              <li>
                 <Link to="/javascript/nullish-coalescing-operator">JavaScript Nullish Coalescing</Link>
               </li>
               <li>

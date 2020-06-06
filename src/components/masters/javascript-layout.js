@@ -36,6 +36,9 @@ const Layout = ({ children }) => {
           <li>
             <Link to="/javascript/nullish-coalescing-operator">JavaScript Nullish Coalescing</Link>
           </li>
+          <li>
+            <Link to="/javascript/optional-chaining">JavaScript Optional Chaining</Link>
+          </li>
         </ul>
         <h4>JavaScript Advanced</h4>
         <ul>
