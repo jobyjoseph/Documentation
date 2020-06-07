@@ -21,6 +21,9 @@ const IndexPage = () => (
             <h4>JavaScript Recent</h4>
             <ul>
               <li>
+                <Link to="/javascript/promises">JavaScript Promises</Link>
+              </li>
+              <li>
                 <Link to="/javascript/optional-chaining">JavaScript Optional Chaining</Link>
               </li>
               <li>
@@ -113,9 +116,6 @@ const IndexPage = () => (
           </li>
           <li>
             <Link to="/es2020-new-features">ES2020 New Features</Link>
-          </li>
-          <li>
-            <Link to="/promises-in-javascript">Promises in JavaScript</Link>
           </li>
           <li>
             <Link to="/callbacks-in-javascript">Callbacks in JavaScript</Link>

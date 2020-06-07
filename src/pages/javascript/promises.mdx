@@ -1,8 +1,9 @@
-import SEO from "../components/seo.js";
-import Layout from "../components/layout.js";
-import JSLayout from "../components/masters/javascript-layout.js";
-import imagePromise from "../images/promises-1.png";
-import Image from "../components/utils/image/image.js";
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+import imagePromise from "../../images/promises-1.png";
+import Image from "../../components/utils/image/image.js";
+import imagePromiseAllSettled from "../../images/articles/2020/promise-allsettled.png";
 
 
 <Layout>
@@ -152,6 +153,30 @@ catch error at any steps
 ```
 
 This is called chaining of promises. It allows a sequential flow control.
+
+## Promise Methods
+
+### `.allSettled()`
+
+`allSettled()` is a static method of `Promise` constructor function. It accepts an array of promises as arguments and returns a promise object. The returned promise object will resolve only when all the promises in the passed array are settled. Settled means either resolved or rejected.
+
+```javascript
+// Promise 1
+const p1 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 1000);
+});
+
+// Promise 2
+const p2 = new Promise((resolve, reject) => {
+  setTimeout(reject, 5000);
+});
+
+Promise.allSettled([p1, p2]).then(data => console.log(data));
+```
+
+Here `p1` is a promise that is resolved after 1 second. `p2` is a promise that is rejected after 5 seconds. When both these promises are settled after 5 seconds, the response of each promises is logged in console as an array.
+
+<Image src={imagePromiseAllSettled} alt="Promise.allSettled()" caption="Output: Promise.allSettled()" style={{maxWidth: "400px"}}/>
 
 </JSLayout>
 </Layout>

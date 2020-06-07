@@ -45,6 +45,9 @@ const Layout = ({ children }) => {
           <li>
             <Link to="/javascript/closures-in-javascript">JavaScript Closures</Link>
           </li>
+          <li>
+            <Link to="/javascript/promises">JavaScript Promises</Link>
+          </li>
         </ul>
       </div>
       <div className="contentArea">
