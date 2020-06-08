@@ -31,6 +31,9 @@ const Layout = ({ children }) => {
             <Link to="/javascript/bigint">JavaScript BigInt</Link>
           </li>
           <li>
+            <Link to="/javascript/string-matchall">JavaScript String MatchAll</Link>
+          </li>
+          <li>
             <Link to="/javascript/dynamic-import">JavaScript Dynamic Import</Link>
           </li>
           <li>

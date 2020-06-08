@@ -21,6 +21,9 @@ const IndexPage = () => (
             <h4>JavaScript Recent</h4>
             <ul>
               <li>
+                <Link to="/javascript/string-matchall">JavaScript String MatchAll</Link>
+              </li>
+              <li>
                 <Link to="/javascript/promises">JavaScript Promises</Link>
               </li>
               <li>

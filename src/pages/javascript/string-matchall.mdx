@@ -1,0 +1,32 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+import Image from "../../components/utils/image/image.js";
+import imageStringMatchAll from "../../images/articles/2020/string-matchall.png";
+
+<Layout>
+<SEO title="String .matchAll() in JavaScript" />
+<JSLayout>
+
+# `matchAll()`
+
+`matchAll()` is a new method added to String prototype. It works similar to Regular Expression. The method returns an iterator. The iterator returns all matches one after other.
+
+```javascript
+const regExp = /world/g
+const str = "This world is a beautiful world";
+const iterator = str.matchAll(regExp);
+
+for(const match of iterator) {
+  console.log(match);
+}
+```
+
+The `match` will be an object containing information like the input string and position of the match.
+
+<Image src={imageStringMatchAll} alt="string.matchAll()" caption="Output: .matchAll()" style={{maxWidth: "600px"}}/>
+
+Here we used `for...of` to loop through the iterator. We can also use `array spread` and `Array.from()`. And for the regular expression, the ending `/g` is mandatory. Otherwise, `.matchAll()` throws `TypeError`.
+
+</JSLayout>
+</Layout>
