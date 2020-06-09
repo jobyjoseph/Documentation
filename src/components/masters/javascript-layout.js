@@ -42,6 +42,9 @@ const Layout = ({ children }) => {
           <li>
             <Link to="/javascript/optional-chaining">JavaScript Optional Chaining</Link>
           </li>
+          <li>
+            <Link to="/javascript/globalthis">JavaScript globalThis</Link>
+          </li>
         </ul>
         <h4>JavaScript Advanced</h4>
         <ul>
