@@ -16,10 +16,15 @@ const Layout = ({ children }) => {
     <div className="container">
       <div className="sidebar">
         <Badge image={jsLogoImage} name="JavaScript" version="v11 - ES2020"/>
+        <ul>
+          <li>
+            <Link to="/javascript/introduction-to-javascript">Introduction</Link>
+          </li>
+        </ul>
         <h4>JavaScript Basics</h4>
         <ul>
           <li>
-            <Link to="/javascript/introduction-to-javascript">JavaScript Introduction</Link>
+            <Link to="/javascript/values">Values</Link>
           </li>
           <li>
             <Link to="/javascript/types-in-javascript">JavaScript Types</Link>

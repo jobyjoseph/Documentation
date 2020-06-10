@@ -15,11 +15,21 @@ const IndexPage = () => (
     <SEO title="Learn JavaScript and Node.js" />
     <div className="container">
       <div className="contentBox">
+        <div className="topBanner">
+          <Badge image={jsLogoImage} name="JavaScript" version="v11 - ES2020"/>
+        </div>
         <div className="homeGrid">
           <div className="homeBox">
-            <Badge image={jsLogoImage} name="JavaScript" version="v11 - ES2020"/>
-            <h4>JavaScript Recent</h4>
             <ul>
+              <li>
+                <Link to="/javascript/introduction-to-javascript">Introduction</Link>
+              </li>
+            </ul>
+            <strong>JavaScript Basics</strong>
+            <ul>
+              <li>
+                <Link to="/javascript/values">Values</Link>
+              </li>
               <li>
                 <Link to="/javascript/globalthis">JavaScript globalThis</Link>
               </li>
