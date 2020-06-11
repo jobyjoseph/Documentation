@@ -31,6 +31,9 @@ const IndexPage = () => (
                 <Link to="/javascript/values">Values</Link>
               </li>
               <li>
+                <Link to="/javascript/operators">Operators</Link>
+              </li>
+              <li>
                 <Link to="/javascript/globalthis">JavaScript globalThis</Link>
               </li>
               <li>
