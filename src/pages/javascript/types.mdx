@@ -1,0 +1,27 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+
+<Layout>
+<SEO title="Types in JavaScript" />
+<JSLayout>
+
+# Types
+
+Types represent the ability of a program to classify a value. Eg: When JavaScript sees `23`, the language identifies the value as of _Number_ type. Similary `"23"` is a _String_ for JavaScript.
+
+## typeof
+
+`typeof` is an unary operator in JavaScript. It returns the type of the operand supplied to it.
+
+```javascript
+console.log(typeof 42);   // "number"
+
+var str = "Backbencher";
+console.log(typeof str);  // "string"
+```
+
+> `typeof undefined` is `undefined` and `typeof null` is `object` instead of `null`. That is actually a bug in JavaScript implementation happened years ago.
+
+</JSLayout>
+</Layout>

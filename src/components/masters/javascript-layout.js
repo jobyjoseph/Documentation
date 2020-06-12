@@ -30,6 +30,9 @@ const Layout = ({ children }) => {
             <Link to="/javascript/operators">Operators</Link>
           </li>
           <li>
+            <Link to="/javascript/types">Types</Link>
+          </li>
+          <li>
             <Link to="/javascript/types-in-javascript">JavaScript Types</Link>
           </li>
           <li>
