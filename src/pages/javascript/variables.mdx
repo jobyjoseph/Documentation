@@ -1,0 +1,60 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+
+<Layout>
+<SEO title="Variables in JavaScript" />
+<JSLayout>
+
+# Variables
+
+Variables are named memory locations. When we declare a variable in JavaScript, it means that a memory location is allocated to store some value and that location can be accessed using the variable name.
+
+Here is an example of variable declaration.
+
+```javascript
+var name;
+```
+
+Here `name` is pointing towards some memory location in RAM. We store some value to that memory location using assignment operator(`=`).
+
+```javascript
+name = "Backbencher";
+```
+
+## Array Variables
+
+In JavaScript, we can define arrays by placing comma separated values inside a square brackets(`[]`). When we assign an array to a variable, JavaScript allocates contiguous memory locations to store each elements of the array.
+
+```javascript
+var fruits = ["Apple", "Banana"];
+```
+
+Here `fruits` represent the set of contiguous memory locations allocated. Later, we access the values of the array by giving the element index.
+
+```javascript
+console.log(fruits[1]); // "Banana"
+```
+
+## Variable Only Operators
+
+There are some operators in JavaScript that can be used only with a variable. One example is unary `++` operator. It increments the value present in a variable by 1 and reassign the new value back to the variable.
+
+```javascript
+var a = 5;
+
+a++;
+
+console.log(a); // 6
+```
+
+Similar to `++` operator there is a `--` operator. It decrements the variable value by 1.
+
+If we try to use `++` operator directly with a value, it throws an error.
+
+```javascript
+console.log(2++); // SyntaxError: Invalid left-hand side expression in postfix operation
+```
+
+</JSLayout>
+</Layout>
