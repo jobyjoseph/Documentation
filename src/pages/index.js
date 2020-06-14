@@ -40,6 +40,9 @@ const IndexPage = () => (
                 <Link to="/javascript/variables">Variables</Link>
               </li>
               <li>
+                <Link to="/javascript/if-else">If-else</Link>
+              </li>
+              <li>
                 <Link to="/javascript/globalthis">JavaScript globalThis</Link>
               </li>
               <li>
