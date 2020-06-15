@@ -43,6 +43,9 @@ const IndexPage = () => (
                 <Link to="/javascript/if-else">If-else</Link>
               </li>
               <li>
+                <Link to="/javascript/functions">Functions</Link>
+              </li>
+              <li>
                 <Link to="/javascript/globalthis">JavaScript globalThis</Link>
               </li>
               <li>

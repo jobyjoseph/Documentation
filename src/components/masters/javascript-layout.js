@@ -39,6 +39,9 @@ const Layout = ({ children }) => {
             <Link to="/javascript/if-else">If-else</Link>
           </li>
           <li>
+            <Link to="/javascript/functions">Functions</Link>
+          </li>
+          <li>
             <Link to="/javascript/types-in-javascript">JavaScript Types</Link>
           </li>
           <li>
