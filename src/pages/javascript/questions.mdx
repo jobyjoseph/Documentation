@@ -1,23 +1,106 @@
-import SEO from "../components/seo.js";
-import Layout from "../components/layout.js";
-import JSLayout from "../components/masters/javascript-layout.js";
-
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+import Answer from "../../components/utils/Answer";
 
 <Layout>
-<SEO title="JavaScript Destructuring Interview Questions" />
+<SEO title="JavaScript Questions" />
 <JSLayout>
 
-# JavaScript Destructuring Interview Questions
+# JavaScript Questions
 
-**Question**
+Here is a set of questions in JavaScript. It can test our JavaScript skills and teach a lot of new things.
 
-What is destructuring in JavaScript?
+**Question #1:**
 
-**Solution**
+What is the output printed in the console?
 
-Destructuring in JavaScript enables breaking down a larger data structure and assign the individual elements to variables or properties. It is a feature that came as part of ES6.
+```javascript{numberLines: true}
+var a = 4;
 
-**Question**
+function baaz() {
+  a = 6;
+  boom();
+}
+
+function boom() {
+  var a = 8;
+}
+
+baaz();
+console.log(a);
+```
+
+<Answer>
+
+**Solution:**
+
+It prints `6` in browser console.
+
+In the global context, named memory locations are allocated for `a`, `baaz`, `boom`. When function `baaz` is called(_line 12_), it is added to call stack and a new execution context is created for `baaz`. `baaz` updates the value of `a` in global context to 6(_line 4_). When `baaz` calls `boom`, a new stack is added on top of `baaz` in call stack. Also a new execution context is created for `boom`. `boom` allocate a memory location for `a` in its local memory(_line 9_). Therefore, the global `a` is not updated. Hence finally, the value 6 is printed.
+
+</Answer>
+
+**Question #2:**
+
+What is a closure?
+
+<Answer>
+
+**Solution:**
+
+> Closure is when a function "remembers" its lexical scope even when the function is executed outside that lexical scope.
+
+One of the easy way to meet this condition is when a function returns another function. That is why usually during interviews, when asked about closures, candidates say "When a function returns another function, that is a closure.".
+
+Example of a closure.
+
+```javascript{numberLines: true}
+function a(){
+  const name = "Backbencher";
+
+  function b() {
+    console.log(name);
+  }
+
+  return b;
+}
+
+const c = a();
+c(); // "Backbencher"
+```
+
+Here is how we explain Kyle's definition with above example.
+
+Closure is when a function(`b()`) remembers its lexical scope(`name` is part of the scope) even when the function is executed outside(global scope) that lexical scope(scope of `a()`).
+</Answer>
+
+
+
+**Question #3:**
+
+Here is a code snippet:
+
+```javascript
+setTimeout(function(){
+    console.log("Backbencher");
+}, 2000);
+```
+
+Above code, does it form a closure?
+
+<Answer>
+
+**Solution:**
+
+Yes. It is a closure.
+
+So here is the technique to findout if there is a closure in the code. Go through the code and identify all the function definitions and the scope where those functions are defined. Now findout in which scope those functions are called. If any function is defined and called in a different scope, a closure is formed.
+
+In our code, the callback function accepted by `setTimeout` is local to `setTimeout` function. So the scope of the callback function definition is `setTimeout` function. Now after 2000 milliseconds, the callback function is executed in the global scope by JavaScript engine. Since the function definition scope is `setTimeout` and function invocation scope is `global`, a closure is formed.
+</Answer>
+
+**Question #4:**
 
 Here is a JavaScript code snippet.
 
@@ -26,15 +109,19 @@ var name = obj.name;
 var age = obj.age !== undefined ? obj.age : 0;
 ```
 
-Refactor above code using JavaScript destructuring.
+How can we refactor above code using JavaScript destructuring?
 
-**Solution**
+<Answer>
+
+**Solution:**
 
 ```javascript
 var {name, age = 0} = obj;
 ```
 
-**Question**
+</Answer>
+
+**Question #5:**
 
 We have an array and elements from the array are assigned to variables.
 
@@ -46,7 +133,9 @@ var second = arr[1];
 
 Refactor this code using destructuring.
 
-**Solution**
+<Answer>
+
+**Solution:**
 
 ```javascript
 var arr = ["B", "a", "c", "k"];
@@ -56,7 +145,9 @@ var [
 ] = arr;
 ```
 
-**Question**
+</Answer>
+
+**Question #6:**
 
 What is the output of following code snippet?
 
@@ -67,11 +158,15 @@ var [first, second] = arr;
 console.log(second);
 ```
 
-**Solution**
+<Answer>
+
+**Solution:**
 
 The output printed is `undefined`. Here the second element of the array holds `undefined` and that is assigned to `second`.
 
-**Question**
+</Answer>
+
+**Question #7:**
 
 What is the output of following code snippet?
 
@@ -82,11 +177,15 @@ var [first, second] = arr;
 console.log(second);
 ```
 
-**Solution**
+<Answer>
+
+**Solution:**
 
 The output is `null`. `null` is not strictly equal to `undefined`.
 
-**Question**
+</Answer>
+
+**Question #8:**
 
 What is the output of following code snippet?
 
@@ -97,11 +196,15 @@ var [first, second = 10 ] = arr;
 console.log(second);
 ```
 
-**Solution**
+<Answer>
+
+**Solution:**
 
 It prints `10`. Since `second` evaluates to `undefined`, JavaScript assigns the default value of `10`.
 
-**Question**
+</Answer>
+
+**Question #9:**
 
 What is the output of following code snippet?
 
@@ -112,11 +215,15 @@ var [first, second = 10 ] = arr;
 console.log(second);
 ```
 
-**Solution**
+<Answer>
+
+**Solution:**
 
 It prints `null`. `second` will take the default value of 10 only if it evaluates to `undefined`, not any other falsy values.
 
-**Question**
+</Answer>
+
+**Question #10:**
 
 How can we refactor below code using destructuring?
 
@@ -127,7 +234,9 @@ var second = arr[1];
 var rest = arr.slice(2);
 ```
 
-**Solution**
+<Answer>
+
+**Solution:**
 
 ```javascript
 var arr = ["B", "a", "c", "k", "b", "e", "n", "c", "h", "e", "r"];
@@ -138,7 +247,9 @@ var [
 ] = arr;
 ```
 
-**Question**
+</Answer>
+
+**Question #11:**
 
 What is the output of following code snippet?
 
@@ -153,11 +264,15 @@ var [
 console.log(rest);
 ```
 
-**Solution**
+<Answer>
+
+**Solution:**
 
 It prints `[]`. Note: it does not print `undefined`.
 
-**Question**
+</Answer>
+
+**Question #12:**
 
 Is this code valid?
 
@@ -171,11 +286,15 @@ var first, second, third;
 ] = arr;
 ```
 
-**Solution**
+<Answer>
+
+**Solution:**
 
 Yes. It is valid. Destructuring is all about assignment. So we can declare the variables first separately and then assign it using destructuring.
 
-**Question**
+</Answer>
+
+**Question #13:**
 
 Here is a JavaScript code snippet.
 
@@ -190,7 +309,9 @@ console.log(profile);
 
 Refactor above code using destructuring.
 
-**Solution**
+<Answer>
+
+**Solution:**
 
 ```javascript
 var arr = ["Joe", 23, "Male"];
@@ -203,7 +324,9 @@ var profile = {};
 console.log(profile);
 ```
 
-**Question**
+</Answer>
+
+**Question #14:**
 
 Here we have a code that copies first two elements of an array to another array.
 
@@ -217,7 +340,9 @@ console.log(newArr);
 
 Refactor it using destructuring.
 
-**Solution**
+<Answer>
+
+**Solution:**
 
 ```javascript
 var arr = ["Joe", 23, "Male"];
@@ -229,7 +354,9 @@ var newArr = [];
 console.log(newArr);
 ```
 
-**Question**
+</Answer>
+
+**Question #15:**
 
 Here is an array.
 
@@ -239,7 +366,9 @@ var arr = ["B", "a", "c", "k"];
 
 How to pick only `"B"` and `"k"` from `arr` using destructuring?
 
-**Solution**
+<Answer>
+
+**Solution:**
 
 ```javascript
 var arr = ["B", "a", "c", "k"];
@@ -253,7 +382,9 @@ var [
 
 We can skip elements by simply putting comma separator.
 
-**Question**
+</Answer>
+
+**Question #16:**
 
 Here is a JavaScript code snippet to swap two numbers.
 
@@ -269,7 +400,9 @@ console.log(b);
 
 Refactor the code without using `temp` variable.
 
-**Solution**
+<Answer>
+
+**Solution:**
 
 ```javascript
 var a = 2;
@@ -279,7 +412,9 @@ console.log(a);
 console.log(b);
 ```
 
-**Question**
+</Answer>
+
+**Question #17:**
 
 We have a function that extracts values from its parameter array.
 
@@ -293,7 +428,9 @@ function sum(numbers) {
 
 Refactor the code using destructuring.
 
-**Solution**
+<Answer>
+
+**Solution:**
 
 ```javascript
 function sum([num1, num2]) {
@@ -301,7 +438,9 @@ function sum([num1, num2]) {
 }
 ```
 
-**Question**
+</Answer>
+
+**Question #18:**
 
 Write the ES5 equivalent of following code.
 
@@ -314,7 +453,9 @@ function sum([
 }
 ```
 
-**Solution**
+<Answer>
+
+**Solution:**
 
 ```javascript
 function sum(numbers) {
@@ -325,7 +466,9 @@ function sum(numbers) {
 }
 ```
 
-**Question**
+</Answer>
+
+**Question #19:**
 
 How can we refactor the below code using destructuring?
 
@@ -339,7 +482,9 @@ var d = arr[2][1];
 console.log(a, b, c, d);
 ```
 
-**Solution**
+<Answer>
+
+**Solution:**
 
 ```javascript
 var arr = [1, 2, [3, 4]];
@@ -353,7 +498,9 @@ var [
 ] = arr;
 ```
 
-**Question**
+</Answer>
+
+**Question #20:**
 
 Refactor below code using destructuring.
 
@@ -371,7 +518,9 @@ var objPlanet = obj.planet;
 console.log(objName, objAge, objPlanet);
 ```
 
-**Solution**
+<Answer>
+
+**Solution:**
 
 ```javascript
 var obj = {
@@ -389,7 +538,9 @@ var {
 console.log(objName, objAge, objPlanet);
 ```
 
-**Question**
+</Answer>
+
+**Question #21:**
 
 Here we have an object and 3 variables.
 
@@ -405,7 +556,9 @@ var obj = {
 
 We want `obj.a` to be assigned to a variable `first`, `obj.b` to be assigned to a variable `second` and rest of the object assigned to a variable `rest`. Write the code for it.
 
-**Solution**
+<Answer>
+
+**Solution:**
 
 ```javascript
 var obj = {
@@ -427,7 +580,9 @@ console.log(second);
 console.log(rest);
 ```
 
-**Question**
+</Answer>
+
+**Question #22:**
 
 Here we have an object destructuring code that looks perfectly fine.
 
@@ -459,7 +614,9 @@ SyntaxError: Unexpected token ':'
 
 What is the problem? And how can it be fixed?
 
-**Solution**
+<Answer>
+
+**Solution:**
 
 When JavaScript parser sees `{}`, it is treated as a new block, not as a syntax for object destructuring. Writing a statement like `a:first` is not valid inside a block. That is why it throws a syntax error with unexpected token `:`.
 
@@ -472,7 +629,9 @@ To solve this, we can wrap `{}` with brackets`(), like:
 } = obj);
 ```
 
-**Question**
+</Answer>
+
+**Question #23:**
 
 We have an ES5 code to assign object properties to variables.
 
@@ -491,7 +650,9 @@ console.log(vegetable);
 
 Refactor above code using destructuring.
 
-**Solution**
+<Answer>
+
+**Solution:**
 
 ```javascript
 var obj = {
@@ -510,7 +671,9 @@ console.log(vegetable);
 
 Since variable name and object property name are same, we do not have to explicitly mention the variable name in the destructuring code.
 
-**Question**
+</Answer>
+
+**Question #24:**
 
 Here we have an object nested inside another object.
 
@@ -536,7 +699,9 @@ console.log(country);
 
 Refactor this code using destructuring.
 
-**Solution**
+<Answer>
+
+**Solution:**
 
 ```javascript
 var profile = {
@@ -562,7 +727,9 @@ console.log(state);
 console.log(country);
 ```
 
-**Question**
+</Answer>
+
+**Question #25:**
 
 What is the value printed in the console?
 
@@ -586,11 +753,15 @@ var {
 console.log(c);
 ```
 
-**Solution**
+<Answer>
+
+**Solution:**
 
 It prints `undefined`, not 15. The default object with b, 10 and c, 15 is taken only if `a` is not defined. Here `a` is present, but only with one property `b`.
 
-**Question**
+</Answer>
+
+**Question #26:**
 
 What is the output printed?
 
@@ -618,7 +789,9 @@ console.log(likes);  // 2
 console.log(tweets); // 3
 ```
 
-**Solution**
+<Answer>
+
+**Solution:**
 
 1. `social` object
 2. 245
@@ -626,11 +799,15 @@ console.log(tweets); // 3
 
 Here value from `social` is taken more than once within destructuring operation. That is allowed for object destructuring. We can map a property to a variable multiple times.
 
-**Question**
+</Answer>
+
+**Question #27:**
 
 How can we bring named argument support to JavaScript using destructuring?
 
-**Solution**
+<Answer>
+
+**Solution:**
 
 Named argument support means, we can pass arguments to a function as name-value pair. This allows developer to pass arguments in any order. In JavaScript, we can bring this feature using object destructuring.
 
@@ -646,6 +823,20 @@ getDetails({
 ```
 
 As long as the variable name and property name in argument matches, things will work. The order of properties in the object does not matter.
+
+</Answer>
+
+**Question #28**
+
+What is async-await in JavaScript?
+
+<Answer>
+
+**Solution:**
+
+async-await feature was shipped in ES8. `await` inside an `async` function pauses a promise to resolve and send the response back in a synchronous style. async-await brings a cleaner syntax compared to callback hell or promise chains.
+
+</Answer>
 
 </JSLayout>
 </Layout>
