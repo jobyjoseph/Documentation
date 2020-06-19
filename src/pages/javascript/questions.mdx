@@ -826,7 +826,7 @@ As long as the variable name and property name in argument matches, things will 
 
 </Answer>
 
-**Question #28**
+**Question #28:**
 
 What is async-await in JavaScript?
 
@@ -835,6 +835,28 @@ What is async-await in JavaScript?
 **Solution:**
 
 async-await feature was shipped in ES8. `await` inside an `async` function pauses a promise to resolve and send the response back in a synchronous style. async-await brings a cleaner syntax compared to callback hell or promise chains.
+
+</Answer>
+
+**Question #29:**
+
+We all have heard that JavaScript is an interpreted language? Then why below code does not print `"Backbencher"` in the console. Instead, the code is throwing a syntax error.
+
+```javascript
+var name = "Backbencher";
+
+console.log(name);
+
+name = "Hi"+;
+```
+
+<Answer>
+
+**Solution:**
+
+Even though JavaScript is said to execute the code line by line, every JavaScript engine performs a parsing/compilation phase before actually running the code. In the parsing phase itself, it can detect the syntax error and is notifying us.
+
+The parsing/compilation step improves the performance of execution.
 
 </Answer>
 
