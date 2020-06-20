@@ -860,5 +860,36 @@ The parsing/compilation step improves the performance of execution.
 
 </Answer>
 
+**Question #30:**
+
+What is the output of following code snippet?
+
+```javascript{numberLines: true}
+console.log("Backbencher");
+
+baz("Hello","World");
+
+function baz(name, name) {
+    "use strict";
+    console.log(name);
+}
+```
+
+<Answer>
+
+**Solution:**
+
+An error is logged in the console.
+
+```
+SyntaxError: Duplicate parameter name not allowed in this context
+```
+
+The function `baz()` is accepting 2 arguments of the same name. The function is run in strict mode. In strict mode duplicate parameter name is not allowed.
+
+Even though the error is happening due to line 5, JavaScript will not output "Backbencher" from line 1. It is because before line by line execution, JavaScript engine is doing a parsing step. In that process, it is able to identify that the function is going to be executed in strict mode and already a duplicate parameter error has occured. So, that error is displayed to the developer first.
+
+</Answer>
+
 </JSLayout>
 </Layout>
