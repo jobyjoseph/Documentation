@@ -891,5 +891,33 @@ Even though the error is happening due to line 5, JavaScript will not output "Ba
 
 </Answer>
 
+**Question #31:**
+
+What will be the output when following code is run?
+
+```javascript{numberLines: true}
+var a = 10;
+{
+  console.log(a);
+  let a = 20;
+}
+```
+
+Explain how that answer came.
+
+<Answer>
+
+**Solution:**
+
+It will throw following error in console.
+
+```
+ReferenceError: Cannot access 'a' before initialization
+```
+
+We might be tempted to think that `10` will be printed in console. But the `{}` created a block scope. Inside the block scope, we are declaring a variable `a` with `let`. That keeps `a` in Temporal Dead Zone(TDZ) till line 4. When trying to access a variable which is in TDZ, throws ReferenceError.
+
+</Answer>
+
 </JSLayout>
 </Layout>
