@@ -11,7 +11,51 @@ import JSLayout from "../../components/masters/javascript-layout.js";
 
 Closure is a powerful feature in JavaScript. We all are using closures frequently, when working with JavaScript. Still, many of us are not confident to explain what is a closure. We are going to crack the closure concept smoothly by understanding all the pillars that support this feature in JavaScript.
 
+I have intentionally parked the definition and example of closure towards last. There are few concepts we need to refresh before talking about closures.
+
 ## Scope in JavaScript
+
+In simple terms scope defines a boundary in which a variable can be accessed. We all might have heard about terms like global scope, function scope and so on. In order to understand the concept of closure, we refresh few areas related to scope in JavaScript.
+
+### Lexical Scope
+
+When a user loads a web page with JavaScript, first a request is sent to server to fetch the file. Once the browser receives the JavaScript file, the JavaScript engine within the browser executes the file. The engine does not directly jump into line by line execution. It first does a parsing/compiling step. This is to verify syntax, define scope, do optimization and so on, so that in the next step line by line execution will be fast.
+
+Our focus is on scope. The scope in JavaScript is decided during this parsing phase. Consider following code.
+
+```javascript
+var a;
+
+function baaz() {
+  var b;
+}
+```
+
+Here, variable `a` is in global scope. Variable `b` is in function scope, ie in the scope of `baaz()`. We came to that conclusion by looking where in the code the variable is written. We are not looking anything else like where the variable is used or how it is used.
+
+> Our only concern is where in the code, the variable is declared.
+
+This is called lexical scope. That means, this scope is decided during the lexical or parsing phase.
+
+### Inheriting Scope
+
+Consider following example:
+
+```javascript{numberLines: true}
+var a = 10;
+
+function baz() {
+  console.log(a);
+}
+
+baz(); // 10
+```
+
+What is the value printed by `baz()` in line 7?
+
+It prints `10` in console. Here variable `a` is in global scope. When function `baz()` was called, it needs to print the value of `a`. It is not able to resolve the value of `a` within itself(`baz()` scope). So JavaScript engine looks outside `baz()`. There the engine finds a variable `a` with value `10` in global scope and that value is printed.
+
+Ok wait! That was very easy to understand. But have you imagined how this scope inheritance is actually implemented by JavaScript engine. We need to skip a lot of details and just understand a very high level picture.
 
 ## Functions as First-class Values
 
