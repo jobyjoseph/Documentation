@@ -919,5 +919,31 @@ We might be tempted to think that `10` will be printed in console. But the `{}` 
 
 </Answer>
 
+**Question #32:**
+
+What is the output?
+
+```javascript
+for(var i = 1; i <= 3; i++ ) {
+  setTimeout(() => console.log(i), 1000);
+}
+```
+
+<Answer>
+
+**Solution:**
+
+Console output after 1 second:
+
+```
+4
+4
+4
+```
+
+The `for` loop starts from 1 and continues till the value of `i` is 3. In total, there will be 3 loops. In each loop, a time out is set for 1 second. After 1 second, each timer starts to execute the callback function(`() => console.log(i)`). The callback needs to print the value of `i`. There is no local variable `i` in the callback function. So it checks one level up in the scope chain, which is the global scope. Since the for loop is now exited with value of `i` reaching `4`, the callback functions log the value of `4` every time.
+
+</Answer>
+
 </JSLayout>
 </Layout>
