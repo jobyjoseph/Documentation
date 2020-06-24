@@ -28,6 +28,9 @@ function Posts(props) {
           <Link to="/javascript/if-else">If-else</Link>
         </li>
         <li>
+          <Link to="/javascript/arrays">Arrays</Link>
+        </li>
+        <li>
           <Link to="/javascript/functions">Functions</Link>
         </li>
         <li>

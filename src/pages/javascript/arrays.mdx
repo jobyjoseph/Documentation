@@ -1,0 +1,95 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+import Version from "../../components/utils/Version";
+
+<Layout>
+<SEO title="Arrays in JavaScript" />
+<JSLayout>
+
+# Arrays
+
+## Array Instance Methods
+
+### flat() <Version number="10"/>
+
+The `flat()` method of an array flattens the array and **returns a new array**.
+
+```javascript
+const arr = [1, 2, ["A", "B"]];
+console.log(arr.flat()); // [1, 2, "A", "B"]
+```
+
+#### Depth
+
+`flat()` method accepts an optional parameter for depth. Depth specifies the extend to which the array can be flattened.
+
+Here is an array with nested arrays and is 2 level deep.
+
+```javascript
+const arr = [1, 2, ["A", "B", ["C", "D"]]];
+console.log(arr.flat(1)); // [1, 2, "A", "B", ["C", "D"]]
+console.log(arr.flat(2)); // [1, 2, "A", "B", "C", "D"]
+```
+
+Depth value of 1 did not flatten the innermost sub-array. Depth value of 2 flattened all levels.
+
+#### Default depth
+
+The default value of depth parameter is `1`.
+
+```javascript
+const arr = [1, 2, ["A", "B", ["C", "D"]]];
+console.log(arr.flat()); // [1, 2, "A", "B", ["C", "D"]]
+```
+
+#### Complete flatten
+
+Passing `Infinity` as depth in `flat()` method flattens an array completely, irrespective of its nesting.
+
+```javascript
+const arr = ["A", ["B", ["C", ["D", ["E"]]]]];
+console.log(arr.flat(Infinity)); // ["A", "B", "C", "D", "E"]
+```
+
+#### Array holes
+
+`flat()` method skips array holes.
+
+```javascript
+const arr = ["A", , "B"];
+console.log(arr.flat()); // ["A", "B"]
+```
+
+### flatMap() <Version number="10" />
+
+`flatMap()` is a combination of 2 array methods, `map()` and `flat()`. First, the mapping function is executed on the elements of the array. Then, flattening of the array is done of depth `1`. `flatMap()` returns a **new array**.
+
+```javascript
+const arr = [1, 2, [3, 4]];
+
+// All number elements are made 0
+const result = arr.flatMap(ele => {
+  if(typeof ele === "number") {
+    return ele * 0;
+  }
+  return ele;
+});
+
+console.log(result); // [0, 0, 3, 4]
+```
+
+Here, the output of the `map()` method will be:
+
+```javascript
+[0, 0, [3, 4]]
+```
+
+On the result, `flat()` method is applied to get:
+
+```javascript
+[0, 0, 3, 4]
+```
+
+</JSLayout>
+</Layout>

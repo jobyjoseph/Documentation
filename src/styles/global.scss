@@ -20,7 +20,7 @@ h1 {
   font-weight: 700;
 }
 h2 {
-  font-size: 250%;
+  font-size: 280%;
   font-family: 'Source Sans Pro', sans-serif;
   margin: 1em 0 .5em;
   line-height: 1.02;
@@ -30,14 +30,15 @@ h2 {
   }
 }
 h3 {
-  font-size: 180%;
+  font-size: 220%;
   font-family: 'Source Sans Pro', sans-serif;
   margin: 1em 0 .3em;
 }
 h4 {
   font-size: 130%;
   font-family: 'Source Sans Pro', sans-serif;
-  margin: 1em 0 .3em;
+  margin: 1em 0 .1em;
+  font-weight: 700;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -54,7 +55,7 @@ img {
 
 /* Common elements */
 p {
-  margin-top: 1em;
+  margin-top: .2em;
 }
 
 blockquote {

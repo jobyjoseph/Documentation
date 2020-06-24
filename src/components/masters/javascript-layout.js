@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
     <div className="container">
       <div className="contentArea">
         {children}
-        <br/><br/><br/><br/>
+        <br/><br/>
         <strong>Other Articles:</strong>
         <br/><br/>
         <Posts/>
