@@ -34,6 +34,9 @@ function Posts(props) {
           <Link to="/javascript/functions">Functions</Link>
         </li>
         <li>
+          <Link to="/javascript/objects">Objects</Link>
+        </li>
+        <li>
           <Link to="/javascript/globalthis">JavaScript globalThis</Link>
         </li>
         <li>
@@ -62,6 +65,9 @@ function Posts(props) {
         </li>
         <li>
           <Link to="/javascript/closures">JavaScript Closures</Link>
+        </li>
+        <li>
+          <Link to="/javascript/es2021-new-features">New Features in ES2021</Link>
         </li>
       </ul>
 

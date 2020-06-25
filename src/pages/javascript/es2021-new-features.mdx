@@ -1,0 +1,36 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+
+<Layout>
+<SEO title="New Features in ES2021(ES12)" />
+<JSLayout>
+
+# New Features in ES2021(ES12)
+
+ECMAScript 2021 version is expected to be released in the month of June 2021. Here are some of the features we can expect in ES2021 or ES12.
+
+## String replaceAll() Method
+
+Currently JavaScript string has a `replace()` method. It can be used to replace a string with another string.
+
+```javascript
+const str = "Backbencher sits at the Back";
+const newStr = str.replace("Back", "Front");
+console.log(newStr); // "Frontbencher sits at the Back"
+```
+
+`replace()` method only replaces the first occurrence, if the **pattern is a string**, in this case(`"Back"`).
+
+We can do a full replacement if we supply the pattern as a **regular expression**.
+
+```javascript
+const str = "Backbencher sits at the Back";
+const newStr = str.replace(/Back/g, "Front"); // highlight-line
+console.log(newStr); // "Frontbencher sits at the Front"
+```
+
+`String.prototype.replaceAll()` is trying to bring the full replacement option when the pattern is a string.
+
+</JSLayout>
+</Layout>
