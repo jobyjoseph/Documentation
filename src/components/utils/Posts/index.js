@@ -22,19 +22,22 @@ function Posts(props) {
           <Link to="/javascript/types">Types</Link>
         </li>
         <li>
+          <Link to="/javascript/string">String</Link>
+        </li>
+        <li>
           <Link to="/javascript/variables">Variables</Link>
         </li>
         <li>
           <Link to="/javascript/if-else">If-else</Link>
         </li>
         <li>
-          <Link to="/javascript/arrays">Arrays</Link>
+          <Link to="/javascript/array">Array</Link>
         </li>
         <li>
-          <Link to="/javascript/functions">Functions</Link>
+          <Link to="/javascript/function">Function</Link>
         </li>
         <li>
-          <Link to="/javascript/objects">Objects</Link>
+          <Link to="/javascript/object">Object</Link>
         </li>
         <li>
           <Link to="/javascript/globalthis">JavaScript globalThis</Link>

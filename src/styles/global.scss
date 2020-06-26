@@ -230,11 +230,12 @@ code[class*="language-"], pre[class*="language-"] {
 :not(pre) > code[class*="language-"] {
   border: none;
   font-size: .9em;
-  color: #FD2D74;
+  color: #000;
   box-shadow: none;
-  border-radius: 3px;
+  border-radius: 2px;
   font-weight: 300;
-  background: none;
+  background: #F5F2F0;
+  padding: 3px 5px;
 }
 
 .token {
@@ -248,13 +249,13 @@ code[class*="language-"], pre[class*="language-"] {
 }
 
 .gatsby-highlight-code-line {
-  background-color: #f2d8e1;
+  background-color: #f1e2e7;
   display: block;
   margin-right: -1em;
   margin-left: -1em;
   padding-right: 1em;
   padding-left: 0.75em;
-  border-left: 0.25em solid #f2d8e1;
+  border-left: 0.25em solid #f1e2e7;
 }
 
 /*** Prismjs ***/
