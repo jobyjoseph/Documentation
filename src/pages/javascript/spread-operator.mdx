@@ -1,0 +1,29 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+import Version from "../../components/utils/Version";
+
+<Layout>
+<SEO title="Spread Operator in JavaScript" />
+<JSLayout>
+
+# Spread Operator
+
+## Object Spread <Version number="9" />
+
+Spread operator(`...`) copies **own enumerable properties** of an object to a new object.
+
+```javascript
+const obj = { name: "Backbencher", topic: "JavaScript" };
+const objCopy = { ...obj };
+console.log(objCopy);
+/* OUTPUT:
+{
+  name: "Backbencher",
+  topic: "JavaScript"
+}
+*/
+```
+
+</JSLayout>
+</Layout>
