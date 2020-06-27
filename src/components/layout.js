@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Helmet>
-        <link href="https://fonts.googleapis.com/css?family=Lora:700,400|Source+Sans+Pro:700,400&display=swap" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://use.typekit.net/nxq8pto.css" />
       </Helmet>
       <Header/>
       <div className={styles.container}>

@@ -8,7 +8,7 @@ import JSLayout from "../../components/masters/javascript-layout.js";
 
 # Variables
 
-Variables are named memory locations. When we declare a variable in JavaScript, it means that a memory location is allocated to store some value and that location can be accessed using the variable name.
+Variables are **named memory locations**. When we declare a variable in JavaScript, it means that a memory location is allocated to store some value and that location can be accessed using the variable name.
 
 Here is an example of variable declaration.
 
@@ -16,11 +16,56 @@ Here is an example of variable declaration.
 var name;
 ```
 
-Here `name` is pointing towards some memory location in RAM. We store some value to that memory location using assignment operator(`=`).
+Here `name` is pointing towards some memory location in RAM. One of the way to store some value to that memory location is by using assignment operator(`=`).
 
 ```javascript
 name = "Backbencher";
 ```
+
+## Variable Declaration
+
+In JavaScript, a variable can be declared using any one of the following keywords.
+
+1. `var`
+2. `let`
+3. `const`
+
+### var
+
+`var` can declare either **global scoped** or **function scoped** variables.
+
+```javascript
+var a;
+
+function baz() {
+  var b;
+}
+```
+
+Variable `a` is declared outside of all functions. Hence, `a` is in global scope. Variable `b` is declared inside a function `baz()`. Hence, `b` is in function scope, ie the scope of `baz()`. The variable `b` can be used only inside the function `baz()`.
+
+#### Default value
+
+Default value of a variable declared using `var` is `undefined`.
+
+```javascript
+var a;
+console.log(a); // undefined
+```
+
+#### Variable redeclaration
+
+A variable declared using `var` can be redeclared.
+
+```javascript{numberLines: true}
+var a = 3;
+var a = 5;
+console.log(a); // 5
+```
+
+JavaScript engine is keeping a track of all variables declared. So in line 2, instead of redeclaring `a`, the engine maps to the memory location created in line 1.
+
+
 
 ## Array Variables
 

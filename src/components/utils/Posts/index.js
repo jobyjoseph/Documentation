@@ -7,7 +7,7 @@ function Posts(props) {
     <div className={styles.postsWrapper}>
       <ul>
         <li>
-          <Link to="/javascript/introduction-to-javascript">Introduction to JavaScript</Link>
+          <Link to="/javascript/introduction">Introduction to JavaScript</Link>
         </li>
         <li>
           <Link to="/javascript/questions">JavaScript Questions</Link>

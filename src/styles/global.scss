@@ -6,6 +6,9 @@ html, body {
   line-height: 1.7;
   background: #eeeeee;
   color: rgba(0,0,0,.8);
+  font-family: proxima-nova,sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /*** Headers ***/
@@ -13,16 +16,13 @@ h1, h2 {
   margin: 0;
 }
 h1 {
-  font-size: 400%;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 300%;
   margin: 0 0 .75em;
   line-height: 1.02;
-  font-weight: 700;
 }
 h2 {
-  font-size: 280%;
-  font-family: 'Source Sans Pro', sans-serif;
-  margin: 1em 0 .5em;
+  font-size: 230%;
+  margin: 1.5em 0 .75em;
   line-height: 1.02;
 
   code {
@@ -30,18 +30,18 @@ h2 {
   }
 }
 h3 {
-  font-size: 220%;
-  font-family: 'Source Sans Pro', sans-serif;
-  margin: 1em 0 .3em;
+  font-size: 200%;
+  margin: 1.5em 0 .5em;
 }
 h4 {
   font-size: 130%;
-  font-family: 'Source Sans Pro', sans-serif;
-  margin: 1em 0 .1em;
-  font-weight: 700;
+  margin: 1.5em 0 .5em;
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: proxima-nova,sans-serif;
+  font-weight: 700;
+
   code{
     color: rgba(0,0,0,.8) !important;
   }
@@ -71,9 +71,12 @@ blockquote {
 .container {
   max-width: 840px;
   width: 100%;
-  padding: 0 15px;
   box-sizing: border-box;
   margin: auto;
+
+  @media screen and (min-width: 768px) {
+    padding: 0 15px;
+  }
 }
 
 .sidebar {
@@ -105,13 +108,13 @@ blockquote {
   flex: 1 1 auto;
   padding: 20px;
   background: #fff;
-  box-shadow: 0 0 3px #aaa;
   box-sizing: border-box;
   min-width: 0;
   overflow: auto;
 
   @media screen and (min-width: 768px) {
     padding: 60px;
+    box-shadow: 0 0 3px #aaa;
   }
 }
 
@@ -221,6 +224,7 @@ pre[class*="language-"] {
   box-shadow: none;
   font-weight: 300;
   font-size: .9em;
+  font-family: consolas;
 }
 
 code[class*="language-"], pre[class*="language-"] {
