@@ -1,0 +1,35 @@
+###### 1. What's the output?
+
+```javascript
+const obj1 = {
+  name: "Backbencher",
+  topic: "JavaScript"
+};
+
+const obj2 = {
+  name: "MDN",
+  topic: "JavaScript"
+};
+
+const obj = { ...obj1, ...obj2 };
+
+console.log(obj);
+```
+
+- A:
+```
+{
+  name: "MDN",
+  topic: "JavaScript"
+}
+```
+
+- B:
+```
+{
+  {
+    name: "MDN",
+    topic: "JavaScript"
+  }
+}
+```
