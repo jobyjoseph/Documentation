@@ -1,6 +1,7 @@
 import SEO from "../../components/seo.js";
 import Layout from "../../components/layout.js";
 import JSLayout from "../../components/masters/javascript-layout.js";
+import Answer from "../../components/utils/Answer";
 
 <Layout>
 <SEO title="Variables in JavaScript" />
@@ -117,6 +118,53 @@ var a = 6;
 
 Above code prints `undefined` as output. It is because, the value `6` is assigned to the variable only when the JavaScript engine reaches line 2. Till that time the value of `a` is `undefined`.
 
+#### Variable as global object property
+
+When a variable is declared using `var` in **global scope**, that variable is added as a non-configurable property to the global object.
+
+```javascript
+var myVar = 4;
+console.log(window.myVar); // 4
+```
+
+Here the `myVar` property of `window` **cannot be deleted** using `delete` operator.
+
+```javascript
+var myVar = 4;
+delete window.myVar;
+console.log(window.myVar); // 4
+```
+
+#### Tricky Part
+
+**Question**
+
+What is the output?
+
+```javascript
+var a = b, b = "A";
+console.log(a, b);
+```
+
+<Answer>
+
+```
+undefined, "A"
+```
+
+Some of you might think the output is `"A", "A"`. But that is not right.
+
+Here, after hoisting, the memory is allocated for `a` and `b` and is assigned with `undefined`. To make things more clear, the code looks like below after hoisting.
+
+```javascript
+var a;
+var b;
+a = b;
+b = "A"; // It is not the other way round
+console.log(a, b);
+```
+</Answer>
+
 
 ## Array Variables
 
@@ -165,6 +213,7 @@ If we try to use `++` operator directly with a value, it throws an error.
 ```javascript
 console.log(2++); // SyntaxError: Invalid left-hand side expression in postfix operation
 ```
+
 
 </JSLayout>
 </Layout>
