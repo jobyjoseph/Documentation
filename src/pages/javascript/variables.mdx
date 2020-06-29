@@ -55,7 +55,7 @@ console.log(a); // undefined
 
 #### Variable redeclaration
 
-A variable declared using `var` can be redeclared.
+A variable declared using `var` can be redeclared. It **does not throw any error even in strict mode**.
 
 ```javascript{numberLines: true}
 var a = 3;
@@ -63,8 +63,59 @@ var a = 5;
 console.log(a); // 5
 ```
 
-JavaScript engine is keeping a track of all variables declared. So in line 2, instead of redeclaring `a`, the engine maps to the memory location created in line 1.
+JavaScript engine is keeping a track of all variables declared. So in line 2, instead of redeclaring `a`, the engine maps to the memory location created in line 1. In that case, what is the output of below code?
 
+```javascript{numberLines: true}
+var a = 3;
+var a;
+console.log(a);
+```
+
+If you expected `undefined`, it is wrong. The output is `3`. Here also in line 2, it is a redeclaration of variable `a`. JavaScript engine skips that. Since there is no assignment in line 2, previous value(`3`) is retained.
+
+#### Hoisting
+
+Variables declared using `var` are created before executing any code. Before interpreting JavaScript code line by line, JavaScript engine parses through the full code. During this parsing step, the engine allocates memory to variables declared using `var` and assign `undefined`. This behaviour is called **hoisting** of variables.
+
+```javascript{numberLines: true}
+console.log(a); // undefined
+var a;
+```
+
+Here, line 1 is trying to print the value of `a`. But the variable `a` is declared only in line 2. Due to hoisting, when JavaScript engine executes line 1, variable `a` is already created. That is why above code outputs `undefined`.
+
+Since the memory is allocated during parsing step, for a developer it seems like JavaScript is hoisting or moving the variable declaration to the top of current scope, before execution. For example, the JavaScript code we write looks like below.
+
+```javascript
+console.log(a);
+var a;
+console.log(b);
+var b;
+console.log(c);
+var c;
+```
+
+After parsing step, the code looks like below for the JavaScript engine.
+
+```javascript
+var a;
+var b;
+var c;
+console.log(a);
+console.log(b);
+console.log(c);
+```
+
+This can be the reason why this behaviour is called _hoisting_ like in flag hoisting.
+
+During the hoisting process, only the memory allocation is done. Assigning values to the memory location happens only during execution. In that context, what will be the output of following code?
+
+```javascript{numberLines: true}
+console.log(a); // undefined
+var a = 6;
+```
+
+Above code prints `undefined` as output. It is because, the value `6` is assigned to the variable only when the JavaScript engine reaches line 2. Till that time the value of `a` is `undefined`.
 
 
 ## Array Variables
