@@ -135,7 +135,7 @@ delete window.myVar;
 console.log(window.myVar); // 4
 ```
 
-#### Tricky Part
+#### Test your knowledge
 
 **Question**
 
@@ -165,55 +165,115 @@ console.log(a, b);
 ```
 </Answer>
 
+### let
 
-## Array Variables
-
-In JavaScript, we can define arrays by placing comma separated values inside a square brackets(`[]`). When we assign an array to a variable, JavaScript allocates contiguous memory locations to store each elements of the array.
-
-```javascript
-var fruits = ["Apple", "Banana"];
-```
-
-Here `fruits` represent the set of contiguous memory locations allocated. Later, we access the values of the array by giving the element index.
+A variable declared using `let` keyword is **block scoped**. A block is a section of code wrapped in curly braces(`{}`).
 
 ```javascript
-console.log(fruits[1]); // "Banana"
+{
+  let a;
+}
+console.log(a); // ReferenceError: a is not defined
 ```
 
-## Type of variables
+#### Global let variable
 
-In JavaScript, the type of a variable is decided by the type of value it holds. We can use `typeof` operator to find the type of a variable.
+Just like declaring a global variable using `var`, we can declare a global variable using `let`. But, when declaring a global variable using let, it is not added to the global object as `var` does.
 
 ```javascript
-var a = "Backbencher";
-console.log(typeof a); // "string"
-
-a = 2020;
-console.log(typeof a); // "number"
+let letVariable = "let it Backbencher";
+var varVariable = "var it Backbencher";
+console.log(window.letVariable);  // undefined
+console.log(window.varVariable);  // "var it Backbencher"
 ```
 
-In the example above, the variable name is same. But its type changed based on the assigned value.
+#### let variable redeclaration
 
-## Variable Only Operators
-
-There are some operators in JavaScript that can be used only with a variable. One example is unary `++` operator. It increments the value present in a variable by 1 and reassign the new value back to the variable.
+When a variable is redeclared using `let`, it throws SyntaxError.
 
 ```javascript
-var a = 5;
-
-a++;
-
-console.log(a); // 6
+let a;
+let a; // SyntaxError: Identifier 'a' has already been declared
 ```
 
-Similar to `++` operator there is a `--` operator. It decrements the variable value by 1.
-
-If we try to use `++` operator directly with a value, it throws an error.
+Even when the first variable is declared using `var`, the error appears.
 
 ```javascript
-console.log(2++); // SyntaxError: Invalid left-hand side expression in postfix operation
+var a;
+let a; // SyntaxError: Identifier 'a' has already been declared
 ```
 
+#### Temporal Dead Zone
+
+A variable declared using `let` cannot be accessed before its declaration. The variable is treated to be in **Temporal Dead Zone**. Consider following code.
+
+```javascript{numberLines: true}
+console.log(a);
+console.log(b);
+var a;
+let b;
+```
+
+Before executing the code line by line, there is a parsing step. During parsing, all the declarations are understood and memory allocation and scope is defined. When memory is allocated for `a`, a value of `undefined` is automatically assigned to it. But for `b`, memory is allocated but not assigned with a value.
+
+After parsing, the execution starts line by line. So when the execution reaches line 2, there is a memory for `b`, but is in a non-readable condition(Temporal Dead Zone). In line 4, the engine assigns `undefined` to `b` after seeing the declaration statement. Statements if any after line 4 can access the variable `b`.
+
+#### Test your knowledge
+
+**Question**
+
+What is the output?
+
+```javascript{numberLines: true}
+let a = 10;
+{
+  let a = 20;
+  console.log(a);
+}
+console.log(a);
+```
+
+<Answer>
+
+```
+20
+10
+```
+
+Line 1 creates a variable `a` in global scope. Line 2 creates a new block using `{}`. Line 3 creates a new variable in the block scope. 20 is then assigned to the new block scoped variable. It does not affect the outer variable.
+
+</Answer>
+
+**Question**
+
+What is the output?
+
+```javascript{numberLines: true}
+let a = 10;
+{
+  var a = 20;
+}
+console.log(a);
+```
+
+<Answer>
+
+Line 3 throws error.
+
+```
+SyntaxError: Identifier 'a' has already been declared
+```
+
+</Answer>
+
+### var vs let vs const
+
+var | let | const
+--- | --- | ---
+Function scoped | Block scoped | Block scoped
+Global variables are attached to global objects | Global variables are NOT attached to global objects | Global variables are NOT attached to global objects
+Hoisted | Not hoisted(Temporal Dead Zone) | Not hoisted(Temporal Dead Zone)
+Value can be changed | Value can be changed | Value cannot be changed
 
 </JSLayout>
 </Layout>
