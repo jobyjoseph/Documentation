@@ -176,6 +176,15 @@ A variable declared using `let` keyword is **block scoped**. A block is a sectio
 console.log(a); // ReferenceError: a is not defined
 ```
 
+#### Default value
+
+A variable declared using `let` will have `undefined` as the default value.
+
+```javascript
+let a;
+console.log(a); // undefined
+```
+
 #### Global let variable
 
 Just like declaring a global variable using `var`, we can declare a global variable using `let`. But, when declaring a global variable using let, it is not added to the global object as `var` does.
@@ -265,6 +274,69 @@ SyntaxError: Identifier 'a' has already been declared
 ```
 
 </Answer>
+
+### const
+
+`const` is used to declare variables whose values **cannot be re-assigned**. In effect, `const` creates **constant variables**.
+
+```javascript
+const a = 5;
+a = 4; // TypeError: Assignment to constant variable
+```
+
+#### Declared and assigned
+
+A constant variable need to be assigned at the same time of declaration. If we try to separate the declaration and assignment operation, it **throws error**.
+
+```javascript
+const a; // SyntaxError: Missing initializer in const declaration
+a = 5;
+```
+
+#### Block scoped
+
+A variable declared using `const` is **block scoped**.
+
+```javascript
+{
+  const a = 5;
+}
+console.log(a); // ReferenceError: a is not defined
+```
+
+#### Variable redeclaration
+
+A constant variable cannot be redeclared. The initial declaration can be either through `var`, `let` or `const`.
+
+```javascript
+var a;
+const a = 5; // SyntaxError: Identifier 'a' has already been declared
+```
+
+#### Hoisting
+
+A variable declared using `const` is **not hoisted**, just like `let`.
+
+```javascript{numberLines: true}
+console.log(a); // ReferenceError: Cannot access 'a' before initialization
+const a = 5;
+```
+
+Here note the error message in line 1: "Cannot access 'a' before initialization". That means, the engine knows that the variable is going to be declared later. That awareness is obtained during the parsing step before code execution. In line 1, variable `a` is said to be in **Temporal Dead Zone**.
+
+#### Contant objects
+
+Elements of a constant object **can be updated**. It is because, when we assign an object to a constant variable, only the reference of the object is saved in the variable. Even when we update the object elements, the reference does not change. When the reference is kept constant, there will not be any error.
+
+```javascript
+const obj = {
+  name: "Backbencher"
+};
+
+obj.name = "Updated";
+
+console.log(obj.name); // "Updated"
+```
 
 ### var vs let vs const
 
