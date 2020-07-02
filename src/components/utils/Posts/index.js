@@ -10,6 +10,12 @@ function Posts(props) {
           <Link to="/javascript/introduction">Introduction to JavaScript</Link>
         </li>
         <li>
+          <Link to="/javascript/variables">Variables</Link>
+        </li>
+        <li>
+          <Link to="/javascript/data-types">Data Types</Link>
+        </li>
+        <li>
           <Link to="/javascript/questions">JavaScript Questions</Link>
         </li>
         <li>
@@ -27,9 +33,7 @@ function Posts(props) {
         <li>
           <Link to="/javascript/string">String</Link>
         </li>
-        <li>
-          <Link to="/javascript/variables">Variables</Link>
-        </li>
+
         <li>
           <Link to="/javascript/if-else">If-else</Link>
         </li>

@@ -1,0 +1,116 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+import Version from "../../components/utils/Version";
+
+<Layout>
+<SEO title="Data Types in JavaScript" />
+<JSLayout>
+
+# Data Types
+
+Data Types refer to the ability of JavaScript to identify the type of a value. In JavaScript, a value falls under one of the following **8** types.
+
+1. [Boolean](#boolean)
+2. null
+3. undefined
+4. Number
+5. BigInt
+6. String
+7. Symbol
+8. Object
+
+From the list, first 7 types are called **primitive data types**. So, we can say in JavaScript all non-primitive values are **objects**.
+
+## Primitive Data Type
+
+A primitive value is not an object and does not contain any methods. As discussed in the previous section, Boolean, null, undefined, Number, BigInt, String and Symbol are primitive data types in JavaScript.
+
+Primitive values are **immutable**. That means a primitive value once created, cannot be changed.
+
+```javascript{numberLines: true}
+let a = "Backbencher";
+a = "Hello";
+console.log(a);
+```
+
+In the above code, in line 1, JavaScript is storing a string `"Backbencher"` to a memory location. JavaScript is naming that memory location as `a`. This association of a variable name to its memory location is tracked by a **lookup table** which is internal to JavaScript engine.
+
+In line 2, JavaScript engine is not erasing `"Backbencher"` and writing `"Hello"`. It cannot be done since primitive values are immutable. It creates a new memory location to store `"Hello"` and the lookup table is now mapping the variable name `a` to `"Hello"`'s location.
+
+Since all this is happening internally, for the developer it seems like primitive values can be updated or mutated, which is not true.
+
+### Boolean<a name="boolean"/>
+
+Boolean represents a logical entity. Logical entities are used to write conditions and enable branching in the program. There are only 2 values in JavaScript that are of Boolean type. They are `true` and `false`.
+
+```javascript
+// Branching
+if (true) {
+  console.log("I am truthy");
+} else {
+  console.log("I will never be logged");
+}
+```
+
+#### Truthy and falsy values
+
+When we use any data types as a logical entity, JavaScript automatically converts that value to a boolean `true` or `false`. For example, in the following snippet we use `"hello"` as a logical entity.
+
+```javascript
+if ("hello") {
+  console.log("hello is true");
+} else {
+  console.log("hello is false");
+}
+```
+
+Here the output is `"hello is true"`. It is because, JavaScript automatically converts a non-empty string to a `true`. There are some values, when converted to boolean, results in `false`. Those values are called _falsy values_. They are:
+
+- `0`
+- `-0`
+- `null`
+- `false` Obviously
+- `NaN`
+- `undefined`
+- `""` Empty string
+
+All other values in JavaScript are truthy values.
+
+> An empty object `{}` and empty array `[]` are truthy values. It is not falsy like an empty string.
+
+> The string "false" is a non-empty string. So when it is converted to boolean, it is a truthy value.
+
+#### Boolean Conversion
+
+We can convert any value in JavaScript to boolean type. This can be done using 2 techniques.
+
+##### `Boolean` function
+
+We can use `Boolean` function to convert any values to boolean type.
+
+```javascript
+console.log(Boolean("A string")); // true
+console.log(Boolean(""));         // false
+console.log(Boolean(0));          // false
+console.log(Boolean({}));         // true
+```
+
+##### `!!` Double negation
+
+In JavaScript `!` can be used as a NOT operator. In Mathematics, if we have a number `23`, negating it, results in `-23`. Again negating it, reverts it back to `23`. In similar way, in JavaScript when using `!`, it negates the value and the output is a boolean value.
+
+Here is an example. A non-empty string is a truthy value. Let us do a single negation first.
+
+```javascript
+console.log(!"hello"); // false
+```
+
+Negating a truthy value resulted in `false`. We use `!` again to get the boolean converted value.
+
+```javascript
+console.log(!!"hello"); // true
+```
+
+</JSLayout>
+</Layout>

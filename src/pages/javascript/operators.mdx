@@ -25,5 +25,18 @@ Such operators are called **Unary** operators.
 
 Binary and Unary are a way to classify all operators in JavaScript based on the number of operands required. Operators can also be grouped based on the operations they perform.
 
+## typeof
+
+`typeof` is an unary operator in JavaScript. It returns the type of the operand supplied to it.
+
+```javascript
+console.log(typeof 42);   // "number"
+
+var str = "Backbencher";
+console.log(typeof str);  // "string"
+```
+
+> `typeof undefined` is `undefined` and `typeof null` is `object` instead of `null`. That is actually a bug in JavaScript implementation happened years ago.
+
 </JSLayout>
 </Layout>

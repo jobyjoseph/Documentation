@@ -347,5 +347,28 @@ Global variables are attached to global objects | Global variables are NOT attac
 Hoisted | Not hoisted(Temporal Dead Zone) | Not hoisted(Temporal Dead Zone)
 Value can be changed | Value can be changed | Value cannot be changed
 
+## Dynamic Typing
+
+JavaScript is a loosly typed and dynamic language. Variables in JavaScript are not directly mapped with any particular data type. In JavaScript, the type of a variable is decided by the **type of value it holds**.
+
+```javascript{numberLines: true}
+let a = "Backbencher";
+console.log(typeof a);  // "string"
+a = 10;
+console.log(typeof a);  // "number"
+```
+
+> `typeof` is an operator in JavaScript that returns the type of a variable or value as a string.
+
+In line 1, `a` is assigned with a string value `"Backbencher"`. That makes the type of `a` as string. In line 3, we reassigned `a` with a number value `10`. That makes `a` a number type. That is why we say JavaScript is loosly typed.
+
+In languages like Java, which is a strongly typed language, we need to specify the type of variable at the time of declaration.
+
+```java
+int i;
+```
+
+Now, the variable `i` in Java can hold only integer values. When trying to assign a non-integer value to `i`, Java throws an error.
+
 </JSLayout>
 </Layout>
