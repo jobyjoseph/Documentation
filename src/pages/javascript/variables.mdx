@@ -2,6 +2,7 @@ import SEO from "../../components/seo.js";
 import Layout from "../../components/layout.js";
 import JSLayout from "../../components/masters/javascript-layout.js";
 import Answer from "../../components/utils/Answer";
+import QuizBox from "../../components/utils/QuizBox";
 
 <Layout>
 <SEO title="Variables in JavaScript" />
@@ -369,6 +370,15 @@ int i;
 ```
 
 Now, the variable `i` in Java can hold only integer values. When trying to assign a non-integer value to `i`, Java throws an error.
+
+<QuizBox title="Quiz: JavaScript Variables">
+What is the output?
+
+```javascript
+var a = b, b = "A";
+console.log(a, b);
+```
+</QuizBox>
 
 </JSLayout>
 </Layout>
