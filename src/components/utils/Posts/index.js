@@ -28,9 +28,6 @@ function Posts(props) {
           <Link to="/javascript/spread-operator">Spread Operator</Link>
         </li>
         <li>
-          <Link to="/javascript/types">Types</Link>
-        </li>
-        <li>
           <Link to="/javascript/string">String</Link>
         </li>
 
@@ -63,12 +60,6 @@ function Posts(props) {
         </li>
         <li>
           <Link to="/javascript/dynamic-import">JavaScript Dynamic Import</Link>
-        </li>
-        <li>
-          <Link to="/javascript/types-in-javascript">JavaScript Types</Link>
-        </li>
-        <li>
-          <Link to="/javascript/boolean">JavaScript Boolean</Link>
         </li>
         <li>
           <Link to="/javascript/bigint">JavaScript BigInt</Link>

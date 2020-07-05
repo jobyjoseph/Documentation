@@ -17,8 +17,8 @@ Data Types refer to the ability of JavaScript to identify the type of a value. I
 2. [null](#null)
 3. [undefined](#undefined)
 4. [Number](#number)
-5. BigInt
-6. String
+5. [BigInt](#bigint)
+6. [String](#string)
 7. [Symbol](#symbol)
 8. Object
 
@@ -218,6 +218,8 @@ if( typeof a === "undefined" ) {
 - When the operand is declared but not assigned with a value
 - When the operand resolves to an `undefined` value
 
+
+
 ### Number<a name="number"/>
 
 In most of the programming languages, integer values and floating-point(numbers with decimal) values are treated differently. The amount of memory used for both types also varies. But in JavaScript, there is __no distinction__ between integer values and floating-point values.
@@ -384,6 +386,88 @@ console.log(null * 1);  // 0
 
 // Undefined to Number
 console.log(undefined * 1); // NaN
+```
+
+### BigInt <a name="bigint" />
+
+BigInt allows JavaScript developers to have much greater integer representation in their code. The maximum a normal number supports is **9007199254740991**(2^53 - 1).
+
+Let us try to increment from the current MAX value.
+
+```javascript
+var num = Number.MAX_SAFE_INTEGER; // 9007199254740991
+num++;
+num++;
+num++;
+num++;
+num++;
+
+console.log(num); // 9007199254740992
+```
+
+Ideally we expect 9007199254740996 in the console, instead it is printing 9007199254740992. JavaScript is not able to compute beyond that.
+
+BigInt solves this issue. It helps to work on numbers beyond 9007199254740992.
+
+#### Declaring a BigInt
+
+A number is declared as BigInt by appending `n` to the number.
+
+```javascript
+10  // Integer
+10n // BigInt
+```
+
+We can also use `BigInt()` function to convert any JavaScript type to BigInt type.
+
+```javascript
+BigInt(23)    // 23n
+BigInt("23")  // 23n
+BigInt(true)  // 1n
+BigInt(false) // 0n
+```
+
+Trying to convert `undefined`, `null` or an object to BigInt results in error.
+
+Let us rewrite the code in above section using BigInt.
+
+```javascript
+var num = BigInt(Number.MAX_SAFE_INTEGER)
+num++;
+num++;
+num++;
+num++;
+num++;
+
+console.log(num); // 9007199254740996n
+```
+
+#### Type of BigInt
+
+We use `typeof` operator to determine the type of a variable or value. When used with a BigInt variable or value, it returns `"bigint"`.
+
+```javascript
+typeof 1n         // "bigint"
+typeof BigInt(1)  // "bigint"
+```
+
+### String<a name="string" />
+
+In JavaScript, _String_ is a primitive data type. It is used in JavaScript to work with texts.
+
+Here is an example of a string.
+
+```javascript
+"backbencher!"
+```
+
+#### Unicode Support
+
+Each character in a string occupies 16 bits to consider Unicode characters. Since JavaScript supports unicode characters, we can use unicodes in our texts. Here we are going to assign a malayalam language word to a variable.
+
+```javascript
+const fruit = "ആപ്പിൾ";
+console.log(fruit); // "ആപ്പിൾ"
 ```
 
 ### Symbol <Version number="6" /><a name="symbol" />
