@@ -461,14 +461,64 @@ Here is an example of a string.
 "backbencher!"
 ```
 
-#### Unicode Support
+#### String is immutable
 
-Each character in a string occupies 16 bits to consider Unicode characters. Since JavaScript supports unicode characters, we can use unicodes in our texts. Here we are going to assign a malayalam language word to a variable.
+When we do any operations on a string, it creates a new string. The existing string cannot be mutated.
+
+```javascript
+const str = "hello".toUpperCase();
+```
+
+When `.toUpperCase()` is invoked, it does not affect the original string `"hello"`. Instead a new string `"HELLO"` is created in memory and assigned to `str`.
+
+#### Unicode support
+
+Each character in a string occupies **16 bits to consider Unicode characters**. Since JavaScript supports unicode characters, we can use unicodes in our texts. Here we are going to assign a malayalam language word to a variable.
 
 ```javascript
 const fruit = "ആപ്പിൾ";
 console.log(fruit); // "ആപ്പിൾ"
 ```
+
+#### String literals
+
+A string literal is a **string data value** that appears directly in a program. To use a string literal in the code, wrap the string value in a matching pair of single quotes(`''`) or double quotes(`""`) or backticks(` `` `).
+
+```javascript
+"Backbencher.dev"
+'Backbencher.dev'
+`Backbencher.dev`
+```
+
+The backtick(` `` `) syntax was introduced in **ES6**.
+
+When using double quotes or single quotes, we can write a **multi-line** string literal using backslash(`\`).
+
+```javascript
+console.log("Backbencher.dev\
+is\
+rich"); // "Backbencher.devisrich"
+```
+
+Even though we write the code in separate lines, the output came in single line. That means, the backslash technique is purely to bring code readability. It does not have a difference compared to writing in one line.
+
+The backtick(` `` `) syntax by default supports multi-line literals. We do not need backslash to write new lines. Also, the new lines are considered as new lines by JavaScript engine.
+
+```javascript
+console.log(`Backbencher.dev
+is
+rich`);
+```
+
+and the output is shown in three lines.
+
+```
+"Backbencher.dev
+is
+rich"
+```
+
+
 
 ### Symbol <Version number="6" /><a name="symbol" />
 
