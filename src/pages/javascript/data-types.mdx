@@ -518,6 +518,71 @@ is
 rich"
 ```
 
+#### String conversion
+
+Any non-string value in JavaScript can be converted to a string in different ways.
+
+##### String() function
+
+`String()` is a constructor function in JavaScript. It accepts any type as its argument and converts it to a **String object**.
+
+```javascript{numberLines: true}
+// Primitive to string
+const bool = true;
+console.log(String(bool)); // "true"
+
+// Object to string
+const date = new Date();
+console.log(String(date));    // "Tue Jul 07 2020 12:19:55 GMT+0530 (India Standard Time)"
+```
+
+From the code above, it is clear that `String()` function can easily handle primitive or object data types.
+
+##### toString() method
+
+Any data types except `null` and `undefined` can be converted to string using `.toString()` method.
+
+```javascript
+console.log(true.toString()); // "true"
+```
+
+As you can see `toString()` is used as a method using dot(`.`) operator. But we know that only objects have properties and methods. So how a primitive type like `true` behave as an object?
+
+When JavaScript engine tries to evaluate `true.toString()`, it understands that the code is trying to treat the primitive value `true` as an object. So internally, JavaScript engine converts `true` to its equivalent `Boolean` object.
+
+```javascript
+Boolean(true); // Boolean object
+```
+
+Now, `Boolean` is a constructor function object in JavaScript, which is inherited from `Object` type. That means, any methods in `Object` can be invoked from its child objects like `Boolean`. Such an inherited method is `.toString()`.
+
+```javascript
+Boolean(true).toString(); // "true"
+```
+
+Why `null.toString()` and `undefined.toString()` do not work?
+
+When we use `null.toString()`, JavaScript engine cannot convert it into equivalent `Null` object. Same is the case with `undefined`. If we try to convert `null` or `undefined` to string using `.toString()` method, it throws TypeError.
+
+```javascript
+null.toString();  // TypeError: Cannot read property 'toString' of null
+```
+
+##### Adding empty string
+
+In JavaScript, we can concatenate two strings using plus(`+`) operator. If one of the operand is a string, JavaScript automatically converts other operand to a string. We can make use of this capability to convert a value to string.
+
+```javascript
+const str = true + "";
+console.log(str); // "true"
+```
+
+This technique works with `null` and `undefined` also.
+
+```javascript
+console.log(null + "");       // "null"
+console.log(undefined + "");  // "undefined"
+```
 
 
 ### Symbol <Version number="6" /><a name="symbol" />
