@@ -388,6 +388,92 @@ console.log(null * 1);  // 0
 console.log(undefined * 1); // NaN
 ```
 
+##### parseInt() and parseFloat()
+
+`parseInt()` and `parseFloat()` converts a **string to a number**.
+
+`parseInt()` function accepts 2 arguments. First one is the **string to be converted** and the second being the **radix**. In mathematics, radix is also known as the base. Default value of second parameter is **10**.
+
+```javascript
+console.log(parseInt("42", 10));  // 42
+console.log(parseInt("42", 8));   // 34
+```
+
+`parseInt()` ignores the decimal portion in the string, if present.
+
+```javascript
+console.log(parseInt("42.762", 10));  // 42
+```
+
+`parseFloat()` can convert a string to a floating-point number.
+
+```javascript
+console.log(parseFloat("42.762", 10)); // 42.762
+```
+
+##### Number()
+
+`Number` is a global function in JavaScript which can be used to convert any type in JavaScript to a number.
+
+**Boolean to number**
+
+`Number()` can convert a boolean value to a number.
+
+```javascript
+console.log(Number(true)); // 1
+console.log(Number(false)); // 0
+```
+
+`Number()` converts a `true` to `1` and `false` to `0`.
+
+**null to number**
+
+`Number()` converts `null` to `0`.
+
+```javascript
+console.log(Number(null)); // 0
+```
+
+**undefined to number**
+
+`Number()` converts `undefined` to `NaN`.
+
+```javascript
+console.log(Number(undefined)); // NaN
+```
+
+**String to number**
+
+`Number()` converts an empty string to `0`.
+
+```javascript
+console.log(Number("")); // 0
+```
+
+`Number()` converts a string with number value to corresponding number.
+
+```javascript
+console.log(Number("42"));      // 42
+console.log(Number("42.765"));  // 42.765
+```
+
+If the string contains a non-numeric character, `Number()` returns `NaN`.
+
+```javascript
+console.log(Number("42abc")); // NaN
+```
+
+If we used `parseInt()` in the above case, we will get `42`.
+
+**BigInt to number**
+
+A BigInt value can be directly passed to `Number()` to convert it to a number type.
+
+```javascript
+console.log(Number(42n)); // 42
+```
+
+
 ### BigInt <a name="bigint" />
 
 BigInt allows JavaScript developers to have much greater integer representation in their code. The maximum a normal number supports is **9007199254740991**(2^53 - 1).
