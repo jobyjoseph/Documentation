@@ -1,8 +1,8 @@
-import SEO from "../components/seo.js";
-import Layout from "../components/layout.js";
-import JSLayout from "../components/masters/javascript-layout.js";
-import Image from "../components/utils/image/image.js";
-import imageJestError from "../images/articles/2020/jest-error.png";
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+import Image from "../../components/utils/image/image.js";
+import imageJestError from "../../images/articles/2020/jest-error.png";
 
 
 <Layout>
@@ -15,8 +15,8 @@ To use enzyme with React 16, I need to use an enzyme adapter. To setup the adapt
 
 ```
 Enzyme Internal Error: Enzyme expects an adapter to be configured, but found none. To
-configure an adapter, you should call `Enzyme.configure({ adapter: new Adapter() })` 
-before using any of Enzyme's top level APIs, where `Adapter` is the adapter 
+configure an adapter, you should call `Enzyme.configure({ adapter: new Adapter() })`
+before using any of Enzyme's top level APIs, where `Adapter` is the adapter
 corresponding to the library currently being tested. For example:
 
           import Adapter from 'enzyme-adapter-react-15';

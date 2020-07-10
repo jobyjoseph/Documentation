@@ -9,3 +9,12 @@
 /javascript/bigint                                  /javascript/data-types
 /objects-in-javascript                              /javascript/data-types
 /javascript/array                                   /javascript/arrays
+# Jul 10th
+/deno/installation                                  /blog/deno-installation
+/react/hello-world-App                              /blog/react-hello-world-app-without-jsx
+/articles/react-native-experience-of-big-applications        /
+/articles/react-native-vs-native-apps               /blog/react-native-vs-native-apps
+/react/write-your-first-react-app                   /blog/write-your-first-react-app
+/symbol-data-type-in-javascript                     /javascript/data-types
+/react-bootstrap-controllabel-warning               /blog/react-bootstrap-controllabel-warning
+/create-react-app-setuptests-js-not-working         /blog/create-react-app-setuptests-js-not-working

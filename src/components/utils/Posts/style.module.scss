@@ -1,8 +1,7 @@
 .postsWrapper {
-  max-width: 570px;
 
-  h2 {
-    margin-top: 0;
+  h3 {
+    margin: 0;
   }
 
   ul {
@@ -13,6 +12,11 @@
 
     li {
       padding: 5px 0;
+      font-size: 14px;
+
+      a {
+        font-size: 18px;
+      }
     }
   }
 }

@@ -5,15 +5,16 @@ import styles from "./style.module.scss";
 function Posts(props) {
   return (
     <div className={styles.postsWrapper}>
+      <h3>JavaScript</h3>
       <ul>
         <li>
-          <Link to="/javascript/introduction">Introduction to JavaScript</Link>
-        </li>
-        <li>
-          <Link to="/javascript/variables">Variables</Link>
+          <Link to="/javascript/introduction">Introduction</Link>
         </li>
         <li>
           <Link to="/javascript/data-types">Data Types</Link>
+        </li>
+        <li>
+          <Link to="/javascript/variables">Variables</Link>
         </li>
         <li>
           <Link to="/javascript/arrays">Arrays</Link>
@@ -21,75 +22,28 @@ function Posts(props) {
         <li>
           <Link to="/javascript/questions">JavaScript Questions</Link>
         </li>
-        <li>
-          <Link to="/javascript/values">Values</Link>
-        </li>
-        <li>
-          <Link to="/javascript/operators">Operators</Link>
-        </li>
-        <li>
-          <Link to="/javascript/spread-operator">Spread Operator</Link>
-        </li>
-        <li>
-          <Link to="/javascript/string">String</Link>
-        </li>
-
-        <li>
-          <Link to="/javascript/if-else">If-else</Link>
-        </li>
-        <li>
-          <Link to="/javascript/function">Function</Link>
-        </li>
-        <li>
-          <Link to="/javascript/object">Object</Link>
-        </li>
-        <li>
-          <Link to="/javascript/globalthis">JavaScript globalThis</Link>
-        </li>
-        <li>
-          <Link to="/javascript/string-matchall">JavaScript String MatchAll</Link>
-        </li>
-        <li>
-          <Link to="/javascript/promises">JavaScript Promises</Link>
-        </li>
-        <li>
-          <Link to="/javascript/optional-chaining">JavaScript Optional Chaining</Link>
-        </li>
-        <li>
-          <Link to="/javascript/nullish-coalescing-operator">JavaScript Nullish Coalescing</Link>
-        </li>
-        <li>
-          <Link to="/javascript/dynamic-import">JavaScript Dynamic Import</Link>
-        </li>
-        <li>
-          <Link to="/javascript/bigint">JavaScript BigInt</Link>
-        </li>
-        <li>
-          <Link to="/javascript/closures">JavaScript Closures</Link>
-        </li>
-        <li>
-          <Link to="/javascript/es2021-new-features">New Features in ES2021</Link>
-        </li>
       </ul>
+
+      <h3>Blogs</h3>
 
       <ul>
         <li>
-          <Link to="/deno/installation">Deno Installation</Link>
+          <Link to="/blog/react-native-vs-native-apps">React Native vs Native Apps</Link> - Jun 4, 2020
         </li>
         <li>
-          <Link to="/react/hello-world-app">Hello World App Using React</Link>
+          <Link to="/blog/deno-installation">How to Install Deno</Link> - Jun 2, 2020
         </li>
         <li>
-          <Link to="/react/write-your-first-react-app">Write Your First React App</Link>
+          <Link to="/blog/react-hello-world-app-without-jsx">Hello World App Using React Without JSX</Link> - May 29, 2020
         </li>
         <li>
-          <Link to="/react-bootstrap-controllabel-warning">SOLVED: ControlLabel from React Bootstrap throws Warning</Link>
+          <Link to="/blog/write-your-first-react-app">Write Your First React App</Link> - May 29, 2020
         </li>
         <li>
-          <Link to="/create-react-app-setuptests-js-not-working">SOLVED: setupTests.js not working in CreateReactApp</Link>
+          <Link to="/blog/react-bootstrap-controllabel-warning">SOLVED: ControlLabel from React Bootstrap throws Warning</Link> - Feb 19, 2020
         </li>
         <li>
-          <Link to="/javascript-interview-questions">JavaScript Interview Questions</Link>
+          <Link to="/blog/create-react-app-setuptests-js-not-working">SOLVED: setupTests.js not working in CreateReactApp</Link> - Feb 6, 2020
         </li>
         <li>
           <Link to="/es2020-new-features">ES2020 New Features</Link>
@@ -108,12 +62,6 @@ function Posts(props) {
         </li>
         <li>
           <Link to="/spread-operator-in-javascript">Spread Operator in JavaScript</Link>
-        </li>
-        <li>
-          <Link to="/symbol-data-type-in-javascript">Symbol Data Type in JavaScript</Link>
-        </li>
-        <li>
-          <Link to="/variables-in-javascript">Variables in JavaScript</Link>
         </li>
       </ul>
     </div>
