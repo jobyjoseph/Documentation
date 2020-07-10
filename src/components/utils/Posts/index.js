@@ -16,6 +16,9 @@ function Posts(props) {
           <Link to="/javascript/data-types">Data Types</Link>
         </li>
         <li>
+          <Link to="/javascript/arrays">Arrays</Link>
+        </li>
+        <li>
           <Link to="/javascript/questions">JavaScript Questions</Link>
         </li>
         <li>
@@ -33,9 +36,6 @@ function Posts(props) {
 
         <li>
           <Link to="/javascript/if-else">If-else</Link>
-        </li>
-        <li>
-          <Link to="/javascript/array">Array</Link>
         </li>
         <li>
           <Link to="/javascript/function">Function</Link>

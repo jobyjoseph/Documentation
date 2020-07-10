@@ -1,0 +1,158 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+import Version from "../../components/utils/Version";
+
+<Layout>
+<SEO title="Arrays in JavaScript" />
+<JSLayout>
+
+# Arrays
+
+Arrays in JavaScript represent a **list of values**. The values can be **any valid data type** in JavaScript. Here is an example of array with elements, that are of different data types.
+
+```javascript
+[23, "Backbencher", true, 89.65]
+```
+
+## Array Features
+
+### Memory Allocation
+
+Normally in a programming language, arrays allocate a contigous block of memory with fixed length. But in JavaScript, arrays are **just Object types** with special constructor and methods. So internally, JavaScript engine cannot go with contigous memory approach for arrays. It treats an array like an object(hash) internally.
+
+#### Dynamic nature of arrays
+
+JavaScript approach of handling arrays as objects is required to handle dynamic nature of arrays. In JavaScript, we can keep on adding elements to an existing array using `push()` method.
+
+```javascript
+const arr = [];
+arr.push("Backbencher");
+arr.push("JavaScript");
+console.log(arr); // ["Backbencher", "JavaScript"]
+```
+
+Different data types in JavaScript like Boolean, Number, String and so on, occupy different memory sizes. In JavaScript, it is possible to update an element of an array to different data type.
+
+```javascript
+const arr = ["Backbencher", "JavaScript"];
+arr[1] = 72;
+console.log(arr); // ["Backbencher", 72]
+```
+
+Here, the second element of the array is changed from a string type to number type. If arrays are storing elements in contigous memory locations, then we need to shift elements in memory when the data type changes. But since arrays are internally treated as objects, it is easy to make data type changes in an array.
+
+#### Array declaration
+
+When declaring an array using `Array()` constructor function, we can specify the size of the array.
+
+```javascript
+const arr = new Array(1000);
+```
+
+When JavaScript engine executes above line of code, is it allocating 1000 memory locations? **No**. JavaScript cannot do that because it does not know what type of values are going to be in the array. JavaScript is actually creating an `Array` object and setting the `length` property of that object to `1000`.
+
+> Every array(instance of `Array()`) has a property `length` which indicates the size of the array.
+
+> One of the easy way to delete all elements of an array is to set the `length` property of the array to `0`.
+
+#### Sparse arrays
+
+Arrays in JavaScript are sparse. That means, we can create an array with non-contigous elements.
+
+```javascript
+const arr = [];
+arr[1] = "First element";
+arr[5] = "Second element";
+```
+
+When JavaScript engine executes above code, it creates an array object with two keys, `1` and `5` and corresponding values are stored. Sparse array approach in JavaScript saves memory usage, since it allocates memory only for elements that have data.
+
+What if we try to print the value of `arr[3]`? It prints `undefined`. That is not because JavaScript is filling all gaps with `undefined`. It is because JavaScript is designed to return `undefined` when we access a non-existent property of an object.
+
+In the above code snippet, when we assign a value to index 5, JavaScript automatically sets the value of `arr.length` to 6. That means, JavaScript always sets the `length` property value greater than the largest index value of the array.
+
+## Array Instance Methods
+
+### flat() <Version number="10"/>
+
+The `flat()` method of an array flattens the array and **returns a new array**.
+
+```javascript
+const arr = [1, 2, ["A", "B"]];
+console.log(arr.flat()); // [1, 2, "A", "B"]
+```
+
+#### Depth
+
+`flat()` method accepts an optional parameter for depth. Depth specifies the extend to which the array can be flattened.
+
+Here is an array with nested arrays and is 2 level deep.
+
+```javascript
+const arr = [1, 2, ["A", "B", ["C", "D"]]];
+console.log(arr.flat(1)); // [1, 2, "A", "B", ["C", "D"]]
+console.log(arr.flat(2)); // [1, 2, "A", "B", "C", "D"]
+```
+
+Depth value of 1 did not flatten the innermost sub-array. Depth value of 2 flattened all levels.
+
+#### Default depth
+
+The default value of depth parameter is `1`.
+
+```javascript
+const arr = [1, 2, ["A", "B", ["C", "D"]]];
+console.log(arr.flat()); // [1, 2, "A", "B", ["C", "D"]]
+```
+
+#### Complete flatten
+
+Passing `Infinity` as depth in `flat()` method flattens an array completely, irrespective of its nesting.
+
+```javascript
+const arr = ["A", ["B", ["C", ["D", ["E"]]]]];
+console.log(arr.flat(Infinity)); // ["A", "B", "C", "D", "E"]
+```
+
+#### Array holes
+
+`flat()` method skips array holes.
+
+```javascript
+const arr = ["A", , "B"];
+console.log(arr.flat()); // ["A", "B"]
+```
+
+### flatMap() <Version number="10" />
+
+`flatMap()` is a combination of 2 array methods, `map()` and `flat()`. First, the mapping function is executed on the elements of the array. Then, flattening of the array is done of depth `1`. `flatMap()` returns a **new array**.
+
+```javascript
+const arr = [1, 2, [3, 4]];
+
+// All number elements are made 0
+const result = arr.flatMap(ele => {
+  if(typeof ele === "number") {
+    return ele * 0;
+  }
+  return ele;
+});
+
+console.log(result); // [0, 0, 3, 4]
+```
+
+Here, the output of the `map()` method will be:
+
+```javascript
+[0, 0, [3, 4]]
+```
+
+On the result, `flat()` method is applied to get:
+
+```javascript
+[0, 0, 3, 4]
+```
+
+</JSLayout>
+</Layout>
