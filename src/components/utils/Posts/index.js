@@ -20,11 +20,14 @@ function Posts(props) {
           <Link to="/javascript/arrays">Arrays</Link>
         </li>
         <li>
+          <Link to="/javascript/es2020-new-features">ES2020 New Features</Link>
+        </li>
+        <li>
           <Link to="/javascript/questions">JavaScript Questions</Link>
         </li>
       </ul>
 
-      <h3>Blogs</h3>
+      <h3>Articles</h3>
 
       <ul>
         <li>
@@ -44,24 +47,6 @@ function Posts(props) {
         </li>
         <li>
           <Link to="/blog/create-react-app-setuptests-js-not-working">SOLVED: setupTests.js not working in CreateReactApp</Link> - Feb 6, 2020
-        </li>
-        <li>
-          <Link to="/es2020-new-features">ES2020 New Features</Link>
-        </li>
-        <li>
-          <Link to="/callbacks-in-javascript">Callbacks in JavaScript</Link>
-        </li>
-        <li>
-          <Link to="/prototypes-in-javascript">Prototypes in JavaScript</Link>
-        </li>
-        <li>
-          <Link to="/objects-in-javascript">Objects in JavaScript</Link>
-        </li>
-        <li>
-          <Link to="/destructuring-in-javascript">Destructuring in JavaScript</Link>
-        </li>
-        <li>
-          <Link to="/spread-operator-in-javascript">Spread Operator in JavaScript</Link>
         </li>
       </ul>
     </div>
