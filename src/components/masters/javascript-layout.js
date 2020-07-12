@@ -7,10 +7,6 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
-import Badge from "../utils/Badge";
-import Posts from "../utils/Posts";
-import jsLogoImage from "../../images/javascript-logo.png";
 
 const Layout = ({ children }) => {
   return (

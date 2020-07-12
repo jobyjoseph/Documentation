@@ -15,9 +15,55 @@ Arrays in JavaScript represent a **list of values**. The values can be **any val
 [23, "Backbencher", true, 89.65]
 ```
 
-## Array Features
+## Array Declaration
 
-### Memory Allocation
+There are multiple ways in which we can declare an array in JavaScript.
+
+### Square Brackets(`[]`)
+
+An array in JavaScript can be declared using square brackets(`[]`). All the list items are wrapped inside a pair of square bracket.
+
+```javascript
+const arr = [2, 4, 6];
+```
+
+#### Empty array
+
+An array without any element is called an empty array. An empty array is declared using an empty pair of square bracket.
+
+```javascript
+const arr = [];
+```
+
+### Array Constructor
+
+An array in JavaScript can also be declared using `Array()` constructor. The arguments passed as input to the constructor forms the array elements.
+
+```javascript
+const arr = new Array("Apple", "Orange");
+console.log(arr); // ["Apple", "Orange"];
+```
+
+#### Single number argument
+
+When we pass a single number as argument to `Array()`, it treats the number as **array length**.
+
+```javascript{numberLines: true}
+const arr = new Array(2);
+console.log(arr.length); // 2
+console.log(arr); // [undefined, undefined]
+```
+
+Here line 3 prints an array with 2 elements. Note that it did not create an array `[2]`, with number 2 as its element.
+
+If the single argument passed to the `Array()` constructor is a non-number, that argument is taken as an array element.
+
+```javascript
+const arr = new Array("Backbencher");
+console.log(arr); // ["Backbencher"]
+```
+
+## Memory Allocation
 
 Normally in a programming language, arrays allocate a contigous block of memory with fixed length. But in JavaScript, arrays are **just Object types** with special constructor and methods. So internally, JavaScript engine cannot go with contigous memory approach for arrays. It treats an array like an object(hash) internally.
 
