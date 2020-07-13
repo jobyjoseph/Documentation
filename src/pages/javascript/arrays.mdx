@@ -2,6 +2,7 @@ import SEO from "../../components/seo.js";
 import Layout from "../../components/layout.js";
 import JSLayout from "../../components/masters/javascript-layout.js";
 import Version from "../../components/utils/Version";
+import Answer from "../../components/utils/Answer";
 
 <Layout>
 <SEO title="Arrays in JavaScript" />
@@ -14,6 +15,50 @@ Arrays in JavaScript represent a **list of values**. The values can be **any val
 ```javascript
 [23, "Backbencher", true, 89.65]
 ```
+
+## Array Literal
+
+Array Literal is a list of zero or more expressions, each of which represents an array element, wrapped in square brackets(`[]`).
+
+```javascript
+["Apple", 23, true, {}]
+```
+
+### Skip Elements
+
+While creating an array literal, elements can be skipped using commas. The skipped locations are filled by `undefined`.
+
+```javascript
+const arr = [2,,,3];
+console.log(arr); // [2, undefined, undefined, 3]
+```
+
+### Trailing Comma
+
+Trailing comma in an array is ignored. It does NOT create an `undefined` element at the last.
+
+```javascript
+const arr = [2, 4, 6,];
+console.log(arr); // [2, 4, 6]
+```
+Trailing commas can create errors in older browsers. So it is better not to use it.
+
+In order to improve the readability of code, explicitly put `undefined` in place of skipped elements.
+
+**Question:**
+
+What is the length of following array?
+
+```javascript
+[,,,]
+```
+
+<Answer>
+
+The length of the array is **3**.
+
+Here the array evaluates to `[undefined, undefined, undefined]`
+</Answer>
 
 ## Array Declaration
 
@@ -35,7 +80,7 @@ An array without any element is called an empty array. An empty array is declare
 const arr = [];
 ```
 
-### Array Constructor
+### Array() Constructor
 
 An array in JavaScript can also be declared using `Array()` constructor. The arguments passed as input to the constructor forms the array elements.
 
@@ -61,6 +106,43 @@ If the single argument passed to the `Array()` constructor is a non-number, that
 ```javascript
 const arr = new Array("Backbencher");
 console.log(arr); // ["Backbencher"]
+```
+
+#### Empty array
+
+An empty array is created using `Array()` constructor by not passing any arguments.
+
+```javascript
+const arr = new Array();
+console.log(arr); // []
+```
+
+### Array() Function
+
+`Array()` is an overloaded function in JavaScript. It works both as a function and constructor. All things which can be done using `Array()` constructor can be implemented using `Array()` function.
+
+```javascript
+const arr = Array("Apple", "Orange");
+console.log(arr); // ["Apple", "Orange"];
+```
+
+#### Single number argument
+
+When we pass a single number as argument to `Array()` function, it treats the number as **array length**.
+
+```javascript
+const arr = Array(2);
+console.log(arr.length); // 2
+console.log(arr); // [undefined, undefined]
+```
+
+#### Empty array
+
+An empty array is created using `Array()` function by not passing any arguments.
+
+```javascript
+const arr = Array();
+console.log(arr); // []
 ```
 
 ## Memory Allocation
