@@ -16,7 +16,15 @@ Arrays in JavaScript represent a **list of values**. The values can be **any val
 [23, "Backbencher", true, 89.65]
 ```
 
-## Array Literal
+#### Contents
+
+- [Array Literal](#array-literal)
+- [Array Declaration](#array-declaration)
+- [Read Array Elements](#read-array-elements)
+- [Memory Allocation](#memory-allocation)
+- [Array Instance Methods](#array-instance-methods)
+
+## Array Literal<a name="array-literal" />
 
 Array Literal is a list of zero or more expressions, each of which represents an array element, wrapped in square brackets(`[]`).
 
@@ -24,7 +32,7 @@ Array Literal is a list of zero or more expressions, each of which represents an
 ["Apple", 23, true, {}]
 ```
 
-### Skip Elements
+#### Skip elements
 
 While creating an array literal, elements can be skipped using commas. The skipped locations are filled by `undefined`.
 
@@ -33,7 +41,7 @@ const arr = [2,,,3];
 console.log(arr); // [2, undefined, undefined, 3]
 ```
 
-### Trailing Comma
+#### Trailing comma
 
 Trailing comma in an array is ignored. It does NOT create an `undefined` element at the last.
 
@@ -60,7 +68,7 @@ The length of the array is **3**.
 Here the array evaluates to `[undefined, undefined, undefined]`
 </Answer>
 
-## Array Declaration
+## Array Declaration <a name="array-declaration" />
 
 There are multiple ways in which we can declare an array in JavaScript.
 
@@ -145,7 +153,35 @@ const arr = Array();
 console.log(arr); // []
 ```
 
-## Memory Allocation
+## Read Array Elements <a name="read-array-elements" />
+
+All elements in an array is stored as a list of items with numeric indices. The index starts from **0**. An element of the array can be read by passing the index of the element.
+
+```javascript
+const arr = ["Mercedes", "BMW", "Audi"];
+console.log(arr[0]);  // "Mercedes"
+```
+
+#### Read non-existent element
+
+When tried to read a non-existent element from an array, it returns `undefined`.
+
+```javascript
+const arr = ["Mercedes", "BMW", "Audi"];
+console.log(arr[1000]); // undefined
+```
+
+#### Index as string
+
+Arrays are internally stored as objects. More details on that is given later. It is possible to read an element from array by passing the index as type string.
+
+```javascript
+const arr = ["Mercedes", "BMW", "Audi"];
+console.log(arr["1"]);  // "BMW"
+```
+
+
+## Memory Allocation <a name="memory-allocation" />
 
 Normally in a programming language, arrays allocate a contigous block of memory with fixed length. But in JavaScript, arrays are **just Object types** with special constructor and methods. So internally, JavaScript engine cannot go with contigous memory approach for arrays. It treats an array like an object(hash) internally.
 
@@ -200,7 +236,7 @@ What if we try to print the value of `arr[3]`? It prints `undefined`. That is no
 
 In the above code snippet, when we assign a value to index 5, JavaScript automatically sets the value of `arr.length` to 6. That means, JavaScript always sets the `length` property value greater than the largest index value of the array.
 
-## Array Instance Methods
+## Array Instance Methods <a name="array-instance-methods" />
 
 ### flat() <Version number="10"/>
 
