@@ -1,0 +1,261 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+import Answer from "../../components/utils/Answer";
+import QuestionItem from "../../components/utils/QuestionItem";
+import Question from "../../components/utils/Question";
+import Option from "../../components/utils/Option";
+import Explanation from "../../components/utils/Explanation";
+import Divider from "../../components/utils/Divider";
+
+<Layout>
+<SEO title="Quiz: Variables in JavaScript" />
+<JSLayout>
+
+# Quiz: Variables
+<QuestionItem>
+
+<Question>
+
+**Question 1:**
+
+What is the output?
+
+```javascript
+var a;
+console.log(a);
+```
+
+</Question>
+
+<Option>
+
+`Reference Error: a is not defined`
+
+</Option>
+<Option isAnswer="yes">
+
+`undefined`
+
+</Option>
+<Option>
+
+`0`
+
+</Option>
+<Option>
+
+`""`
+
+</Option>
+
+<Explanation>
+
+**Explanation:** <br/> `a` is a variable that is declared in JavaScript using `var` keyword. Any variable that is declared is set with `undefined` value by default.
+
+</Explanation>
+</QuestionItem>
+
+<Divider />
+
+<QuestionItem>
+
+<Question>
+
+**Question 2:**
+
+What is the output?
+
+```javascript
+let a;
+console.log(a);
+```
+
+</Question>
+
+<Option>
+
+`Reference Error: a is not defined`
+
+</Option>
+<Option isAnswer="yes">
+
+`undefined`
+
+</Option>
+<Option>
+
+`0`
+
+</Option>
+<Option>
+
+`""`
+
+</Option>
+
+<Explanation>
+
+**Explanation:** <br/> `a` is a variable that is declared in JavaScript using `let` keyword. Any variable that is declared is set with `undefined` value by default.
+
+</Explanation>
+</QuestionItem>
+
+<Divider />
+
+<QuestionItem>
+
+<Question>
+
+**Question 3:**
+
+What is the output?
+
+```javascript
+const a;
+console.log(a);
+```
+
+</Question>
+
+<Option isAnswer="yes">
+
+`SyntaxError: Missing initializer in const declaration`
+
+</Option>
+<Option>
+
+`undefined`
+
+</Option>
+<Option>
+
+`SyntaxError: Unexpected identifier`
+
+</Option>
+<Option>
+
+`""`
+
+</Option>
+
+<Explanation>
+
+**Explanation:** <br/>
+`const` keyword is used to declare a constant variable in JavaScript. The value initialized to a constant variable cannot be changed later. For the same reason, a constant variable should be initialized at the time of declaration itself. Otherwise, a syntax error is thrown.
+
+</Explanation>
+</QuestionItem>
+
+
+<Divider />
+
+<QuestionItem>
+
+<Question>
+
+**Question 4:**
+
+What is the output?
+
+```javascript
+var a = 10;
+
+{
+  var a = 20;
+}
+
+console.log(a);
+```
+
+</Question>
+
+<Option>
+
+`undefined`
+
+</Option>
+<Option>
+
+`SyntaxError: a is already registered`
+
+</Option>
+<Option isAnswer="yes">
+
+`20`
+
+</Option>
+<Option>
+
+`10`
+
+</Option>
+
+<Explanation>
+
+**Explanation:** <br/>
+A variable declared using `var` is either in global scope or in function scope. Here, both `a`'s are in global scope. And also, redeclaring a `var` variable using `var` is allowed. So the last assignment of 20 is the final value stored in variable `a`.
+
+</Explanation>
+</QuestionItem>
+
+
+<Divider />
+
+<QuestionItem>
+
+<Question>
+
+**Question 5:**
+
+What is the output?
+
+```javascript{numberLines: true}
+var a = 3;
+var a;
+console.log(a);
+```
+
+</Question>
+
+<Option isAnswer="yes">
+
+`3`
+
+</Option>
+<Option>
+
+`undefined`
+
+</Option>
+<Option>
+
+`null`
+
+</Option>
+<Option>
+
+`""`
+
+</Option>
+
+<Explanation>
+
+**Explanation:** <br/>
+JavaScript executes the code, line by line. Before executing the code, JavaScript engine parses the code to identify the scope, allocate memory, catch syntax errors and so on.
+
+During this parsing step, line 1 results in a memory allocation for variable `a`. The assignment of 3 does not happen during parsing. That is part of second step, that is execution. When line 2 is parsed, again a variable with name `a` needs to be created. Since it is already created, the parser does nothing and move on. So finally, after the parsing step, JavaScript engine optimizes the code without line 2.
+
+```javascript
+var a = 3;
+console.log(a);
+```
+
+That is why the output is 3.
+
+</Explanation>
+</QuestionItem>
+
+
+</JSLayout>
+</Layout>
