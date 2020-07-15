@@ -257,5 +257,106 @@ That is why the output is 3.
 </QuestionItem>
 
 
+<Divider />
+
+<QuestionItem>
+
+<Question>
+
+**Question 6:**
+
+What is the output?
+
+```javascript
+var a;
+let a;
+console.log(a);
+```
+
+</Question>
+
+<Option>
+
+`""`
+
+</Option>
+<Option>
+
+`0`
+
+</Option>
+<Option>
+
+`undefined`
+
+</Option>
+<Option isAnswer="yes">
+
+`SyntaxError: Identifier 'a' has already been declared`
+
+</Option>
+
+<Explanation>
+
+**Explanation:** <br/>
+`let` and `const` are two new keywords introduced in ES6. They are used to declare new variables. Both `let` and `const` throw `SyntaxError` if the variable is already declared either using `var`, `let` or `const`.
+
+
+</Explanation>
+</QuestionItem>
+
+
+<Divider />
+
+<QuestionItem>
+
+<Question>
+
+**Question 7:**
+
+What is the output?
+
+```javascript
+console.log(a);
+var a = 6;
+```
+
+</Question>
+
+<Option isAnswer="yes">
+
+`undefined`
+
+</Option>
+<Option>
+
+`ReferenceError: a is not defined`
+
+</Option>
+<Option>
+
+`6`
+
+</Option>
+<Option>
+
+None of these
+
+</Option>
+
+<Explanation>
+
+**Explanation:** <br/>
+The variable `a` can be used before its declaration. This is called hoisting. But how it is possible? Why `undefined`, not `6`? To understand this, we need to know how JavaScript engine executes our code.
+
+JavaScript is an interpreted language. It executes code line by line. But before starting the line-by-line execution, JavaScript parses through the code. During the parsing step, for each variable declaration, it allocates a memory location. Only, memory allocation happens during the parsing step, and the initialization happens during actual code execution.
+
+In our code sample, when the first line tries to get the value of `a`, it can see that already a variable with `a` is allocated during parsing step. That is why it prints the value `undefined`. Only when the execution reaches line 2, the value of `6` is assigned.
+
+
+</Explanation>
+</QuestionItem>
+
+
 </JSLayout>
 </Layout>

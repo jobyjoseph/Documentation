@@ -21,6 +21,7 @@ Arrays in JavaScript represent a **list of values**. The values can be **any val
 - [Array Literal](#array-literal)
 - [Array Declaration](#array-declaration)
 - [Read Array Elements](#read-array-elements)
+- [Set Array Elements](#set-array-elements)
 - [Memory Allocation](#memory-allocation)
 - [Array Instance Methods](#array-instance-methods)
 
@@ -178,6 +179,36 @@ Arrays are internally stored as objects. More details on that is given later. It
 ```javascript
 const arr = ["Mercedes", "BMW", "Audi"];
 console.log(arr["1"]);  // "BMW"
+```
+
+## Set Array Elements <a name="set-array-elements" />
+
+Array elements can be set by initializing at the time of declaration itself. The square bracket(`[]`) syntax or `Array()` syntax can be used for that.
+
+```javascript
+const arr1 = ["Apple", "Banana"];
+const arr2 = new Array("Apple", "Banana");
+const arr3 = Array("Apple", "Banana");
+```
+
+All the above 3 techniques are valid in JavaScript.
+
+Once an array is declared, the elements in the array can be set using square brackets and element index.
+
+```javascript
+const arr = [];
+arr[0] = "Apple";
+arr[1] = "Banana";
+console.log(arr); // ["Apple", "Banana"]
+```
+
+When an element is set in an array, the array automatically ensures that the length of the array is one greater than the largest index.
+
+```javascript
+const arr = [];
+arr[1] = "Second";
+arr[5] = "Sixth";
+console.log(arr.length); // 6
 ```
 
 
