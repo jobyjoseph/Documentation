@@ -20,6 +20,9 @@ function Posts(props) {
           <Link to="/javascript/quiz-variables">Quiz: Variables</Link>
         </li>
         <li>
+          <Link to="/javascript/operators">Operators</Link>
+        </li>
+        <li>
           <Link to="/javascript/arrays">Arrays</Link>
         </li>
         <li>

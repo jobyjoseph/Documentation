@@ -12,7 +12,13 @@ Operators are characters or a group of characters which can perform certain oper
 
 The values on which the operator acts upon are called **operands**. Example, in case of an addition like `3 + 4`, `3` and `4` are operands.
 
-## Binary and Unary Operator
+### Contents
+
+- [Binary and Unary Operators](#binary-unary-operators)
+- [Optional Chaining](#optional-chaining)
+- [typeof](#typeof)
+
+## Binary and Unary Operators <a name="binary-unary-operators" />
 
 In case of adding two numbers, the `+` operator requires two operands. Then only it can work. Such operators are called **Binary** operators.
 
@@ -23,9 +29,102 @@ Some operators like negation(`!`) requires only one operand. Example:
 ```
 Such operators are called **Unary** operators.
 
-Binary and Unary are a way to classify all operators in JavaScript based on the number of operands required. Operators can also be grouped based on the operations they perform.
+Binary and Unary are a way to classify all operators in JavaScript based on the number of operands required. Operators can also be grouped based on the operations they perform. Example: Conditional operators check if a particular condition is satisfied or not. Arithmetic operators perform mathematical calculations.
 
-## typeof
+## Optional Chaining(`?.`) <a name="optional-chaining" />
+
+Let us take an example to understand this operator. Here is a JavaScript object.
+
+```javascript
+const obj = {
+  name: "Backbencher",
+  age: 34
+}
+```
+
+Assume above object is returned from an API. The developer's assumption was the response contained a field for `address` also like below.
+
+```javascript
+const obj = {
+  name: "Backbencher",
+  age: 34,
+  address: {
+    city: "Kakkanad",
+    pincode: 682030
+  }
+}
+```
+
+The developer tries to read the value of pincode using:
+
+```javascript
+const pincode = obj.address.pincode
+```
+
+Since the actual response does not have `address` property, `obj.address` is `undefined`. Trying to access `pincode` property of `undefined` throws error as show below.
+
+```
+TypeError: Cannot read property 'pincode' of undefined
+```
+
+To avoid this error developers write a chain of type check like:
+
+```javascript
+const pincode = obj && obj.address && obj.address.pincode;
+```
+
+Above code safely executes and assign `undefined` to `pincode`. But, as the depth of object increases, the code becomes unnecessarily lengthy.
+
+**Optional Chaining** operator helps to do this undefined check easily. Here is how above pincode statement is written using optional chaining.
+
+```javascript
+const pincode = obj?.address?.pincode;
+```
+
+### Optional Chaining with function calls
+
+Here is an object in JavaScript.
+
+```javascript
+const profile = {
+  name: "Backbencher"
+}
+```
+
+Assuming, there is a method `show()` in `profile` object, we are calling the method.
+
+```javascript
+profile.show();
+```
+
+Since `show()` method does not exist, above statement throws an error:
+
+```
+TypeError: profile.show is not a function
+```
+
+So here, we need to call a method **if only it exists**. In that case, we can ensure a valid method using `?.` and then call it.
+
+```javascript
+profile.show?.()
+```
+
+What if the `profile` object already contain a property `show` like below.
+
+```javascript
+const profile = {
+  name: "Backbencher",
+  show: 34
+}
+```
+
+Here, even if we use optional chaining operator, we are trying to execute a number property `show` as a method. That results in `TypeError`.
+
+```
+TypeError: profile.show is not a function
+```
+
+## typeof <a name="typeof" />
 
 `typeof` is an unary operator in JavaScript. It returns the type of the operand supplied to it.
 
