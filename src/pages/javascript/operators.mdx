@@ -33,6 +33,8 @@ Binary and Unary are a way to classify all operators in JavaScript based on the 
 
 ## Optional Chaining(`?.`) <a name="optional-chaining" />
 
+Optional Chaining operator(`?.`) helps to safely read the value of a deeply nested object property. It returns `undefined`, if anyone of the nested object is nullish(`null` or `undefined`).
+
 Let us take an example to understand this operator. Here is a JavaScript object.
 
 ```javascript
@@ -81,7 +83,7 @@ Above code safely executes and assign `undefined` to `pincode`. But, as the dept
 const pincode = obj?.address?.pincode;
 ```
 
-### Optional Chaining with function calls
+### Optional Chaining with method calls
 
 Here is an object in JavaScript.
 
@@ -123,6 +125,50 @@ Here, even if we use optional chaining operator, we are trying to execute a numb
 ```
 TypeError: profile.show is not a function
 ```
+
+### Optional Chaining with functions
+
+Here we are talking about normal functions. These functions are either created as a function expression or function declaration. If we need to safely check if such a function exists, before invoking it, use it like below.
+
+```javascript
+window.theFunction?.()
+```
+
+Why `window.`? Any global function declared is added as a method to `window` object. Accessing a non-existent property of an object does not throw error. It simply returns `undefined`. So it is safe to check the function existence from `window` object.
+
+If we try to use optional chaining directly on the function name like `theFunction?.()`, we need to make sure that `theFunction` variable is already declared. Otherwise, the statement throws a `ReferenceError`.
+
+### Optional Chaining with callback functions
+
+Here we have a higher order function `hoc()` that accepts a callback function `cb`.
+
+```javascript
+function hoc(cb) {
+  cb();
+}
+```
+
+If we call `hoc()` without passing the callback function, it will throw an error.
+
+```javascript
+hoc(); // TypeError: cb is not a function
+```
+
+Optional chaining operator can check if `cb` is nullish or not before executing it. The updated function definition looks like below.
+
+```javascript
+function hoc(cb) {
+  cb?.();
+}
+```
+
+Now, after placing the optional chaining operator, what if we explicitly pass a non function value to `hoc()` like below.
+
+```javascript
+hoc(6); // TypeError: cb is not a function
+```
+
+Again, it throws `TypeError` which is expected. It is because optional chaining operator checks only for nullish values. `6` is not nullish. Therefore JavaScript engine tried to execute it as a function, which resulted in `TypeError`.
 
 ## typeof <a name="typeof" />
 
