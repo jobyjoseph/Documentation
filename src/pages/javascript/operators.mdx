@@ -138,6 +138,19 @@ Why `window.`? Any global function declared is added as a method to `window` obj
 
 If we try to use optional chaining directly on the function name like `theFunction?.()`, we need to make sure that `theFunction` variable is already declared. Otherwise, the statement throws a `ReferenceError`.
 
+Above code was checking if the function exists. Next case is, when we expect an object as return value from a function. We need to first check if the returned value is not nullish and then access the object properties.
+
+```javascript
+function baaz(){
+  return {
+    name: "Backbencher"
+  };
+}
+console.log(baaz()?.name); // "Backbencher"
+```
+
+Above code does not throw error if `baaz()` returns `undefined`.
+
 ### Optional Chaining with callback functions
 
 Here we have a higher order function `hoc()` that accepts a callback function `cb`.
