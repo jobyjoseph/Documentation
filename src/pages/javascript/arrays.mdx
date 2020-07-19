@@ -23,6 +23,7 @@ Arrays in JavaScript represent a **list of values**. The values can be **any val
 - [Read Array Elements](#read-array-elements)
 - [Set Array Elements](#set-array-elements)
 - [Memory Allocation](#memory-allocation)
+- [Array() Function](#array-function)
 - [Array Instance Methods](#array-instance-methods)
 
 ## Array Literal<a name="array-literal" />
@@ -266,6 +267,66 @@ When JavaScript engine executes above code, it creates an array object with two 
 What if we try to print the value of `arr[3]`? It prints `undefined`. That is not because JavaScript is filling all gaps with `undefined`. It is because JavaScript is designed to return `undefined` when we access a non-existent property of an object.
 
 In the above code snippet, when we assign a value to index 5, JavaScript automatically sets the value of `arr.length` to 6. That means, JavaScript always sets the `length` property value greater than the largest index value of the array.
+
+## Array() Function <a name="array-function" />
+
+`Array()` is a function in JavaScript. It is a built-in function, that means the definition of the function is already written inside JavaScript engine.
+
+```javascript
+console.log(typeof Array); // "function"
+```
+
+### Using Array()
+
+`Array()` is an overloaded function in JavaScript. That means, we can use `Array()` function in multiple ways.
+
+#### Array() as constructor
+
+`Array()` function can be used as a constructor function. That means, we can use `Array()` function with `new` operator to create different array objects.
+
+```javascript
+const arr = new Array("Apple", "Orange");
+console.log(arr); // ["Apple", "Orange"]
+```
+
+#### Array() as normal function
+
+We can also create array objects simply by calling `Array()` function without `new` keyword.
+
+```javascript
+const arr = Array("Apple", "Orange");
+console.log(arr); // ["Apple", "Orange"]
+```
+
+### Array Properties
+
+A function in JavaScript is also an object. Every object in JavaScript has properties. Since `Array()` is also a function, it has properties. There are 6 own properties for `Array()` function. These are **static properties**. So, in order to use these properties or methods, we do not have to create an instance of `Array()` function.
+
+#### Array.length
+
+As per ECMAScript specification, the value of this property is set to `1`.
+
+```javascript
+console.log(Array.length); // 1
+```
+
+#### Array.name
+
+Any function in JavaScript has a property `name`, which returns the name of the function.
+
+```javascript
+console.log(Array.name); // "Array"
+```
+
+That is straight forward. The name of the `Array()` function is `"Array"`.
+
+#### Array.prototype
+
+`Array.prototype` stores an object. This object has all properties and methods which will be inherited by all array instances in JavaScript.
+
+When we create an array like `["Apple", "Banana"]`, whatever properties and methods present for that array object comes from `Array.prototype` object. If we need to add a new method to be inherited by all arrays, we just have to add it as a method to `Array.prototype` object.
+
+We are covering all properties and methods of `Array.prototype` later.
 
 ## Array Instance Methods <a name="array-instance-methods" />
 
