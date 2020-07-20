@@ -3,6 +3,7 @@ import Layout from "../../components/layout.js";
 import JSLayout from "../../components/masters/javascript-layout.js";
 import Image from "../../components/utils/image/image.js";
 import imageGuessWhat from "../../images/articles/2020/guess-what-game.jpg";
+import imageSokuWireframe from "../../images/articles/2020/soku-wireframe.png";
 
 
 <Layout>
@@ -28,6 +29,80 @@ The inspiration came from a <a href="https://flipkart.com" rel="nofollow" target
 </div>
 
 I am going to make it more generic. Users can create their own guessing game using Soku.
+
+### Day 2 - Jul 20, 2020
+
+Today it is holiday for me. So I am spending around 2 hours with the app. I designed a basic wireframe to start with using Adobe XD.
+
+<Image src={imageSokuWireframe} alt="Soku Wireframe" />
+
+Next, after thinking in user's shoes, following screens are required for the app.
+
+##### Home
+
+- Header with search box to search all games
+- Different sections to show games group by trending, featured, latest and so on. Each section contains a carousel.
+- Clicking on a game item takes user to Game details screen
+
+##### Game detail
+
+- Show the game name, author name, feature image, description, no. of people enrolled and start button
+
+##### Countdown timer
+
+- A game starts with a countdown timer starting from 5
+
+##### Game question
+
+- Game name is displayed
+- Countdown timer runs from 20 seconds
+- Score is displayed
+- Question image
+- Answer placeholder
+- Jumbled buttons with characters
+- Skip button
+- Backspace button
+- Submit button
+
+##### Score
+- Show Score
+- Login button for rank
+- List of top players
+- Link to home
+
+##### Login
+- Social auth using Google, Facebook and Twitter
+
+##### Set User id
+- Form to submit @userid
+
+##### Menu
+- Profile photo
+- Profile name
+- Profile username
+- My account Link
+- My games link
+- Logout link
+
+##### My Account
+- Show name, username, email, profile photo
+
+##### My Games
+- List all Games
+- Link to add a game
+
+##### Edit Game
+- Name of the game can be edited
+- Link to view questions / edit them
+- select questions and delete them
+- delete a game
+
+#### React Native
+
+React Native can be used to create both Android and iOS apps. Since I know React and JavaScript, I am planning to use React Native to develop this app. From tomorrow onwards, I have planned to go through [React Native course by Mosh](https://codewithmosh.com/p/the-ultimate-react-native-course). I do not know React Native and I am starting from scratch.
+
+So far I spent **2.5 hours** on Soku.
+
 
 </JSLayout>
 </Layout>
