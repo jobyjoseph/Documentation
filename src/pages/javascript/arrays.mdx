@@ -24,7 +24,7 @@ Arrays in JavaScript represent a **list of values**. The values can be **any val
 - [Set Array Elements](#set-array-elements)
 - [Memory Allocation](#memory-allocation)
 - [Array() Function](#array-function)
-- [Array Instance Methods](#array-instance-methods)
+- [Array.prototype](#array-prototype)
 
 ## Array Literal<a name="array-literal" />
 
@@ -153,6 +153,24 @@ An empty array is created using `Array()` function by not passing any arguments.
 ```javascript
 const arr = Array();
 console.log(arr); // []
+```
+
+### Array.of() <Version number="6" />
+
+`Array.of()` creates a new array from passed arguments.
+
+```javascript
+const arr = Array.of("Apple", "Banana");
+console.log(arr); // ["Apple", "Banana"]
+```
+
+#### Difference between Array()
+
+When passed a single number argument to `Array()`, it creates an empty array of length equal to the passed number. Where as, when passed a single number argument to `Array.of()`, it creates an array with only that number as its element.
+
+```javascript
+console.log(Array(3)); //[undefined, undefined, undefined]
+console.log(Array.of(3)); // [3]
 ```
 
 ## Read Array Elements <a name="read-array-elements" />
@@ -384,7 +402,76 @@ console.log(source); // ["A", "B", ["Apple", "D"]]
 
 We can see that the `source` array is also updated.
 
-## Array Instance Methods <a name="array-instance-methods" />
+##### Using Array.from()
+
+`Array.from()` accepts 3 arguments.
+
+1. _ArrayLike object_ which will be converted to an array. This argument is mandatory.
+2. _Map Function_ which is called with each elements of the array like object. This argument is optional.
+3. _this_ specifies the value of `this` inside `Array.from()`
+
+###### With one argument
+
+`Array.from()` accepts an array or any array-like objects like Map or Set and returns a new array.
+
+```javascript
+const set = new Set(['Apple', 'Banana']);
+console.log(Array.from(set)); // ["Apple", "Banana"]
+```
+
+###### With two arguments
+
+Each elements of the input object is passed to the map function one by one. `Array.from()` returns an array with each elements created using the return value of the map function.
+
+```javascript
+const mapFunction = (element) => {
+  return 0;
+}
+
+const set = new Set(['Apple', 'Banana']);
+console.log(Array.from(set, mapFunction)); // [0, 0]
+```
+
+Irrespective of the input, the map function always return `0`. That is why the result is an array with 2 zeros.
+
+###### With three arguments
+
+Third argument passed to `Array.from()` acts as the `this` value inside the map function(second argument).
+
+```javascript
+const mapFunction = function (element) {
+  console.log(this);
+  return 0;
+}
+
+const customThis = { name: "Backbencher" };
+
+const set = new Set(['Apple', 'Banana']);
+console.log(Array.from(set, mapFunction, customThis)); // [0, 0]
+```
+
+And the output is:
+
+```
+[object Object] {
+  name: "Backbencher"
+}
+[object Object] {
+  name: "Backbencher"
+}
+[0, 0]
+```
+
+If the third argument is not there, `this` will have value of global object.Arrow functions do not respect `this`. That is why `mapFunction` is written in ES5 way.
+
+#### Array.of()
+
+As discussed earlier, `Array.of()` creates and returns a new array from the arguments passed ot the method.
+
+
+## Array.prototype <a name="array-prototype" />
+
+The `Array()` constructor function has got a property called `prototype`. `Array.prototype` stores an object value. Any properties and methods of this `prototype` object is inherited by all instances of `Array()`. Example, if `Array.prototype` has a method called `boom()`, then `[2, 4, 7].boom()` is a valid method call.
 
 ### flat() <Version number="10"/>
 
