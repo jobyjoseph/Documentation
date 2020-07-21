@@ -29,6 +29,9 @@ function Posts(props) {
           <Link to="/javascript/es2020-new-features">ES2020 New Features</Link>
         </li>
         <li>
+          <Link to="/javascript/es2021-new-features">ES2021 New Features</Link>
+        </li>
+        <li>
           <Link to="/javascript/questions">JavaScript Questions</Link>
         </li>
       </ul>

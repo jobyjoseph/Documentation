@@ -12,6 +12,8 @@ ECMAScript 2021 version is expected to be released in the month of June 2021. He
 
 ## String replaceAll() Method
 
+`String.prototype.replaceAll()` replaces all occurrence of a string with another string value.
+
 Currently JavaScript string has a `replace()` method. It can be used to replace a string with another string.
 
 ```javascript
@@ -20,9 +22,9 @@ const newStr = str.replace("Back", "Front");
 console.log(newStr); // "Frontbencher sits at the Back"
 ```
 
-`replace()` method only replaces the first occurrence, if the **pattern is a string**, in this case(`"Back"`).
+If the input pattern is a string, `replace()` method only replaces the first occurrence. That is why in the code, the second occurrence of `"Back"` is not replaced.
 
-We can do a full replacement if we supply the pattern as a **regular expression**.
+We can do a **full replacement** only if we supply the pattern as a **regular expression**.
 
 ```javascript
 const str = "Backbencher sits at the Back";
@@ -30,7 +32,31 @@ const newStr = str.replace(/Back/g, "Front"); // highlight-line
 console.log(newStr); // "Frontbencher sits at the Front"
 ```
 
-`String.prototype.replaceAll()` is trying to bring the full replacement option when the pattern is a string.
+`String.prototype.replaceAll()` is trying to bring the full replacement option even when the input pattern is a **string**.
+
+## Private Methods
+
+Private methods can be accessible only inside the class where it is defined. Private method names starts with `#`.
+
+```javascript
+class Person {
+
+  // Private method
+  #setType() {
+    console.log("I am Private");
+  }
+
+  // Public method
+  show() {
+    #setType();
+  }
+
+}
+
+const personObj = new Person();
+personObj.show(); // "I am Private";
+personObj.setType(); // TypeError
+```
 
 </JSLayout>
 </Layout>

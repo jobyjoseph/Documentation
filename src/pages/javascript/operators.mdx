@@ -1,6 +1,7 @@
 import SEO from "../../components/seo.js";
 import Layout from "../../components/layout.js";
 import JSLayout from "../../components/masters/javascript-layout.js";
+import Version from "../../components/utils/Version";
 
 <Layout>
 <SEO title="Operators in JavaScript" />
@@ -31,7 +32,7 @@ Such operators are called **Unary** operators.
 
 Binary and Unary are a way to classify all operators in JavaScript based on the number of operands required. Operators can also be grouped based on the operations they perform. Example: Conditional operators check if a particular condition is satisfied or not. Arithmetic operators perform mathematical calculations.
 
-## Optional Chaining(`?.`) <a name="optional-chaining" />
+## Optional Chaining(`?.`) <Version number="11" /> <a name="optional-chaining" />
 
 Optional Chaining operator(`?.`) helps to safely read the value of a deeply nested object property. It returns `undefined`, if anyone of the nested object is nullish(`null` or `undefined`).
 
