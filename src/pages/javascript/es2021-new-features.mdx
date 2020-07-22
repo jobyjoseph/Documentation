@@ -8,7 +8,9 @@ import JSLayout from "../../components/masters/javascript-layout.js";
 
 # ES2021 / ES12 New Features
 
-ECMAScript 2021 version is expected to be released in the month of June 2021. Here are some of the features we can expect in ES2021 or ES12.
+ECMAScript 2021 version is expected to be released in the month of June 2021. Here are some of the features we can expect in ES2021 or ES12. The list prepared based on ECMAScript proposal status and the new features released by Google Chrome V8 engine.
+
+All the features listed below, at the time of writing is supported in Google Chrome Canary build.
 
 ## String replaceAll() Method
 
@@ -48,14 +50,40 @@ class Person {
 
   // Public method
   show() {
-    #setType();
+    this.#setType();
   }
 
 }
 
 const personObj = new Person();
 personObj.show(); // "I am Private";
-personObj.setType(); // TypeError
+personObj.setType(); // TypeError: personObj.setType is not a function
+```
+
+Since `setType()` is a private method, `personObj.setType` returns `undefined`. Trying to use `undefined` as a function throws TypeError. 
+
+## Private Accessors
+
+Accessor functions can be made private by prepending `#` to the function name.
+
+```javascript
+class Person {
+  // Public accessor
+  get name() { return "Backbencher" }
+  set name(value) {}
+
+  // Private accessor
+  get #age() { return 42 }
+  set #age(value) {}
+}
+```
+
+In the above code `get` and `set` keywords make `name` an accessor property. Even though `name` looks like a function, it can be read like a normal property.
+
+```javascript
+const obj = new Person();
+console.log(obj.name); // "Backbencher"
+console.log(obj.age); // undefined
 ```
 
 </JSLayout>
