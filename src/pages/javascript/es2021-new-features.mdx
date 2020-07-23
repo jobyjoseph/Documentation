@@ -60,7 +60,7 @@ personObj.show(); // "I am Private";
 personObj.setType(); // TypeError: personObj.setType is not a function
 ```
 
-Since `setType()` is a private method, `personObj.setType` returns `undefined`. Trying to use `undefined` as a function throws TypeError. 
+Since `setType()` is a private method, `personObj.setType` returns `undefined`. Trying to use `undefined` as a function throws TypeError.
 
 ## Private Accessors
 
@@ -85,6 +85,70 @@ const obj = new Person();
 console.log(obj.name); // "Backbencher"
 console.log(obj.age); // undefined
 ```
+
+## WeakRef and Finalizers
+
+`WeakRef` stands for Weak References. Main use of weak references is to implement **caches or mappings to large objects**. In such scenarios, we do not want to keep a lot of memory for a long time saving this rarely used cache or mappings. We can allow the memory to be garbage collected soon and later if we need it again, we can generate a fresh cache.
+
+JavaScript is a garbage collected language. If a variable is no longer reachable, JavaScript garbage collector automatically removes it. You can read more on JavaScript garbage collection here in [MDN site](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management).
+
+Consider the following code:
+
+```javascript
+const callback = () => {
+  const aBigObj = {
+    name: "Backbencher"
+  };
+  console.log(aBigObj);
+}
+
+(async function(){
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      callback();
+      resolve();
+    }, 2000);
+  });
+})();
+```
+
+The code might look complicated. But basically, what we do is create a function named `callback()` and execute it using `setTimeout()`. The `async` wrapping is just to use `await` functionality. `await` is a feature in ES6, that helps to execute asynchronous code in synchronous way.
+
+When executing above code, it prints `"Backbencher"` after 2 seconds. Based on how we use the `callback()` function, `aBigObj` is stored in memory forever, may be.
+
+Let us make `aBigObj` a weak reference.
+
+```javascript
+const callback = () => {
+  // highlight-start
+  const aBigObj = new WeakRef({
+    name: "Backbencher"
+  });
+
+  console.log(aBigObj.deref().name);
+  // highlight-end
+}
+
+(async function(){
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      callback();
+      resolve();
+    }, 2000);
+  });
+
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      callback();
+      resolve();
+    }, 5000);
+  });
+})();
+```
+
+A WeakRef is created using `new WeakRef()`. Later the reference is read using `.deref()` method. Inside the `async` function, The first `setTimeout()` will surely print the value of `name`. That is guaranteed in the first turn of event loop after creating the weak reference.
+
+But there is no guarantee that the second `setTimeout()` prints `"Backbencher"`. It might have been sweeped by the gargage collector. Since the garbage collection works differently in different browsers, we cannot guarantee the output. That is also why, we use WeakRef in situations like managing cache.
 
 </JSLayout>
 </Layout>
