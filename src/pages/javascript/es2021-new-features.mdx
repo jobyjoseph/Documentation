@@ -1,6 +1,8 @@
 import SEO from "../../components/seo.js";
 import Layout from "../../components/layout.js";
 import JSLayout from "../../components/masters/javascript-layout.js";
+import Image from "../../components/utils/image/image.js";
+import imageChromeGarbageCollector from "../../images/articles/2020/chrome-garbage-collection.png";
 
 <Layout>
 <SEO title="ES2021 / ES12 New Features" />
@@ -132,14 +134,14 @@ const callback = () => {
 (async function(){
   await new Promise((resolve) => {
     setTimeout(() => {
-      callback();
+      callback(); // Guaranteed to print "Backbencher"
       resolve();
     }, 2000);
   });
 
   await new Promise((resolve) => {
     setTimeout(() => {
-      callback();
+      callback(); // No Gaurantee that "Backbencher" is printed
       resolve();
     }, 5000);
   });
@@ -149,6 +151,31 @@ const callback = () => {
 A WeakRef is created using `new WeakRef()`. Later the reference is read using `.deref()` method. Inside the `async` function, The first `setTimeout()` will surely print the value of `name`. That is guaranteed in the first turn of event loop after creating the weak reference.
 
 But there is no guarantee that the second `setTimeout()` prints `"Backbencher"`. It might have been sweeped by the gargage collector. Since the garbage collection works differently in different browsers, we cannot guarantee the output. That is also why, we use WeakRef in situations like managing cache.
+
+### Finalizers
+
+`FinalizationRegistry` is a companion feature of `WeakRef`. It lets programmers register callbacks to be invoked after an object is garbage collected.
+
+```javascript
+const registry = new FinalizationRegistry((value) => {
+  console.log(value);
+});
+```
+
+Here `registry` is an instance of `FinalizationRegistry`. The callback function passed to `FinalizationRegistry` gets triggered when an object is garbage collected.
+
+```javascript{numberLines: true}
+(function () {
+  const obj = {};
+  registry.register(obj, "Backbencher");
+})();
+```
+
+Line 3 attaches `obj` to `registry`. When `obj` is garbage collected, the second argument of `.register()` method is passed to the callback function. So, according to our code logic, when `obj` is garbage collected, `"Backbencher"` is passed to the callback function and is printed in the console.
+
+When I executed above code in Google Chrome Canary console, after about 1 min, it printed `"Backbencher"` in the console. Another way to force garbage collection in chrome is to click on _Collect Garbage_ icon. We can find it in _Performance_ tab.
+
+<Image src={imageChromeGarbageCollector} style={{maxWidth: "500px", display: "block", margin: "auto"}} alt="Chrome Garbage Collection" />
 
 </JSLayout>
 </Layout>
