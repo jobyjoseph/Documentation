@@ -222,5 +222,88 @@ For demo purpose, only one promise is passed to `Promise.any()`. And that promis
 
 <Image src={imgPromiseAnyError} style={{maxWidth: "500px", display: "block", margin: "auto"}} alt="AggregateError" />
 
+## Logical Assignment Operator
+
+Logical assignment operator combines the logical operations(`&&`, `||` or `??`) with assignment.
+
+```javascript{numberLines: true}
+var x = 1;
+var y = 2;
+x &&= y; // highlight-line
+console.log(x); // 2
+```
+
+Line 3 operation can be expanded to:
+
+```javascript
+x && (x = y)
+```
+
+Or in other way, it is like:
+
+```javascript
+if(x) {
+  x = y
+}
+```
+
+Since `x` is a truthy value, it is assigned with the value of `y`, ie `2`.
+
+Just like the way we did with `&&`, we can do with `||` and `??`.
+
+```javascript
+x &&= y;
+x ||= y;
+x ??= y;
+```
+
+### Logical assignment operator with `||`
+
+Here is the code.
+
+```javascript
+var x = 1;
+var y = 2;
+x ||= y; // highlight-line
+console.log(x); // 1
+```
+
+Here line 3 can be expanded like:
+
+```javascript
+x || (x = y)
+```
+
+That means, the assignment operation happens only if `x` is a falsy value. In our code, `x` contains `1` which is a truthy value and hence, assignment does not happen. That is why our code prints `1` in the console.
+
+### Logical assignment operator with `??`
+
+`??` is **Nullish Coalescing operator** in JavaScript. It specifically checks if a value is `null` or `undefined`.
+
+```javascript{numberLines: true}
+var a;
+var b = a ?? 5;
+console.log(b); // 5
+```
+
+In line 2, if the value of `a` is `null` or `undefined`, the right hand side of `??` is evaluated and assigned to `b`.
+
+Let us now consider `??` along with `=`.
+
+```javascript
+var x;
+var y = 2;
+x ??= y; // highlight-line
+console.log(x); // 2
+```
+
+Line 2 in the above code is equivalent to:
+
+```javascript
+x = x ?? (x = y)
+```
+
+Here the value of `x` is `undefined`. So the right hand side expression is evaluated and sets `x` to `2`.
+
 </JSLayout>
 </Layout>
