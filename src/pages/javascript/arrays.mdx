@@ -543,6 +543,47 @@ console.log(arr1); [["Banana"]]
 
 Also note that, when there is nested arrays, `concat()` does not flatten the array. It simply merges the input.
 
+### copyWithin()
+
+`copyWithin()` method **shallow copies** part of an array to another location in the same array. The method returns the updated array. The original array is not affected.
+
+```javascript
+const arr = [2, 4, 6, 8];
+const result = arr.copyWithin(0, 2, 3);
+console.log(result); // [6, 4, 6, 8]
+```
+
+#### Parameters
+
+1. **target**: zero based index to start pasting the sequence of elements
+2. **start**(Optional): zero-based index at which to start copying elements from
+3. **end**(Optional): Zero-based index at which to end copying elements from
+
+#### With only target
+
+When `copyWithin()` method is used by passing only the first argument, default value is taken for second and third argument.
+
+For second argument, ie **start**, the default value is `0`. For third argument, ie **end**, the default value is the length of the array.
+
+```javascript
+const arr = ["A", "B", "C", "D", "E"];
+const result = arr.copyWithin(2);
+console.log(result); // ["A", "B", "A", "B", "C"]
+```
+
+#### With a negative target
+
+If a negative value is given as **target**, the copying starts from the end of array. Eg: If the value of target is `-2`, then the copying starts from the second last element of the array.
+
+```javascript
+const arr = ["A", "B", "C", "D", "E"];
+const result1 = arr.copyWithin(-1);
+console.log(result1); // ["A", "B", "C", "D", "A"]
+
+const result2 = arr.copyWithin(-2);
+console.log(result2); // ["A", "B", "C", "A", "B"]
+```
+
 
 ### flat() <Version number="10"/>
 
