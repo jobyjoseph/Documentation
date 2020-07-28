@@ -466,7 +466,7 @@ If the third argument is not there, `this` will have value of global object.Arro
 
 #### Array.of()
 
-As discussed earlier, `Array.of()` creates and returns a new array from the arguments passed ot the method.
+As discussed earlier, `Array.of()` creates and returns a new array from the arguments passed to the method.
 
 
 ## Array Instance Methods <a name="array-instance-methods" />
@@ -583,6 +583,54 @@ console.log(result1); // ["A", "B", "C", "D", "A"]
 const result2 = arr.copyWithin(-2);
 console.log(result2); // ["A", "B", "C", "A", "B"]
 ```
+
+#### When start is before target
+
+When the `start` position is before `target`, the copy sequence is trimmed to maintain original array length.
+
+```javascript
+const arr = ["A", "B", "C", "D", "E"];
+const result = arr.copyWithin(2, 0);
+console.log(result); // ["A", "B", "A", "B", "C"]
+```
+
+In the above code, we need to start copying from index `2`. And we have a copy sequence starting from index `0`. So, we might think, the output will be `["A", "B", "A", "B", "C", "D", "E"]`. But `copyWithin()` will keep the array length intact. So it trims elements `"D"` and `"E"` to keep the original array length of `5`.
+
+#### With negative start
+
+If the second argument for `copyWithin()` is a negative number, the copy sequence start position is counted from end.
+
+```javascript
+const arr = ["A", "B", "C", "D", "E"];
+const result = arr.copyWithin(2, -1);
+console.log(result); // ["A", "B", "E", "D", "E"]
+```
+
+Here the last element, `"E"` is taken to paste in index `2`. It is because we gave the second argument as `-1`.
+
+#### Third argument, end
+
+The third argument `end`, of `copyWithin()` is the zero based index at which to end copying elements from. `copyWithin()` copies upto, but not including `end`.
+
+```javascript
+const arr = ["A", "B", "C", "D", "E"];
+const result = arr.copyWithin(2, 1, 2);
+console.log(result); // ["A", "B", "B", "D", "E"]
+```
+
+Observe that element at position `2`, ie `"C"` is not copied.
+
+#### With negative end
+
+If `end` value is negative, the position is calculated from end.
+
+```javascript
+const arr = ["A", "B", "C", "D", "E"];
+const result = arr.copyWithin(2, 1, -2);
+console.log(result); // ["A", "B", "B", "C", "E"]
+```
+
+`end` value of `-2` means, two elements from the end of the array ie `"D"` and `"E"` is skipped. So elements `"B"` and `"C"` is copied.
 
 
 ### flat() <Version number="10"/>
