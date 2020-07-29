@@ -632,6 +632,18 @@ console.log(result); // ["A", "B", "B", "C", "E"]
 
 `end` value of `-2` means, two elements from the end of the array ie `"D"` and `"E"` is skipped. So elements `"B"` and `"C"` is copied.
 
+### entries()
+
+`entries()` method returns a new Array Iterator object. The iterator contains the key-value pair of each elements in the array.
+
+```javascript
+const arr = ["Apple", "Banana"];
+const iterator = arr.entries();
+console.log(iterator.next().value); // [0, "Apple"]
+console.log(iterator.next().value); // [1, "Banana"]
+console.log(iterator.next().value); // undefined
+```
+
 
 ### flat() <Version number="10"/>
 
