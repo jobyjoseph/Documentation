@@ -1,0 +1,275 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+import Answer from "../../components/utils/Answer";
+import QuestionItem from "../../components/utils/QuestionItem";
+import Question from "../../components/utils/Question";
+import Option from "../../components/utils/Option";
+import Explanation from "../../components/utils/Explanation";
+import Divider from "../../components/utils/Divider";
+
+<Layout>
+<SEO title="Quiz: JavaScript Arrays" />
+<JSLayout>
+
+# Quiz: Arrays
+
+Here is a bunch of questions related to JavaScript arrays. It helps a developer to test his/her knowledge about JavaScript arrays.
+
+<QuestionItem>
+
+<Question>
+
+**Question 1:**
+
+Which of the following is / are valid statement(s) to declare an array?
+
+A. `const arr = [2, 4, 6];`
+
+B. `const arr = new Array(2, 4, 6);`
+
+C. `const arr = Array(2, 4, 6);`
+
+</Question>
+
+<Option>
+
+A and B
+
+</Option>
+<Option>
+
+Only A
+
+</Option>
+<Option>
+
+B and C
+
+</Option>
+<Option isAnswer="yes">
+
+A, B and C
+
+</Option>
+
+<Explanation>
+
+**Explanation:** <br/>
+Declaring an array using square brackets(`[]`) is common. Talking about `Array` function in JavaScript, it can be used both as a constructor and a normal function. That means, `Array()` is an overloaded function in JavaScript. We can use both the techniques to declare an array.
+
+</Explanation>
+</QuestionItem>
+
+<Divider />
+
+<QuestionItem>
+
+<Question>
+
+**Question 2:**
+
+What is the output?
+
+```javascript
+const arr = [2,,,4,];
+console.log(arr.length);
+```
+
+</Question>
+
+<Option>
+
+`5`
+
+</Option>
+<Option isAnswer="yes">
+
+`4`
+
+</Option>
+<Option>
+
+`2`
+
+</Option>
+<Option>
+
+`SyntaxError: Invalid operator ,`
+
+</Option>
+
+<Explanation>
+
+**Explanation:** <br/>
+In JavaScript arrays, we can skip elements by using comma operator. Here `[2,,,4,]` is equivalent to `[2, undefined, undefined, 4]`. Even though there is a comma at last, that is ignored. The last comma does not create an `undefined` element at the end of array.
+
+</Explanation>
+</QuestionItem>
+
+<Divider />
+
+<QuestionItem>
+
+<Question>
+
+**Question 3:**
+
+What is the output?
+
+```javascript
+const arr = [,,,];
+console.log(arr.length);
+```
+
+</Question>
+
+<Option isAnswer="yes">
+
+`3`
+
+</Option>
+<Option>
+
+`2`
+
+</Option>
+<Option>
+
+`4`
+
+</Option>
+<Option>
+
+`1`
+
+</Option>
+
+<Explanation>
+
+**Explanation:** <br/>
+`[,,,]` is equivalent to `[undefined, undefined, undefined]`. So the length of the array is `3`.
+
+</Explanation>
+</QuestionItem>
+
+<Divider />
+
+<QuestionItem>
+
+<Question>
+
+**Question 4:**
+
+What is the output?
+
+```javascript
+const arr = Array(3);
+console.log(arr);
+```
+
+</Question>
+
+<Option>
+
+`undefined`
+
+</Option>
+<Option>
+
+`[3]`
+
+</Option>
+<Option isAnswer="yes">
+
+`[undefined, undefined, undefined]`
+
+</Option>
+<Option>
+
+None of these
+
+</Option>
+
+<Explanation>
+
+**Explanation:** <br/>
+`Array()` function in JavaScript can be used to declare arrays. When more than one argument is passed to `Array()` function it creates an array with all the passed arguments as array elements.
+
+```javascript
+const arr = Array(3, 6, 9);
+console.log(arr); // [3, 6, 9]
+```
+
+If a **single numeric argument** is passed to `Array()`, it takes the argument as the length of the array.
+
+```javascript
+const arr = Array(3);
+console.log(arr); // [undefined, undefined, undefined]
+```
+
+If a single non-numeric argument is passed to `Array()`, it is taken as the array element.
+
+```javascript
+const arr = Array("3");
+console.log(arr); // ["3"]
+```
+
+> When we use `Array.of()`, even if we pass a single numeric argument, that number forms the array element. It is not taken as the length of array.
+
+```javascript
+console.log(Array(3)); //[undefined, undefined, undefined]
+console.log(Array.of(3)); // [3]
+```
+
+</Explanation>
+</QuestionItem>
+
+<Divider />
+
+<QuestionItem>
+
+<Question>
+
+**Question 5:**
+
+What is the output?
+
+```javascript
+const arr = ["Mercedes", "BMW", "Audi"];
+console.log(arr[1]);
+```
+
+</Question>
+
+<Option isAnswer="yes">
+
+`"BMW"`
+
+</Option>
+<Option>
+
+`"Mercedes"`
+
+</Option>
+<Option>
+
+`"Audi"`
+
+</Option>
+<Option>
+
+`undefined`
+
+</Option>
+
+<Explanation>
+
+**Explanation:** <br/>
+Arrays are indexed starting from `0`. In that case, `arr[0]` contains `"Mercedes"`. `arr[1]` contains `"BMW"`.
+
+</Explanation>
+</QuestionItem>
+
+</JSLayout>
+</Layout>
