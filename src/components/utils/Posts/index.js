@@ -26,6 +26,9 @@ function Posts(props) {
           <Link to="/javascript/arrays">Arrays</Link>
         </li>
         <li>
+          <Link to="/javascript/quiz-arrays">Quiz: Arrays</Link>
+        </li>
+        <li>
           <Link to="/javascript/es2020-new-features">ES2020 New Features</Link>
         </li>
         <li>

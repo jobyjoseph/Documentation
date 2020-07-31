@@ -15,7 +15,6 @@
 
   &.wrong {
     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-    animation: boom .5s;
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     perspective: 1000px;
@@ -43,12 +42,12 @@
   &.correct {
   	background: #A5D6A7;
   	transform: scale(1);
-  	animation: boom .5s;
+  	animation: boom 1s;
   }
 
   @keyframes boom {
   	0% {
-  		transform: scale(1.05);
+  		transform: scale(1.02);
   	}
 
   	100% {

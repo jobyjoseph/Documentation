@@ -3,6 +3,7 @@ import Layout from "../../components/layout.js";
 import JSLayout from "../../components/masters/javascript-layout.js";
 import Image from "../../components/utils/image/image.js";
 import imageChromeGarbageCollector from "../../images/articles/2020/chrome-garbage-collection.png";
+import imgPromiseAnyError from "../../images/articles/2020/promise-any-error.png";
 
 <Layout>
 <SEO title="ES2021 / ES12 New Features" />
@@ -176,6 +177,133 @@ Line 3 attaches `obj` to `registry`. When `obj` is garbage collected, the second
 When I executed above code in Google Chrome Canary console, after about 1 min, it printed `"Backbencher"` in the console. Another way to force garbage collection in chrome is to click on _Collect Garbage_ icon. We can find it in _Performance_ tab.
 
 <Image src={imageChromeGarbageCollector} style={{maxWidth: "500px", display: "block", margin: "auto"}} alt="Chrome Garbage Collection" />
+
+## Promise.any() and AggregateError
+
+`Promise.any()` resolves if any of the supplied promises is resolved. Below we have 3 promises, which resolves at random times.
+
+```javascript
+const p1 = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("A"), Math.floor(Math.random() * 1000));
+});
+const p2 = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("B"), Math.floor(Math.random() * 1000));
+});
+const p3 = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("C"), Math.floor(Math.random() * 1000));
+});
+```
+
+Out of `p1`, `p2` and `p3`, whichever resolves first is taken by `Promise.any()`.
+
+```javascript
+(async function() {
+  const result = await Promise.any([p1, p2, p3]);
+  console.log(result); // Prints "A", "B" or "C"
+})();
+```
+
+What if none of the promises resolve? In that case `Promise.any()` throws an `AggregateError` exception. We need to catch it and handle it.
+
+```javascript
+const p = new Promise((resolve, reject) => reject());
+
+try {
+  (async function() {
+    const result = await Promise.any([p]);
+    console.log(result);
+  })();
+} catch(error) {
+  console.log(error.errors);
+}
+```
+
+For demo purpose, only one promise is passed to `Promise.any()`. And that promise is rejected. The above code logs following error in console.
+
+<Image src={imgPromiseAnyError} style={{maxWidth: "500px", display: "block", margin: "auto"}} alt="AggregateError" />
+
+## Logical Assignment Operator
+
+Logical assignment operator combines the logical operations(`&&`, `||` or `??`) with assignment.
+
+```javascript{numberLines: true}
+var x = 1;
+var y = 2;
+x &&= y; // highlight-line
+console.log(x); // 2
+```
+
+Line 3 operation can be expanded to:
+
+```javascript
+x && (x = y)
+```
+
+Or in other way, it is like:
+
+```javascript
+if(x) {
+  x = y
+}
+```
+
+Since `x` is a truthy value, it is assigned with the value of `y`, ie `2`.
+
+Just like the way we did with `&&`, we can do with `||` and `??`.
+
+```javascript
+x &&= y;
+x ||= y;
+x ??= y;
+```
+
+### Logical assignment operator with `||`
+
+Here is the code.
+
+```javascript
+var x = 1;
+var y = 2;
+x ||= y; // highlight-line
+console.log(x); // 1
+```
+
+Here line 3 can be expanded like:
+
+```javascript
+x || (x = y)
+```
+
+That means, the assignment operation happens only if `x` is a falsy value. In our code, `x` contains `1` which is a truthy value and hence, assignment does not happen. That is why our code prints `1` in the console.
+
+### Logical assignment operator with `??`
+
+`??` is **Nullish Coalescing operator** in JavaScript. It specifically checks if a value is `null` or `undefined`.
+
+```javascript{numberLines: true}
+var a;
+var b = a ?? 5;
+console.log(b); // 5
+```
+
+In line 2, if the value of `a` is `null` or `undefined`, the right hand side of `??` is evaluated and assigned to `b`.
+
+Let us now consider `??` along with `=`.
+
+```javascript
+var x;
+var y = 2;
+x ??= y; // highlight-line
+console.log(x); // 2
+```
+
+Line 2 in the above code is equivalent to:
+
+```javascript
+x = x ?? (x = y)
+```
+
+Here the value of `x` is `undefined`. So the right hand side expression is evaluated and sets `x` to `2`.
 
 </JSLayout>
 </Layout>

@@ -466,7 +466,7 @@ If the third argument is not there, `this` will have value of global object.Arro
 
 #### Array.of()
 
-As discussed earlier, `Array.of()` creates and returns a new array from the arguments passed ot the method.
+As discussed earlier, `Array.of()` creates and returns a new array from the arguments passed to the method.
 
 
 ## Array Instance Methods <a name="array-instance-methods" />
@@ -542,6 +542,107 @@ console.log(arr1); [["Banana"]]
 ```
 
 Also note that, when there is nested arrays, `concat()` does not flatten the array. It simply merges the input.
+
+### copyWithin()
+
+`copyWithin()` method **shallow copies** part of an array to another location in the same array. The method returns the updated array. The original array is not affected.
+
+```javascript
+const arr = [2, 4, 6, 8];
+const result = arr.copyWithin(0, 2, 3);
+console.log(result); // [6, 4, 6, 8]
+```
+
+#### Parameters
+
+1. **target**: zero based index to start pasting the sequence of elements
+2. **start**(Optional): zero-based index at which to start copying elements from
+3. **end**(Optional): Zero-based index at which to end copying elements from
+
+#### With only target
+
+When `copyWithin()` method is used by passing only the first argument, default value is taken for second and third argument.
+
+For second argument, ie **start**, the default value is `0`. For third argument, ie **end**, the default value is the length of the array.
+
+```javascript
+const arr = ["A", "B", "C", "D", "E"];
+const result = arr.copyWithin(2);
+console.log(result); // ["A", "B", "A", "B", "C"]
+```
+
+#### With a negative target
+
+If a negative value is given as **target**, the copying starts from the end of array. Eg: If the value of target is `-2`, then the copying starts from the second last element of the array.
+
+```javascript
+const arr = ["A", "B", "C", "D", "E"];
+const result1 = arr.copyWithin(-1);
+console.log(result1); // ["A", "B", "C", "D", "A"]
+
+const result2 = arr.copyWithin(-2);
+console.log(result2); // ["A", "B", "C", "A", "B"]
+```
+
+#### When start is before target
+
+When the `start` position is before `target`, the copy sequence is trimmed to maintain original array length.
+
+```javascript
+const arr = ["A", "B", "C", "D", "E"];
+const result = arr.copyWithin(2, 0);
+console.log(result); // ["A", "B", "A", "B", "C"]
+```
+
+In the above code, we need to start copying from index `2`. And we have a copy sequence starting from index `0`. So, we might think, the output will be `["A", "B", "A", "B", "C", "D", "E"]`. But `copyWithin()` will keep the array length intact. So it trims elements `"D"` and `"E"` to keep the original array length of `5`.
+
+#### With negative start
+
+If the second argument for `copyWithin()` is a negative number, the copy sequence start position is counted from end.
+
+```javascript
+const arr = ["A", "B", "C", "D", "E"];
+const result = arr.copyWithin(2, -1);
+console.log(result); // ["A", "B", "E", "D", "E"]
+```
+
+Here the last element, `"E"` is taken to paste in index `2`. It is because we gave the second argument as `-1`.
+
+#### Third argument, end
+
+The third argument `end`, of `copyWithin()` is the zero based index at which to end copying elements from. `copyWithin()` copies upto, but not including `end`.
+
+```javascript
+const arr = ["A", "B", "C", "D", "E"];
+const result = arr.copyWithin(2, 1, 2);
+console.log(result); // ["A", "B", "B", "D", "E"]
+```
+
+Observe that element at position `2`, ie `"C"` is not copied.
+
+#### With negative end
+
+If `end` value is negative, the position is calculated from end.
+
+```javascript
+const arr = ["A", "B", "C", "D", "E"];
+const result = arr.copyWithin(2, 1, -2);
+console.log(result); // ["A", "B", "B", "C", "E"]
+```
+
+`end` value of `-2` means, two elements from the end of the array ie `"D"` and `"E"` is skipped. So elements `"B"` and `"C"` is copied.
+
+### entries()
+
+`entries()` method returns a new Array Iterator object. The iterator contains the key-value pair of each elements in the array.
+
+```javascript
+const arr = ["Apple", "Banana"];
+const iterator = arr.entries();
+console.log(iterator.next().value); // [0, "Apple"]
+console.log(iterator.next().value); // [1, "Banana"]
+console.log(iterator.next().value); // undefined
+```
 
 
 ### flat() <Version number="10"/>
