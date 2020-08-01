@@ -508,6 +508,54 @@ console.log(arr1);
 </Explanation>
 </QuestionItem>
 
+<Divider />
+
+<QuestionItem>
+
+<Question>
+
+**Question 11:**
+
+What is the output?
+
+```javascript
+const arr = [2, 4, 6];
+const result = arr.every(ele => ele * 2);
+console.log(result);
+```
+
+
+</Question>
+
+<Option isAnswer="yes">
+
+`true`
+
+</Option>
+<Option>
+
+`[4, 8, 12]`
+
+</Option>
+<Option>
+
+`false`
+
+</Option>
+<Option>
+
+`[2, 4, 6]`
+
+</Option>
+
+<Explanation>
+
+**Explanation:** <br/>
+`every()` method of an array returns a boolean value. If the callback function returns a truthy value for all elements, `every()` returns `true`. In this case, the callback function returns non-zero number in each execution. Therefore the result is `true`. `every()` does not affect the original array.
+
+</Explanation>
+</QuestionItem>
+
 
 </JSLayout>
 </Layout>

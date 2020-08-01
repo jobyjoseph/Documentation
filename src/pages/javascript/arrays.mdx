@@ -644,6 +644,30 @@ console.log(iterator.next().value); // [1, "Banana"]
 console.log(iterator.next().value); // undefined
 ```
 
+### every()
+
+`every()` method checks if **all the elements** in the array satisfies a particular condition. The method returns a **Boolean** value. It returns `true` if all the elements satisfy the condition.
+
+```javascript
+const arr = [2, 4, 6];
+const result = arr.every(ele => ele % 2 === 0);
+console.log(result); // true
+```
+
+Above code checks if all the elements of `arr` are even numbers. Each element in the array goes through the callback function to `every()`. In any iteration, if the callback function returns `false`, `every()` returns `false`.
+
+#### With an empty array
+
+Irrespective of the condition, `every()` returns `true` for an empty array.
+
+```javascript
+const arr = [];
+const result = arr.every(ele => false);
+console.log(result); // true
+```
+
+Why `true` for an empty array? Here we are talking about _vacuous truth_. If we say "All students should remain silent", the statement stands `true` even if there are no students.
+
 
 ### flat() <Version number="10"/>
 
