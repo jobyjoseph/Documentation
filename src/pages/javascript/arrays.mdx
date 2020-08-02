@@ -668,6 +668,43 @@ console.log(result); // true
 
 Why `true` for an empty array? Here we are talking about _vacuous truth_. If we say "All students should remain silent", the statement stands `true` even if there are no students.
 
+### fill()
+
+The `fill()` method changes all elements in an array to a **static value**. It returns a **new array**.
+
+```javascript
+const arr = [1, 3, 5, 7];
+console.log(arr.fill(6)); // [6, 6, 6, 6]
+```
+
+#### Without any arguments
+
+If we call `fill()` method without any arguments, all elements in the array are replaced by `undefined`.
+
+```javascript
+const arr = [1, 3, 5, 7];
+console.log(arr.fill()); // [undefined, undefined, undefined, undefined]
+```
+
+#### Start index
+
+`fill()` method accepts a second argument which indicates `start` index. If we specify an array start index, only elements from that index is replaced.
+
+```javascript
+const arr = [1, 3, 5, 7];
+console.log(arr.fill(6, 2)); // [1, 3, 6, 6]
+```
+
+#### End index
+
+`fill()` method accepts a third argument which indicates `end` index. Default value of `end` is the length of the array. That means, by default, all elements from `start` is replaced.
+
+```javascript
+const arr = [1, 3, 5, 7];
+console.log(arr.fill(6, 1, 3)); // [1, 6, 6, 7]
+```
+
+The `end` index is not inclusive. In the above code, we gave index `3`. But, the elements at index `1` and `2` are replaced.
 
 ### flat() <Version number="10"/>
 
