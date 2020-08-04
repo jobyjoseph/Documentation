@@ -706,6 +706,18 @@ console.log(arr.fill(6, 1, 3)); // [1, 6, 6, 7]
 
 The `end` index is not inclusive. In the above code, we gave index `3`. But, the elements at index `1` and `2` are replaced.
 
+### filter()
+
+`filter()` method **creates a new array** with all elements that satisfies a particular condition. That condition is tested by passing a callback function to `filter()` method.
+
+```javascript
+const arr = [1, 2, 3, 4, 5, 6];
+const result = arr.filter(ele => ele % 2 === 0);
+console.log(result); [2, 4, 6]
+```
+
+Above code checks if each element is an even number. The callback function returns `true` if the number is even. Therefore, the final `result` contains an array of even numbers.
+
 ### flat() <Version number="10"/>
 
 The `flat()` method of an array flattens the array and **returns a new array**.
