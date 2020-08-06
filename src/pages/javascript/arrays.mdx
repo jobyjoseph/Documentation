@@ -718,7 +718,7 @@ console.log(result); [2, 4, 6]
 
 Above code checks if each element is an even number. The callback function returns `true` if the number is even. Therefore, the final `result` contains an array of even numbers.
 
-#### Callback function
+#### Callback function execution
 
 The callback function is executed **once** for each element of the array.
 
@@ -729,6 +729,18 @@ console.log(filteredArray); // [2, 4, 6, 8, 10]
 ```
 
 In the above code, the callback function always returns `true`. That is why the contents `arr` and `filteredArray` are same. The result also testifies that the callback function is called only once with each elements.
+
+#### Callback function return value
+
+`filter()` method takes an element to new array, if the callback function returns a **truthy value**. Truthy values are those values in JavaScript that can be converted to a boolean `true` when a boolean value is expected. As an example, all numbers except `0` are truthy values. `0` is considered as a falsy value.
+
+```javascript
+const arr = [-2, -1, 0, 1, 2];
+const filteredArray = arr.filter(ele => ele);
+console.log(filteredArray); // [-2, -1, 1, 2];
+```
+
+Here, the callback function is simply returning the array element. When it comes to third element, ie `0`, `filter()` method does not copy the element to the new array. 
 
 ### flat() <Version number="10"/>
 
