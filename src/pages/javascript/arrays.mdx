@@ -740,7 +740,27 @@ const filteredArray = arr.filter(ele => ele);
 console.log(filteredArray); // [-2, -1, 1, 2];
 ```
 
-Here, the callback function is simply returning the array element. When it comes to third element, ie `0`, `filter()` method does not copy the element to the new array. 
+Here, the callback function is simply returning the array element. When it comes to third element, ie `0`, `filter()` method does not copy the element to the new array.
+
+#### Callback with deleted or unallocated indices
+
+```javascript
+const arr = [1,,,2];
+const filteredArray = arr.filter(() => true);
+console.log(filteredArray); // [1, 2]
+```
+
+In the above code, the `filter()` method callback always returns `true`. That means all elements of `arr` are copied to new array `filteredArray`. But, the length of `arr` is 4 and the length of `filteredArray` is 2. That is because, `filter()` method does not take deleted or unassigned elements. In our case the index 1 and 2 in `arr` is unassigned.
+
+Placing empty commas are just for skipping the position. JavaScript is not filling the gap with `undefined`. What if `arr` contains explicitly assigned `undefined` values?
+
+```javascript
+const arr = [1, undefined, undefined, 2];
+const filteredArray = arr.filter(() => true);
+console.log(filteredArray); // [1, undefined, undefined, 2]
+```
+
+In this case, `undefined` values are also copied, since that is explicitly assigned. From this example, we can understand that `filter()` method can be used to convert a sparse array to a condensed array.
 
 ### flat() <Version number="10"/>
 
