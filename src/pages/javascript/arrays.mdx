@@ -762,6 +762,23 @@ console.log(filteredArray); // [1, undefined, undefined, 2]
 
 In this case, `undefined` values are also copied, since that is explicitly assigned. From this example, we can understand that `filter()` method can be used to convert a sparse array to a condensed array.
 
+#### Callback function arguments
+
+The callback function to `filter()` method has 3 parameters.
+
+1. Value of current element
+2. Index of current element
+3. The original array
+
+```javascript
+const arr = [2, 4, 6, 8];
+const filteredArray = arr.filter((value, index, array) => {
+  console.log(`Value at ${index} is ${value}`);
+  array[index] = value * 2;
+});
+console.log(arr);
+```
+
 ### flat() <Version number="10"/>
 
 The `flat()` method of an array flattens the array and **returns a new array**.
