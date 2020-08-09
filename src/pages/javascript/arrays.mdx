@@ -779,6 +779,18 @@ const filteredArray = arr.filter((value, index, array) => {
 console.log(arr);
 ```
 
+Here each callback function execution prints the `value` and `index` to console. In each loop, the `value` is doubled and stored to `array`. Outside the loop, we print the original array `arr`, to check if `array` is directly referenced to `arr`. Here is the output:
+
+```
+"Value at 0 is 2"
+"Value at 1 is 4"
+"Value at 2 is 6"
+"Value at 3 is 8"
+[4, 8, 12, 16]
+```
+
+As we can see, when we updated `array` argument, the original array `arr` is also updated. That means, `arr` and `array` points to the same array.
+
 ### flat() <Version number="10"/>
 
 The `flat()` method of an array flattens the array and **returns a new array**.
