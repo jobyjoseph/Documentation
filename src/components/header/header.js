@@ -10,11 +10,6 @@ const Header = (props) => (
         <img src={logo} alt="Backbencher.dev" className={styles.logo}/>
         <span className={styles.logoText}>backbencher.dev</span>
       </Link>
-      <ul className={styles.menu}>
-        <li>
-          <Link to="/">Blog</Link>
-        </li>
-      </ul>
     </div>
   </header>
 );

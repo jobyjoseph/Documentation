@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-flow: column wrap;
+  max-height: 400px;
+
+  .box {
+    font-size: 16px;
+    width: 20%;
+
+    .content {
+      background: #fff;
+      margin: 10px;
+    }
+
+    .title {
+      padding: 15px 15px 5px 15px;
+      color: #FE2E74;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .subTitle {
+      padding: 0 15px;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0 15px 10px 15px;
+      li {
+
+      }
+    }
+  }
+}
