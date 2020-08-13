@@ -151,6 +151,7 @@ console.log(arr); // [undefined, undefined]
 An empty array is created using `Array()` function by not passing any arguments.
 
 ```javascript
+
 const arr = Array();
 console.log(arr); // []
 ```
@@ -790,6 +791,56 @@ Here each callback function execution prints the `value` and `index` to console.
 ```
 
 As we can see, when we updated `array` argument, the original array `arr` is also updated. That means, `arr` and `array` points to the same array.
+
+#### this argument
+
+Other than the callback function, `filter()` method accepts a second argument. Whatever value passed as second argument is taken as the value of `this` inside callback function.
+
+Here is a snippet without the second argument.
+
+```javascript
+const arr = [2, 4, 6];
+arr.filter(function() {
+  console.log(this);
+});
+```
+
+Above code prints `window` object to console 3 times. I purposefully used ES5 anonymous function syntax instead of arrow functions. If we use arrow function, the second argument of `filter()` method does not have any significance.
+
+Now, we are going to explicitly define the value of this using the second argument.
+
+```javascript
+const arr = [2, 4, 6];
+arr.filter(function() {
+  console.log(this);
+}, {name: "Backbencher"});
+```
+
+Above code logs the passed object 3 times in the console.
+
+```
+[object Object] {
+  name: "Backbencher"
+}
+[object Object] {
+  name: "Backbencher"
+}
+[object Object] {
+  name: "Backbencher"
+}
+```
+
+### find()
+
+`find()` method returns the **first** element that satisfies a given condition. The condition check is done by a **callback function** passed to `find()` method.
+
+```javascript
+const arr = [2, 4, 6, 8];
+const result = arr.find(ele => ele > 5);
+console.log(result); // 6
+```
+
+In the array `arr`, `6` is the first element that is greater than `5`. That is why `result` got the value `6`.
 
 ### flat() <Version number="10"/>
 
