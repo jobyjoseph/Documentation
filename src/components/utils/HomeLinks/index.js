@@ -8,7 +8,7 @@ function HomeLinks(props) {
       <div className={styles.box}>
         <div className={styles.content}>
           <div className={styles.title}>Introduction</div>
-          <ul>
+          <ul className={styles.level1}>
             <li>
               <Link to="#">Introduction to JavaScript</Link>
             </li>
@@ -21,7 +21,7 @@ function HomeLinks(props) {
       <div className={styles.box}>
         <div className={styles.content}>
           <div className={styles.title}>Arrays</div>
-          <ul>
+          <ul className={styles.level1}>
             <li>
               <Link to="#">Array Literal</Link>
             </li>

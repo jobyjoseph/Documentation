@@ -4,7 +4,7 @@ import logo from "../../images/logo.png";
 import styles from "./header.module.scss";
 
 const Header = (props) => (
-  <header>
+  <header className={styles.header}>
     <div className={styles.container}>
       <Link to="/">
         <img src={logo} alt="Backbencher.dev" className={styles.logo}/>
