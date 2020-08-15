@@ -844,6 +844,18 @@ In the array `arr`, `6` is the first element that is greater than `5`. That is w
 
 The callback function passed to `find()` method visits the deleted elements also.
 
+### findIndex()
+
+`findIndex()` returns the **index** of **first** element that satisfies a specific condition. The condition is setup using a callback function passed to `findIndex()` method.
+
+```javascript
+const arr = [2, 4, 6, 8];
+const index = arr.findIndex(ele => ele > 7);
+console.log(index); // 3
+```
+
+In the array `arr`, `8` is the first element that is greater than `7`. So the index of `8` is returned, that is `3`.
+
 ### flat() <Version number="10"/>
 
 The `flat()` method of an array flattens the array and **returns a new array**.
