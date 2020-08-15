@@ -23,10 +23,22 @@ function HomeLinks(props) {
           <div className={styles.title}>Arrays</div>
           <ul>
             <li>
+              <Link to="#">Array Literal</Link>
+            </li>
+            <li>
               <Link to="#">Array Declaration</Link>
             </li>
             <li>
+              <Link to="#">Read Array Elements</Link>
+            </li>
+            <li>
+              <Link to="#">Set Array Elements</Link>
+            </li>
+            <li>
               <Link to="#">Memory Allocation</Link>
+            </li>
+            <li>
+              <Link to="#">Array() Function</Link>
             </li>
           </ul>
           <div className={styles.subTitle}>Array Instance Methods</div>
