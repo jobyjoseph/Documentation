@@ -10,10 +10,41 @@ function HomeLinks(props) {
           <div className={styles.title}>Introduction</div>
           <ul className={styles.level1}>
             <li>
-              <Link to="#">Introduction to JavaScript</Link>
+              <Link to="/javascript/introduction">Introduction to JavaScript</Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className={styles.box}>
+        <div className={styles.content}>
+          <div className={styles.title}>Data Types</div>
+          <ul className={styles.level1}>
+            <li>
+              <Link to="#">Overview</Link>
             </li>
             <li>
-              <Link to="#">Executing JavaScript Code</Link>
+              <Link to="#">Primitive Data Types</Link>
+            </li>
+            <li>
+              <Link to="#">Read Array Elements</Link>
+            </li>
+            <li>
+              <Link to="#">Set Array Elements</Link>
+            </li>
+            <li>
+              <Link to="#">Memory Allocation</Link>
+            </li>
+            <li>
+              <Link to="#">Array() Function</Link>
+            </li>
+          </ul>
+          <div className={styles.subTitle}>Array Instance Methods</div>
+          <ul className={styles.level1}>
+            <li>
+              <Link to="#">every()</Link>
+            </li>
+            <li>
+              <Link to="#">find()</Link>
             </li>
           </ul>
         </div>
@@ -42,95 +73,7 @@ function HomeLinks(props) {
             </li>
           </ul>
           <div className={styles.subTitle}>Array Instance Methods</div>
-          <ul>
-            <li>
-              <Link to="#">every()</Link>
-            </li>
-            <li>
-              <Link to="#">find()</Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div className={styles.box}>
-        <div className={styles.content}>
-          <div className={styles.title}>Arrays</div>
-          <ul>
-            <li>
-              <Link to="#">Array Declaration</Link>
-            </li>
-            <li>
-              <Link to="#">Memory Allocation</Link>
-            </li>
-          </ul>
-          <div className={styles.subTitle}>Array Instance Methods</div>
-          <ul>
-            <li>
-              <Link to="#">every()</Link>
-            </li>
-            <li>
-              <Link to="#">find()</Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div className={styles.box}>
-        <div className={styles.content}>
-          <div className={styles.title}>Arrays</div>
-          <ul>
-            <li>
-              <Link to="#">Array Declaration</Link>
-            </li>
-            <li>
-              <Link to="#">Memory Allocation</Link>
-            </li>
-          </ul>
-          <div className={styles.subTitle}>Array Instance Methods</div>
-          <ul>
-            <li>
-              <Link to="#">every()</Link>
-            </li>
-            <li>
-              <Link to="#">find()</Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div className={styles.box}>
-        <div className={styles.content}>
-          <div className={styles.title}>Arrays</div>
-          <ul>
-            <li>
-              <Link to="#">Array Declaration</Link>
-            </li>
-            <li>
-              <Link to="#">Memory Allocation</Link>
-            </li>
-          </ul>
-          <div className={styles.subTitle}>Array Instance Methods</div>
-          <ul>
-            <li>
-              <Link to="#">every()</Link>
-            </li>
-            <li>
-              <Link to="#">find()</Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div className={styles.box}>
-        <div className={styles.content}>
-          <div className={styles.title}>Arrays</div>
-          <ul>
-            <li>
-              <Link to="#">Array Declaration</Link>
-            </li>
-            <li>
-              <Link to="#">Memory Allocation</Link>
-            </li>
-          </ul>
-          <div className={styles.subTitle}>Array Instance Methods</div>
-          <ul>
+          <ul className={styles.level1}>
             <li>
               <Link to="#">every()</Link>
             </li>
