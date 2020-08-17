@@ -35,5 +35,28 @@ console.log(പേര്); // "Backbencher"
 
 Above code used a word from Malayalam language as an identifier. That is also valid in JavaScript.
 
+## Escape Sequence
+
+Due to either hardware or software limitations, if we are not able input a particular unicode character, we can make use of escape sequence. Any unicode character in JavaScript can be represented using **6 characters**. 6 characters include a `\`, `u` and 4 hexa decimal characters.
+
+```javascript
+console.log("\u2764"); // "❤"
+```
+
+Above code logs a heart symbol in console.
+
+Another useful case is to write **latin alphabets**. How to write an `é`?. We can make use of unicode in this case.
+
+```javascript
+console.log("\u00e9"); // "é"
+```
+
+According to JavaScript engine, both `é` and `\u00e9` are same.
+
+```javascript
+console.log( "é" === "\u00e9"); // true
+```
+
+
 </JSLayout>
 </Layout>
