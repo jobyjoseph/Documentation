@@ -8,7 +8,32 @@ import JSLayout from "../../components/masters/javascript-layout.js";
 
 # Character Set
 
-JavaScript programs are written using **Unicode** character set.
+JavaScript programs are written using **Unicode** character set. Unicode is a superset of ASCII and supports most of languages in the world.
+
+> Unicode is a standard for consistent representation of text maintained by Unicode Consortium. Unicode Consortium is a non-profit organization based in Mountain View California.
+
+## Non English Text
+
+Let us try to print a Japanese text using `console.log()` statement. I translated `"hope"` to Japanese using Google translate and it says the Japanese is `Nozomu`.
+
+```javascript
+console.log("望む");
+```
+
+Above code prints the Japanese text just like that in console.
+
+```
+望む
+```
+
+Since JavaScript supports Unicode character set, it also possible to use foreign languages as **variable names**.
+
+```javascript
+const പേര് = "Backbencher";
+console.log(പേര്); // "Backbencher"
+```
+
+Above code used a word from Malayalam language as an identifier. That is also valid in JavaScript.
 
 </JSLayout>
 </Layout>
