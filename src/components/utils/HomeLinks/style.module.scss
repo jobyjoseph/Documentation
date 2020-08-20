@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  max-width: 920px;
+  max-width: 960px;
   padding: 0 20px;
   margin: auto;
   counter-reset: a;
@@ -14,7 +14,7 @@
 
     .content {
       background: #fff;
-      margin: 10px;
+      margin: 10px 0;
     }
 
     .title {
