@@ -1,0 +1,35 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+
+<Layout>
+<SEO title="Optional Semicolon in JavaScript" />
+<JSLayout>
+
+# Optional Semicolon
+
+JavaScript uses semi-colon(`;`) to separate two statements.
+
+```javascript
+var a; let b;
+```
+
+In JavaScript, if we omit the semi-colon, JavaScript intelligently understands end of statements.
+
+```javascript
+var
+a
+=
+6
+console.log(a); // 6
+```
+
+In the above code JavaScript parser first takes `var` and then check if adding next phrase makes any sense. `var a` is a valid statement. The engine does not stop there. It will check if the next part can also be appended. `var a =` makes sense only if there is a value or expression after `=`. We have `6` which is valid value. Now, the statement looks like `var a = 6`. Again, JavaScript checks if appending next line makes sense. `var a = 6 console.log(a)` is not a valid statement. So JavaScript, automatically inserts a semi-colon after `6`. So our code after parsing looks like:
+
+```javascript
+var a = 6;
+console.log(a);
+```
+
+</JSLayout>
+</Layout>
