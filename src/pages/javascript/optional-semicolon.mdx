@@ -31,5 +31,19 @@ var a = 6;
 console.log(a);
 ```
 
+It is always good to explicitly put semicolon. Consider the following code.
+
+```javascript
+var a = b
+(x + y).toString()
+```
+
+If we tried to insert 2 statements, that wont work. JavaScript engine consider above code like below.
+
+```javascript
+var a = b(x + y).toString();
+```
+
+
 </JSLayout>
 </Layout>
