@@ -44,6 +44,47 @@ If we tried to insert 2 statements, that wont work. JavaScript engine consider a
 var a = b(x + y).toString();
 ```
 
+## return, break and continue
+
+There are 2 exceptions to the automatic semicolon insertion by JavaScript.
+
+The first exception involves `return`, `break` and `continue`. Let us consider following code.
+
+```javascript
+return
+true
+```
+
+The second line can be considered as continuation of first line. But JavaScript does not do that. It places a semicolon immediately after `return`.
+
+```javascript
+return;
+true;
+```
+
+So if we want to write the return value in separate lines, place a `(` as a starting point in the same line of `return`. That makes JavaScript to parse the full `()` block and return it.
+
+```javascript
+return (
+  a + b
+)
+```
+
+This line break issue is with `break` and `continue` also;
+
+## Unary increment and decrement operators
+
+The second exception to auto semicolon insertion is with unary increment and decrement operators.
+
+How the code below works?
+
+```javascript
+x
+++
+y
+```
+
+It is parsed as `x; ++y;`, not as `x++; y;`. Anyways, I have not seen any developer writing unary operators in separate lines. Still, it is fun to know this weird behaviour of JavaScript.
 
 </JSLayout>
 </Layout>
