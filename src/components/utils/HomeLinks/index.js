@@ -12,6 +12,15 @@ function HomeLinks(props) {
             <li>
               <Link to="/javascript/introduction">Introduction to JavaScript</Link>
             </li>
+            <li>
+              <Link to="/javascript/character-set">Character Set</Link>
+            </li>
+            <li>
+              <Link to="/javascript/comments">Comments</Link>
+            </li>
+            <li>
+              <Link to="/javascript/optional-semicolon">Optional Semicolon</Link>
+            </li>
           </ul>
         </div>
       </div>
