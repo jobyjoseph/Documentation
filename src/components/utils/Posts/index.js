@@ -43,6 +43,9 @@ function Posts(props) {
 
       <ul>
         <li>
+          <Link to="/blog/empty-shallowwrapper-snapshot-jest-enzyme">SOLVED: Empty ShallowWrapper Snapshot Object in Jest and Enzyme</Link> - Aug 26, 2020
+        </li>
+        <li>
           <Link to="/blog/react-native-vs-native-apps">React Native vs Native Apps</Link> - Jun 4, 2020
         </li>
         <li>
