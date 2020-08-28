@@ -1,0 +1,29 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+import Version from "../../components/utils/Version";
+
+<Layout>
+<SEO title="Arithmetic Operators in JavaScript" />
+<JSLayout>
+
+# Arithmetic Operators
+
+Arithmetic Operators are used to perform arithmetic operations on their operands.
+
+## Multiplication
+
+The asteriks(`*`) operator is used to **multipy** two numbers.
+
+```javascript
+console.log(2 * 3); // 6
+```
+
+Since, the multiplication operator can be used **only** with numbers, any **non-numeric** operand results in **Not a Number**(`NaN`).
+
+```javascript
+console.log(2 * "A"); // NaN
+```
+
+</JSLayout>
+</Layout>
