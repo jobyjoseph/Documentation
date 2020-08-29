@@ -25,5 +25,44 @@ Since, the multiplication operator can be used **only** with numbers, any **non-
 console.log(2 * "A"); // NaN
 ```
 
+## Division
+
+The forward slash(`/`) operator is used to **divide** two numbers.
+
+```javascript
+console.log(6 / 2); // 3
+```
+
+By default all numbers in JavaScript are handled as **floating-point** numbers. Therefore, the division result can contain **decimal** places.
+
+```javascript
+console.log(5 / 3); // 1.6666666666666667
+```
+
+The division operator works only with numbers. If any of the operands is a non-numeric value, the result results in `NaN`.
+
+```javascript
+console.log(5 / "A"); // NaN
+```
+
+In JavaScript, there are two special keywords to mark the both ends of number line, `Infinity` and `-Infinity`. When we try to divide any number by `0`, the result is `Infinity` or `-Infinity` based on the numerator.
+
+```javascript
+console.log(1 / 0);   // Infinity
+console.log(-1 / 0);  // -Infinity
+```
+
+If the numerator is `0`, the result of division is always `0`.
+
+```javascript
+console.log(0 / 4); // 0
+```
+
+What happens when we divide a `0` by `0`? Will the answer be `0` or `Infinity`? May be, to avoid this debate, JavaScript returns `NaN`, if we try to divide `0` by `0`.
+
+```javascript
+console.log(0 / 0); // NaN
+```
+
 </JSLayout>
 </Layout>
