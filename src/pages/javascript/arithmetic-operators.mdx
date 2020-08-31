@@ -64,12 +64,20 @@ What happens when we divide a `0` by `0`? Will the answer be `0` or `Infinity`? 
 console.log(0 / 0); // NaN
 ```
 
-## Division Remainder
+## Modulo
 
 In order to find the remainder of a division operation, we can use **modulo**(`%`) operator.
 
 ```javascript
 console.log(10 % 4); // 2
+```
+
+The **sign** of the result is the sign of the first operand. The remainder will be **negative** if the first operand is negative. The remainder will be **positive** integer, if the first operand is positive.
+
+```javascript
+console.log(5 % 2); // 1
+console.log(-5 % 2); // -1
+console.log(4 % 2); // 0
 ```
 
 </JSLayout>
