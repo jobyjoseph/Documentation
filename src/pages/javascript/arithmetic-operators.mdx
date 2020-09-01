@@ -64,6 +64,13 @@ What happens when we divide a `0` by `0`? Will the answer be `0` or `Infinity`? 
 console.log(0 / 0); // NaN
 ```
 
+Division operator works only with numbers. If the operands can be converted to a valid number, then JavaScript does automatic conversion before doing the division. If the operands cannot be converted to a valid number, the result will be `NaN`.
+
+```javascript
+console.log(4 / "2"); // 2
+console.log(4 / "A"); // NaN
+```
+
 ## Modulo
 
 In order to find the remainder of a division operation, we can use **modulo**(`%`) operator.
@@ -78,6 +85,12 @@ The **sign** of the result is the sign of the first operand. The remainder will 
 console.log(5 % 2); // 1
 console.log(-5 % 2); // -1
 console.log(4 % 2); // 0
+```
+
+In JavaScript, modulo operator works with **floating point numbers** also. But most of the time, we use modulo operator with integers.
+
+```javascript
+console.log(5.1 % 2.3); // 0.5
 ```
 
 </JSLayout>
