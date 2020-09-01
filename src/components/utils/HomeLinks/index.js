@@ -60,6 +60,28 @@ function HomeLinks(props) {
       </div>
       <div className={styles.box}>
         <div className={styles.content}>
+          <div className={styles.title}>Operators</div>
+          <ul className={styles.level1}>
+            <li>
+              <Link to="/javascript/operators">JavaScript Operators</Link>
+            </li>
+            <li>
+              <Link to="/javascript/arithmetic-operators">Arithmetic Operators</Link>
+            </li>
+            <li>
+              <Link to="/javascript/nullish-coalescing-operator">Nullish Coalescing Operator</Link>
+            </li>
+            <li>
+              <Link to="/javascript/spread-operator">Spread Operator</Link>
+            </li>
+            <li>
+              <Link to="/javascript/optional-chaining-operator">Optional Chaining Operator</Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className={styles.box}>
+        <div className={styles.content}>
           <div className={styles.title}>Arrays</div>
           <ul className={styles.level1}>
             <li>

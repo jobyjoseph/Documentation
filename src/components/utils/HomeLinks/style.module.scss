@@ -7,7 +7,7 @@
   counter-reset: a;
 
   .box {
-    font-size: 16px;
+    font-size: 18px;
     width: 100%;
     counter-reset: b;
     counter-increment: a;
@@ -21,7 +21,7 @@
       padding: 5px 15px 5px 15px;
       margin-bottom: 10px;
       color: #FE2E74;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: bold;
       border-bottom: 1px solid #eee;
     }
