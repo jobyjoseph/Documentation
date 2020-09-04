@@ -107,5 +107,20 @@ Subtraction operator works only with numbers. So if any of the operands cannot b
 console.log(5 - "A"); // NaN
 ```
 
+## Addition
+
+In JavaScript, `+` is used to add two numbers. The operator `+` is overloaded. That means, it behaves differently based on the type of operands. If both the operands are numbers, `+` performs addition.
+
+```javascript
+console.log(3 + 4); // 7
+```
+
+If any of the operator is not a number, then both the operands are converted to string and then **concatenated**.
+
+```javascript
+console.log(4 + "A"); // "4A"
+console.log(true + "3"); // "true3"
+```
+
 </JSLayout>
 </Layout>
