@@ -122,5 +122,13 @@ console.log(4 + "A"); // "4A"
 console.log(true + "3"); // "true3"
 ```
 
+What if one operand cannot be converted to a string? Take following example:
+
+```javascript
+console.log(4 + null);
+```
+
+In the above case `null` cannot be converted to a string like `"null"`. So JavaScript tries to perform a numeric addition and results in `NaN`.
+
 </JSLayout>
 </Layout>
