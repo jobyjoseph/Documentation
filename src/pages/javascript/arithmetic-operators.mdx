@@ -115,20 +115,38 @@ In JavaScript, `+` is used to add two numbers. The operator `+` is overloaded. T
 console.log(3 + 4); // 7
 ```
 
-If any of the operator is not a number, then both the operands are converted to string and then **concatenated**.
+If any of the operands is not a number, then the result is calculated based on following rules.
+
+If **both the operands are strings**, it performs concatenation.
 
 ```javascript
-console.log(4 + "A"); // "4A"
-console.log(true + "3"); // "true3"
+console.log("Apple" + "Banana"); // "AppleBanana"
 ```
 
-What if one operand cannot be converted to a string? Take following example:
+In any other case, **type conversion** is required. `+` operator gives more priority to **string concatenation**. If either of the operands is a string or an object that can be converted to a string, all operands are converted to string and string concatenation is performed. In all other cases, that is if both operands are not strings or can be converted to strings, addition operation is performed.
+
+Let us consider different cases.
+
+If one of the operand is a string, other operands are also converted to string and string concatenation is done.
 
 ```javascript
-console.log(4 + null);
+console.log("A" + 2); // "A2"
 ```
 
-In the above case `null` cannot be converted to a string like `"null"`. So JavaScript tries to perform a numeric addition and results in `NaN`.
+If one of the operand is an object, that can be converted to a string, the string concatenation occurs.
+
+```javascript
+console.log([2, 3] + 5); // "2,35"
+```
+
+If none of the operands can be converted to a string, addition occurs. `null` and `undefined` cannot be converted to a string.
+
+```javascript
+console.log(3 + null); // 0
+console.log(3 + undefined); // NaN
+```
+
+When addition is done, all operands are converted to numbers. `null` converts to 0 and `undefined` converts to `NaN`.
 
 </JSLayout>
 </Layout>
