@@ -148,5 +148,14 @@ console.log(3 + undefined); // NaN
 
 When addition is done, all operands are converted to numbers. `null` converts to 0 and `undefined` converts to `NaN`.
 
+The `+` operator has **left-to-right** associativity. Consider the following statement.
+
+```javascript
+console.log(2 + 4 + "Hello"); // "6Hello"
+console.log(2 + (4 + "Hello")); // "24Hello"
+```
+
+First line first performs number addition of `2` and `4`. The result `6` is then concatenated with `"Hello"`. Whereas in the second line the default associativity is altered using paranthesis.
+
 </JSLayout>
 </Layout>
