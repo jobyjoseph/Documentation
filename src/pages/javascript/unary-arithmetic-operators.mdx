@@ -1,0 +1,44 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+
+<Layout>
+<SEO title="Unary Arithmetic Operators in JavaScript" />
+<JSLayout>
+
+# Unary Arithmetic Operators
+
+As the name indicates, **unary** operators work on a single operand.
+
+```javascript
+-23
+```
+
+The four unary arithmetic operators are:
+
+1. `+`
+2. `-`
+3. `++`
+4. `--`
+
+`+` and `-` can be used as binary operators also. All 4 unary arithmetic operators convert their non-numeric operands to a number or `NaN`.
+
+
+## Associativity
+
+Unary operators in JavaScript have **right associativity**.
+
+```javascript
+var a = 6;
+var b = 2;
+b
+++
+a;
+console.log(a); // 7
+console.log(b); // 2
+```
+
+Above code applied `++` to `a` due to right associativity.
+
+</JSLayout>
+</Layout>
