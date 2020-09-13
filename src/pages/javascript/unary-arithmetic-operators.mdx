@@ -51,7 +51,21 @@ console.log(-(-3)); // 3
 
 ## Increment
 
-The increment(`++`) operator increments(adds 1) to its single operand. The operand should be either a variable, an element of an array or a property of an object.
+The increment(`++`) operator increments(adds 1) to its single operand. The operand should be either a **variable**, an **element of an array** or a **property of an object**.
+
+When `++` is used before the operand, it is called **pre-increment** operation. Here the increment expression increments the operand and returns the **incremented** value.
+
+```javascript
+var a = 1;
+console.log(++a); // 2
+```
+
+When `++` is used after the operand, it is called **post-increment** operation. Here the increment expression increments the operand and returns the **unincremented** value.
+
+```javascript
+var a = 1;
+console.log(a++); // 1
+```
 
 ## Associativity
 
