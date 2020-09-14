@@ -67,6 +67,8 @@ var a = 1;
 console.log(a++); // 1
 ```
 
+`++a` is not always equal to `a=a+1`. If the value of `a` is a string `"2"`, `++a` results in `3` and `a=a+1` results in `"21"`. This is because `++` works only with numbers and converts its operand to number.
+
 ## Associativity
 
 Unary operators in JavaScript have **right associativity**.
