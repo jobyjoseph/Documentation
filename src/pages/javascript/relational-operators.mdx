@@ -48,6 +48,13 @@ console.log(false == "false"); false
 
 In the above example, note that when `true` is compared with `"true"`, it retured `false`. In a relational operation, `true` and `false` are always converted to **numbers**.
 
+If either of the operands is an object and other operand is a number or string, the object is converted to a primitive type using `valueOf()` or `toString()` method of the object. Then the comparison takes place.
+
+```javascript
+console.log([2, 4, 6] == "2,4,6"); // true
+```
+
+Above statement is true because an array is converted to a string by joining its elements with comma(`,`).
 
 
 </JSLayout>
