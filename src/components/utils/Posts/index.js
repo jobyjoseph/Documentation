@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import styles from "./style.module.scss";
+import styles from "./style.module.scss"
 
 function Posts(props) {
   return (
@@ -39,33 +39,62 @@ function Posts(props) {
         </li>
       </ul>
 
+      <h3>Interview Questions</h3>
+
+      <ul>
+        <li>
+          <Link to="/react-hooks-interview-questions">
+            React Hooks Interview Questions
+          </Link>
+        </li>
+      </ul>
+
       <h3>Articles</h3>
 
       <ul>
         <li>
-          <Link to="/blog/empty-shallowwrapper-snapshot-jest-enzyme">SOLVED: Empty ShallowWrapper Snapshot Object in Jest and Enzyme</Link> - Aug 26, 2020
+          <Link to="/blog/empty-shallowwrapper-snapshot-jest-enzyme">
+            SOLVED: Empty ShallowWrapper Snapshot Object in Jest and Enzyme
+          </Link>{" "}
+          - Aug 26, 2020
         </li>
         <li>
-          <Link to="/blog/react-native-vs-native-apps">React Native vs Native Apps</Link> - Jun 4, 2020
+          <Link to="/blog/react-native-vs-native-apps">
+            React Native vs Native Apps
+          </Link>{" "}
+          - Jun 4, 2020
         </li>
         <li>
-          <Link to="/blog/deno-installation">How to Install Deno</Link> - Jun 2, 2020
+          <Link to="/blog/deno-installation">How to Install Deno</Link> - Jun 2,
+          2020
         </li>
         <li>
-          <Link to="/blog/react-hello-world-app-without-jsx">Hello World App Using React Without JSX</Link> - May 29, 2020
+          <Link to="/blog/react-hello-world-app-without-jsx">
+            Hello World App Using React Without JSX
+          </Link>{" "}
+          - May 29, 2020
         </li>
         <li>
-          <Link to="/blog/write-your-first-react-app">Write Your First React App</Link> - May 29, 2020
+          <Link to="/blog/write-your-first-react-app">
+            Write Your First React App
+          </Link>{" "}
+          - May 29, 2020
         </li>
         <li>
-          <Link to="/blog/react-bootstrap-controllabel-warning">SOLVED: ControlLabel from React Bootstrap throws Warning</Link> - Feb 19, 2020
+          <Link to="/blog/react-bootstrap-controllabel-warning">
+            SOLVED: ControlLabel from React Bootstrap throws Warning
+          </Link>{" "}
+          - Feb 19, 2020
         </li>
         <li>
-          <Link to="/blog/create-react-app-setuptests-js-not-working">SOLVED: setupTests.js not working in CreateReactApp</Link> - Feb 6, 2020
+          <Link to="/blog/create-react-app-setuptests-js-not-working">
+            SOLVED: setupTests.js not working in CreateReactApp
+          </Link>{" "}
+          - Feb 6, 2020
         </li>
       </ul>
     </div>
-  );
+  )
 }
 
-export default Posts;
+export default Posts
