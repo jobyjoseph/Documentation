@@ -1,0 +1,58 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+import Divider from "../../components/utils/Divider";
+import Related from "../../components/utils/Posts/react";
+
+
+<Layout>
+<SEO title="React Render Props Interview Questions" />
+<JSLayout>
+
+# React Render Props Interview Questions
+
+**Question:**
+
+What is _Render Props_ technique in React?
+
+**Answer:**
+
+Render prop is a function prop passed to a component. The component then renders the passed prop.
+
+<Divider />
+
+** Question: **
+
+What is the advantage of Render Props?
+
+** Answer: **
+
+Main advantage is code reusability. For eg: There is a mega-menu component created by some third party developer. The component renders menu items and sub-menu items in the following html format.
+
+```html
+<ul class="menu">
+  <li>Menu Item 1
+    <ul class="sub-menu">
+      <li>Sub menu 1</li>
+      <li>Sub menu 2</li>
+    </ul>
+  </li>
+</ul>
+```
+
+If the user wants to add some content below each sub-menu, he / she needs to edit the library code. Using Render props the developer of the library can give the flexibility to the user to add custom content below the sub-menu.
+
+<Divider />
+
+**Question: **
+
+Do you know any libraries that uses Render props technique?
+
+**Answer: **
+
+Yes. _React-Router_, _Downshift_ and _Formik_ are using Render props.
+
+<Related />
+
+</JSLayout>
+</Layout>

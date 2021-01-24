@@ -56,15 +56,8 @@ function Posts(props) {
         <li>
           <Link to="/react/refs-interview-questions">React Refs Interview Questions</Link>
         </li>
-      </ul>
-
-      <h3>Interview Questions</h3>
-
-      <ul>
         <li>
-          <Link to="/react-hooks-interview-questions">
-            React Hooks Interview Questions
-          </Link>
+          <Link to="/react/render-props-interview-questions">React Render Props Interview Questions</Link>
         </li>
       </ul>
 
