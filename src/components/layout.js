@@ -18,6 +18,7 @@ const Layout = ({ children }) => {
     <>
       <Helmet>
         <link rel="stylesheet" href="https://use.typekit.net/nxq8pto.css" />
+        <script data-ad-client="ca-pub-5942804533883970" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       </Helmet>
       <Header/>
       <div className={styles.container}>
