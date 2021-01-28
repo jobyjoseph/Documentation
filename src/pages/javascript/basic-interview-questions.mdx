@@ -1,0 +1,52 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+import Image from "../../components/utils/image/image.js";
+import imageFnConsole from "./images/printing-fn-console.png";
+import Divider from "../../components/utils/Divider";
+
+
+<Layout>
+<SEO title="JavaScript Basic Interview Questions" />
+<JSLayout>
+
+# JavaScript Basic Interview Questions
+
+** Question: **
+
+How are functions stored in memory by JavaScript? Here we have a function `sum()`.
+
+```javascript
+function sum(a, b) {
+  return a + b;
+}
+```
+
+How `sum()` function is stored in memory?
+
+** Answer: **
+
+JavaScript allocates a memory block, just like a memory is allocated for a variable. The definition of the function is then stored inside the variable. That is why if we print the value of `sum` in console, it prints out the full source code of the function.
+
+```javascript
+console.log(sum);
+```
+
+Here is the console output:
+<Image src={imageFnConsole} style={{maxWidth: "200px", display: "block", margin: "auto"}} alt="Printing function in console" />
+
+<Divider />
+
+** Question: **
+
+Is JavaScript single threaded or multi-threaded?
+
+** Answer: **
+
+JavaScript is single threaded. That means, it can execute one and only one part of the code at a time. If a code block calls a function, the block needs to wait until the function finishes its execution.
+
+<Divider />
+
+
+</JSLayout>
+</Layout>
