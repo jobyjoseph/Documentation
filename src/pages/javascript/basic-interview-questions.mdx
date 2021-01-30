@@ -47,6 +47,34 @@ JavaScript is single threaded. That means, it can execute one and only one part 
 
 <Divider />
 
+**Question:**
+
+What is the difference between `undefined` and `null` in JavaScript?
+
+**Answer:**
+
+`undefined` denotes a variable that is declared, but not yet initialized. In JavaScript, if we declare a variable and prints it value, the output will be `undefined`.
+
+```javascript
+var a;
+console.log(a); // undefined
+```
+
+On the other hand, `null` represents an intentional absense of an object. For example, the `match()` method in JavaScript returns all matches of a regular expression as an array.
+
+```javascript
+var str = "some things are awesome";
+var res = str.match(/some/g);
+console.log(res); // ["some", "some"]
+```
+
+We can see that the `match()` method returns an array, which is an object. So we expect an object from `match()` method. But what if, there is no match? In that case, `null` is returned to denote intentional absense of an object.
+
+```javascript
+var str = "some things are awesome";
+var res = str.match(/boom/g);
+console.log(res); // null
+```
 
 </JSLayout>
 </Layout>
