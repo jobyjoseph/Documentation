@@ -69,6 +69,9 @@ function Posts(props) {
         <li>
           <Link to="/nextjs/interview-questions-routing-dynamic-routes-catch-all">Next.js Interview Questions - Routing, Dynamic Routes, Catch-All Routes</Link>
         </li>
+        <li>
+          <Link to="/nextjs/interview-questions-links-redirect">Next.js Interview Questions - Link</Link>
+        </li>
       </ul>
 
       <h3>Articles</h3>
