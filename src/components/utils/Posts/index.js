@@ -8,31 +8,31 @@ function Posts(props) {
       <h3>JavaScript</h3>
       <ul>
         <li>
-          <Link to="/javascript/introduction">Introduction</Link>
+          <Link to="/javascript/introduction">Introduction to JavaScript</Link>
         </li>
         <li>
-          <Link to="/javascript/data-types">Data Types</Link>
+          <Link to="/javascript/data-types">Data Types in JavaScript</Link>
         </li>
         <li>
-          <Link to="/javascript/variables">Variables</Link>
+          <Link to="/javascript/variables">Variables in JavaScript</Link>
         </li>
         <li>
-          <Link to="/javascript/quiz-variables">Quiz: Variables</Link>
+          <Link to="/javascript/quiz-variables">Quiz - Variables in JavaScript</Link>
         </li>
         <li>
-          <Link to="/javascript/operators">Operators</Link>
+          <Link to="/javascript/operators">Operators in JavaScript</Link>
         </li>
         <li>
-          <Link to="/javascript/arrays">Arrays</Link>
+          <Link to="/javascript/arrays">Arrays in JavaScript</Link>
         </li>
         <li>
-          <Link to="/javascript/quiz-arrays">Quiz: Arrays</Link>
+          <Link to="/javascript/quiz-arrays">Quiz - Arrays in JavaScript</Link>
         </li>
         <li>
-          <Link to="/javascript/es2020-new-features">ES2020 New Features</Link>
+          <Link to="/javascript/es2020-new-features">ES2020 New Features in JavaScript</Link>
         </li>
         <li>
-          <Link to="/javascript/es2021-new-features">ES2021 New Features</Link>
+          <Link to="/javascript/es2021-new-features">ES2021 New Features in JavaScript</Link>
         </li>
         <li>
           <Link to="/javascript/questions">JavaScript Questions</Link>
