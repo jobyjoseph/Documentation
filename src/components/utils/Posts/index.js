@@ -64,6 +64,9 @@ function Posts(props) {
       <h3>Next.js</h3>
       <ul>
         <li>
+          <Link to="/nextjs/hello-world-nextjs-site-for-beginners">Hello World Next.js Site for Beginners</Link>
+        </li>
+        <li>
           <Link to="/nextjs/interview-questions-getting-started">Next.js Interview Questions - Getting Started</Link>
         </li>
         <li>
