@@ -1,0 +1,31 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import { Link } from "gatsby"
+import JSLayout from "../../components/masters/javascript-layout.js";
+import Image from "../../components/utils/image/image.js";
+import ImageTishkuGithub from "./images/github-tishku.png";
+
+
+<Layout>
+<SEO title="Deploy Next.js Site in Vercel with Custom Domain" />
+<JSLayout>
+
+# Deploy Next.js Site in Vercel with Custom Domain
+
+<a href="https://vercel.com/" target="_blank" rel="nofollow">Vercel</a> platform is from the creators of Next.js. It supports easy deployment of Next.js app along with CDN support.
+
+In this article we are going to deploy the Next.js application that we created in <Link to="/nextjs/hello-world-nextjs-site-for-beginners">Hello World Next.js Site for Beginners</Link>. If you do not have an existing Next.js project, you can go to this link and create one in few minutes.
+
+Deploying Next.js app to Vercel contains different steps. We are not going into granular level of explanation in each step. We assume you know those steps or if not, there are many articles on web to help in those areas.
+
+## Setup Git Repo
+
+Vercel can automatically pull the Nextjs project code from a **Git repository** and deploy it. For that we need to store our Next.js project in a Git server like **Github**, **Bitbucket** or **Gitlab**.
+
+I created a repository in my Github account named `tishku`. Then I pushed my Next.js code, just like that to the newly created repo.
+
+<Image src={ImageTishkuGithub} alt="Tishku in Github" />
+
+
+</JSLayout>
+</Layout>
