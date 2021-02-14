@@ -64,6 +64,9 @@ function Posts(props) {
       <h3>Next.js</h3>
       <ul>
         <li>
+          <Link to="/nextjs/deploy-nextjs-site-in-vercel-with-custom-domain">Deploy Next.js Site in Vercel with Custom Domain</Link>
+        </li>
+        <li>
           <Link to="/nextjs/hello-world-nextjs-site-for-beginners">Hello World Next.js Site for Beginners</Link>
         </li>
         <li>
