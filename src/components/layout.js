@@ -7,6 +7,7 @@
 
 import React from "react"
 import PropTypes from "prop-types"
+import { withPrefix } from "gatsby"
 import Helmet from "react-helmet"
 import Header from "./header/header"
 import Footer from "./footer/footer";
@@ -18,7 +19,7 @@ const Layout = ({ children }) => {
     <>
       <Helmet>
         <link rel="stylesheet" href="https://use.typekit.net/nxq8pto.css" />
-        <script data-ad-client="ca-pub-5942804533883970" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script src={withPrefix('mailchimppopup.js')} />
       </Helmet>
       <Header/>
       <div className={styles.container}>
