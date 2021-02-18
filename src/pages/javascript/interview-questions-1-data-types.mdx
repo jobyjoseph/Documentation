@@ -1,0 +1,90 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+import Divider from "../../components/utils/Divider";
+
+
+<Layout>
+<SEO title="JavaScript Interview Questions #1 - Data Types" />
+<JSLayout>
+
+# JavaScript Interview Questions #1 - Data Types
+
+** Question 1: **
+
+What are the data types we have in latest JavaScript?
+
+** Answer: **
+
+We have 8 data types. They are:
+
+1. Boolean
+2. null
+3. undefined
+4. Number
+5. BigInt
+6. String
+7. Symbol
+8. Object
+
+<Divider />
+
+** Question 2: **
+
+What are falsy values in JavaScript? List the values that are falsy in JavaScript.
+
+** Answer: **
+
+Those values when converted to a Boolean type results in `false` are called falsy values. Here are the list of falsy values in JavaScript.
+
+- `0`
+- ``-0`
+- `null`
+- `false` Obviously
+- `NaN`
+- `undefined`
+- "" Empty string
+
+<Divider />
+
+** Question 3: **
+
+What is the output of following code? Please explain your answer.
+
+```javascript
+if({}) {
+  console.log("I am true");
+} else {
+  console.log("I am false");
+}
+```
+
+** Answer: **
+
+It prints `"I am true"` in the console. Any object, even empty object is a truthy value in JavaScript.
+
+<Divider />
+
+** Question 4: **
+
+In JavaScript, how can we convert a value to boolean type?
+
+** Answer: **
+
+One way is to use `Boolean()` function.
+
+```javascript
+console.log(Boolean("A string")); // true
+console.log(Boolean(""));         // false
+console.log(Boolean(0));          // false
+console.log(Boolean({}));         // true
+```
+
+Another way is to use double negation operator `!!`.
+
+```javascript
+console.log(!!"hello"); // true
+```
+
+</JSLayout>
+</Layout>
