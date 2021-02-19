@@ -5,8 +5,11 @@ import styles from "./style.module.scss"
 function Posts(props) {
   return (
     <div className={styles.postsWrapper}>
-      <h3>JavaScript</h3>
       <ul>
+        <li>
+          <Link to="/javascript/js-daily-1-variable-redeclaration">JS Daily #1 - Variable Redeclaration</Link>{" "}
+          - Feb 18, 2021
+        </li>
         <li>
           <Link to="/javascript/introduction">Introduction to JavaScript</Link>
         </li>
@@ -37,10 +40,6 @@ function Posts(props) {
         <li>
           <Link to="/javascript/questions">JavaScript Questions</Link>
         </li>
-      </ul>
-
-      <h3>React</h3>
-      <ul>
         <li>
           <Link to="/react/basic-interview-questions">React Basic Interview Questions</Link>
         </li>
@@ -59,10 +58,6 @@ function Posts(props) {
         <li>
           <Link to="/react/render-props-interview-questions">React Render Props Interview Questions</Link>
         </li>
-      </ul>
-
-      <h3>Next.js</h3>
-      <ul>
         <li>
           <Link to="/nextjs/deploy-nextjs-site-in-vercel-with-custom-domain">Deploy Next.js Site in Vercel with Custom Domain</Link>
         </li>
@@ -78,11 +73,6 @@ function Posts(props) {
         <li>
           <Link to="/nextjs/interview-questions-links-redirect">Next.js Interview Questions - Link</Link>
         </li>
-      </ul>
-
-      <h3>Articles</h3>
-
-      <ul>
         <li>
           <Link to="/blog/empty-shallowwrapper-snapshot-jest-enzyme">
             SOLVED: Empty ShallowWrapper Snapshot Object in Jest and Enzyme
