@@ -7,6 +7,10 @@ function Posts(props) {
     <div className={styles.postsWrapper}>
       <ul>
         <li>
+          <Link to="/javascript/js-daily-2-arrow-function-this">JS Daily #2 - this in Arrow Function</Link>{" "}
+          - Feb 19, 2021
+        </li>
+        <li>
           <Link to="/javascript/js-daily-1-variable-redeclaration">JS Daily #1 - Variable Redeclaration</Link>{" "}
           - Feb 18, 2021
         </li>
