@@ -38,12 +38,12 @@ What are falsy values in JavaScript? List the values that are falsy in JavaScrip
 Those values when converted to a Boolean type results in `false` are called falsy values. Here are the list of falsy values in JavaScript.
 
 - `0`
-- ``-0`
+- `-0`
 - `null`
 - `false` Obviously
 - `NaN`
 - `undefined`
-- "" Empty string
+- `""` Empty string
 
 <Divider />
 
@@ -85,6 +85,63 @@ Another way is to use double negation operator `!!`.
 ```javascript
 console.log(!!"hello"); // true
 ```
+
+<Divider />
+
+**Question 5:**
+
+What is the difference between `null` and `undefined`?
+
+**Answer:**
+
+Both `null` and `undefined` behaves almost the same way when used in code. But as part of best practice, difference between those two lies in their usage.
+
+`null` represents intentional absence of an object. That means, if there is a place where the code expects an object, but we are unable to provide one, then we give back `null`. Example: `match()` is a string method that returns an array of all matches of a supplied pattern.
+
+```javascript
+const str = "Orange is orange";
+const result = str.match(/orange/ig);
+console.log(result); // ["Orange", "orange"]
+```
+
+Here the `match()` method returned an array. After all, array is a type of object. So, we can say that, `result` is always expecting an object. If there was no match found, then there is no object to return to `result`. In order to state an intentional absence of an object, `match()` method returns `null` if no match is found.
+
+```javascript
+const str = "Orange is orange";
+const result = str.match(/Apple/ig);
+console.log(result); // null
+```
+
+On the other hand, `undefined` is the value of a variable that is declared, but not initialized. Also, a function in JavaScript by default returns `undefined`. So in those context, we can use `undefined`.
+
+<Divider />
+
+**Question 6:**
+
+I need to check if the value of variable `a` is `undefined`. For that, I wrote the following code:
+
+```javascript
+if(a === undefined) {
+  console.log('a is declared');
+} else {
+  console.log('a is declared and initialized');
+}
+```
+
+What happened is, if `a` is not declared, above code throws `ReferenceError` in the first line. How can we resolve this issue?
+
+**Answer:**
+
+We can use `typeof` operator.
+
+```javascript
+if( typeof a === "undefined" ) {
+  // ...
+}
+```
+
+`typeof` does not throw error for undeclared variables.
+
 
 </JSLayout>
 </Layout>

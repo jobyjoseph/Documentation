@@ -1,0 +1,31 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+import Divider from "../../components/utils/Divider";
+
+<Layout>
+<SEO title="JS Daily #4 - Truthy Empty Objects" />
+<JSLayout>
+
+# JS Daily #4 - Truthy Empty Objects
+
+What is the output of following code?
+
+```javascript{numberLines: true}
+if({}) {
+  console.log("I am true");
+} else {
+  console.log("I am false");
+}
+```
+
+<Divider />
+
+Output will be **I am true**.
+
+Any object in JavaScript, when converted to a boolean value, results in `true`. It can even be an empty object, as shown in the question.
+
+> Since Array is also a type of object, empty array(`[]`) also converts to `true` in boolean.
+
+</JSLayout>
+</Layout>

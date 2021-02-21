@@ -7,6 +7,10 @@ function Posts(props) {
     <div className={styles.postsWrapper}>
       <ul>
         <li>
+          <Link to="/javascript/js-daily-4-truthy-empty-object">JS Daily #4 - Truthy Empty Objects</Link>{" "}
+          - Feb 21, 2021
+        </li>
+        <li>
           <Link to="/javascript/js-daily-3-swap-values-destructuring">JS Daily #3 - Swap Values using Destructuring</Link>{" "}
           - Feb 20, 2021
         </li>
