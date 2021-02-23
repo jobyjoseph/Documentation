@@ -7,6 +7,10 @@ function Posts(props) {
     <div className={styles.postsWrapper}>
       <ul>
         <li>
+          <Link to="/javascript/js-daily-6-settimeout-asynchronous">JS Daily #6 - SetTimeout and Callstack</Link>{" "}
+          - Feb 23, 2021
+        </li>
+        <li>
           <Link to="/javascript/js-daily-5-nullish-coalescing-operator">JS Daily #5 - Boolean Value With Nullish Coalescing Operator</Link>{" "}
           - Feb 22, 2021
         </li>
@@ -27,13 +31,16 @@ function Posts(props) {
           - Feb 18, 2021
         </li>
         <li>
-          <Link to="/javascript/introduction">Introduction to JavaScript</Link>
+          <Link to="/javascript/data-types">Data Types in JavaScript</Link>{" "}
+          - Jul 2, 2020
         </li>
         <li>
-          <Link to="/javascript/data-types">Data Types in JavaScript</Link>
+          <Link to="/javascript/variables">Variables in JavaScript</Link>{" "}
+          - Dec 3, 2019
         </li>
         <li>
-          <Link to="/javascript/variables">Variables in JavaScript</Link>
+          <Link to="/javascript/introduction">Introduction to JavaScript</Link>{" "}
+          - Nov 24, 2019
         </li>
         <li>
           <Link to="/javascript/quiz-variables">Quiz - Variables in JavaScript</Link>
