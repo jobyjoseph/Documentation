@@ -7,6 +7,10 @@ function Posts(props) {
     <div className={styles.postsWrapper}>
       <ul>
         <li>
+          <Link to="/javascript/js-daily-7-block-scoped-let">JS Daily #7 - Block Scoped Let</Link>{" "}
+          - Feb 24, 2021
+        </li>
+        <li>
           <Link to="/javascript/js-daily-6-settimeout-asynchronous">JS Daily #6 - SetTimeout and Callstack</Link>{" "}
           - Feb 23, 2021
         </li>
