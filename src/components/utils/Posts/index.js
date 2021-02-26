@@ -7,6 +7,14 @@ function Posts(props) {
     <div className={styles.postsWrapper}>
       <ul>
         <li>
+          <Link to="/javascript/js-daily-9-string-replace">JS Daily #9 - String Replace Method</Link>{" "}
+          - Feb 26, 2021
+        </li>
+        <li>
+          <Link to="/javascript/js-daily-8-apply-with-arrow-function">JS Daily #8 - Using apply() With Arrow Functions</Link>{" "}
+          - Feb 25, 2021
+        </li>
+        <li>
           <Link to="/javascript/js-daily-7-block-scoped-let">JS Daily #7 - Block Scoped Let</Link>{" "}
           - Feb 24, 2021
         </li>
@@ -35,8 +43,72 @@ function Posts(props) {
           - Feb 18, 2021
         </li>
         <li>
+          <Link to="/blog/empty-shallowwrapper-snapshot-jest-enzyme">
+            SOLVED: Empty ShallowWrapper Snapshot Object in Jest and Enzyme
+          </Link>{" "}
+          - Aug 26, 2020
+        </li>
+        <li>
+          <Link to="/javascript/quiz-arrays">Quiz - Arrays in JavaScript</Link>{" "}
+          - Jul 30, 2020
+        </li>
+        <li>
+          <Link to="/javascript/quiz-variables">Quiz - Variables in JavaScript</Link>{" "}
+          - Jul 14, 2020
+        </li>
+        <li>
           <Link to="/javascript/data-types">Data Types in JavaScript</Link>{" "}
           - Jul 2, 2020
+        </li>
+        <li>
+          <Link to="/javascript/es2021-new-features">ES2021 New Features in JavaScript</Link>{" "}
+          - Jun 25, 2020
+        </li>
+        <li>
+          <Link to="/javascript/arrays">Arrays in JavaScript</Link>{" "}
+          - Jun 24, 2020
+        </li>
+        <li>
+          <Link to="/javascript/operators">Operators in JavaScript</Link>{" "}
+          - Jun 11, 2020
+        </li>
+        <li>
+          <Link to="/blog/react-native-vs-native-apps">
+            React Native vs Native Apps
+          </Link>{" "}
+          - Jun 4, 2020
+        </li>
+        <li>
+          <Link to="/blog/deno-installation">How to Install Deno</Link> - Jun 2,
+          2020
+        </li>
+        <li>
+          <Link to="/blog/react-hello-world-app-without-jsx">
+            Hello World App Using React Without JSX
+          </Link>{" "}
+          - May 29, 2020
+        </li>
+        <li>
+          <Link to="/blog/write-your-first-react-app">
+            Write Your First React App
+          </Link>{" "}
+          - May 29, 2020
+        </li>
+        <li>
+          <Link to="/blog/react-bootstrap-controllabel-warning">
+            SOLVED: ControlLabel from React Bootstrap throws Warning
+          </Link>{" "}
+          - Feb 19, 2020
+        </li>
+        <li>
+          <Link to="/blog/create-react-app-setuptests-js-not-working">
+            SOLVED: setupTests.js not working in CreateReactApp
+          </Link>{" "}
+          - Feb 6, 2020
+        </li>
+        <li>
+          <Link to="/javascript/es2020-new-features">ES2020 New Features in JavaScript</Link>{" "}
+          - Jan 15, 2020
         </li>
         <li>
           <Link to="/javascript/variables">Variables in JavaScript</Link>{" "}
@@ -45,24 +117,6 @@ function Posts(props) {
         <li>
           <Link to="/javascript/introduction">Introduction to JavaScript</Link>{" "}
           - Nov 24, 2019
-        </li>
-        <li>
-          <Link to="/javascript/quiz-variables">Quiz - Variables in JavaScript</Link>
-        </li>
-        <li>
-          <Link to="/javascript/operators">Operators in JavaScript</Link>
-        </li>
-        <li>
-          <Link to="/javascript/arrays">Arrays in JavaScript</Link>
-        </li>
-        <li>
-          <Link to="/javascript/quiz-arrays">Quiz - Arrays in JavaScript</Link>
-        </li>
-        <li>
-          <Link to="/javascript/es2020-new-features">ES2020 New Features in JavaScript</Link>
-        </li>
-        <li>
-          <Link to="/javascript/es2021-new-features">ES2021 New Features in JavaScript</Link>
         </li>
         <li>
           <Link to="/javascript/questions">JavaScript Questions</Link>
@@ -99,46 +153,6 @@ function Posts(props) {
         </li>
         <li>
           <Link to="/nextjs/interview-questions-links-redirect">Next.js Interview Questions - Link</Link>
-        </li>
-        <li>
-          <Link to="/blog/empty-shallowwrapper-snapshot-jest-enzyme">
-            SOLVED: Empty ShallowWrapper Snapshot Object in Jest and Enzyme
-          </Link>{" "}
-          - Aug 26, 2020
-        </li>
-        <li>
-          <Link to="/blog/react-native-vs-native-apps">
-            React Native vs Native Apps
-          </Link>{" "}
-          - Jun 4, 2020
-        </li>
-        <li>
-          <Link to="/blog/deno-installation">How to Install Deno</Link> - Jun 2,
-          2020
-        </li>
-        <li>
-          <Link to="/blog/react-hello-world-app-without-jsx">
-            Hello World App Using React Without JSX
-          </Link>{" "}
-          - May 29, 2020
-        </li>
-        <li>
-          <Link to="/blog/write-your-first-react-app">
-            Write Your First React App
-          </Link>{" "}
-          - May 29, 2020
-        </li>
-        <li>
-          <Link to="/blog/react-bootstrap-controllabel-warning">
-            SOLVED: ControlLabel from React Bootstrap throws Warning
-          </Link>{" "}
-          - Feb 19, 2020
-        </li>
-        <li>
-          <Link to="/blog/create-react-app-setuptests-js-not-working">
-            SOLVED: setupTests.js not working in CreateReactApp
-          </Link>{" "}
-          - Feb 6, 2020
         </li>
       </ul>
     </div>
