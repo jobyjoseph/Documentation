@@ -10,14 +10,6 @@ function Posts(props) {
 
   return (
     <div className={styles.postsWrapper}>
-      <div>
-      <ins className="adsbygoogle"
-           style={{"display":"block", "textAlign":"center"}}
-           dataAdLayout="in-article"
-           dataAdFormat="fluid"
-           dataAdClient="ca-pub-5942804533883970"
-           dataAdSlot="9034656808"></ins>
-      </div>
       <ul>
         <li>
           <Link to="/javascript/js-daily-10-logical-or">JS Daily #10 - Logical OR</Link>{" "}
