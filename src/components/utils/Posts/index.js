@@ -1,12 +1,8 @@
-import React, {useEffect} from "react"
+import React from "react"
 import { Link } from "gatsby"
 import styles from "./style.module.scss"
 
 function Posts(props) {
-
-  useEffect(() => {
-    (window.adsbygoogle = window.adsbygoogle || []).push({});
-  }, []);
 
   return (
     <div className={styles.postsWrapper}>
