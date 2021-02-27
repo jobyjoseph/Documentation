@@ -19,6 +19,7 @@ const Layout = ({ children }) => {
       <Helmet>
         <link rel="stylesheet" href="https://use.typekit.net/nxq8pto.css" />
         <script src="https://chimpstatic.com/mcjs-connected/js/users/46e3529af04e73e3a37742ae8/787188458634130b24778b31b.js" async></script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       </Helmet>
       <Header/>
       <div className={styles.container}>

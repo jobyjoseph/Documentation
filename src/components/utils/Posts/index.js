@@ -1,11 +1,28 @@
-import React from "react"
+import React, {useEffect} from "react"
 import { Link } from "gatsby"
 import styles from "./style.module.scss"
 
 function Posts(props) {
+
+  useEffect(() => {
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
+  }, []);
+
   return (
     <div className={styles.postsWrapper}>
+      <div>
+      <ins className="adsbygoogle"
+           style={{"display":"block", "textAlign":"center"}}
+           dataAdLayout="in-article"
+           dataAdFormat="fluid"
+           dataAdClient="ca-pub-5942804533883970"
+           dataAdSlot="9034656808"></ins>
+      </div>
       <ul>
+        <li>
+          <Link to="/javascript/js-daily-10-logical-or">JS Daily #10 - Logical OR</Link>{" "}
+          - Feb 27, 2021
+        </li>
         <li>
           <Link to="/javascript/js-daily-9-string-replace">JS Daily #9 - String Replace Method</Link>{" "}
           - Feb 26, 2021
@@ -43,6 +60,30 @@ function Posts(props) {
           - Feb 18, 2021
         </li>
         <li>
+          <Link to="/react/basic-interview-questions">React Basic Interview Questions</Link>{" "}
+          - Jan 28, 2021
+        </li>
+        <li>
+          <Link to="/react/render-props-interview-questions">React Render Props Interview Questions</Link>{" "}
+          - Jan 24, 2021
+        </li>
+        <li>
+          <Link to="/react/code-splitting-lazy-suspense-interview-questions">React Code-Splitting, Lazy, Suspense Interview Questions</Link>{" "}
+          - Jan 19, 2021
+        </li>
+        <li>
+          <Link to="/react/context-api-interview-questions">React Context API Interview Questions</Link>{" "}
+          - Jan 18, 2021
+        </li>
+        <li>
+          <Link to="/react/hooks-interview-questions">React Hooks Interview Questions</Link>{" "}
+          - Jan 17, 2021
+        </li>
+        <li>
+          <Link to="/react/refs-interview-questions">React Refs Interview Questions</Link>{" "}
+          - Jan 16, 2021
+        </li>
+        <li>
           <Link to="/blog/empty-shallowwrapper-snapshot-jest-enzyme">
             SOLVED: Empty ShallowWrapper Snapshot Object in Jest and Enzyme
           </Link>{" "}
@@ -67,6 +108,10 @@ function Posts(props) {
         <li>
           <Link to="/javascript/arrays">Arrays in JavaScript</Link>{" "}
           - Jun 24, 2020
+        </li>
+        <li>
+          <Link to="/javascript/questions">JavaScript Questions</Link>{" "}
+          - Jun 18, 2020
         </li>
         <li>
           <Link to="/javascript/operators">Operators in JavaScript</Link>{" "}
@@ -117,27 +162,6 @@ function Posts(props) {
         <li>
           <Link to="/javascript/introduction">Introduction to JavaScript</Link>{" "}
           - Nov 24, 2019
-        </li>
-        <li>
-          <Link to="/javascript/questions">JavaScript Questions</Link>
-        </li>
-        <li>
-          <Link to="/react/basic-interview-questions">React Basic Interview Questions</Link>
-        </li>
-        <li>
-          <Link to="/react/code-splitting-lazy-suspense-interview-questions">React Code-Splitting, Lazy, Suspense Interview Questions</Link>
-        </li>
-        <li>
-          <Link to="/react/context-api-interview-questions">React Context API Interview Questions</Link>
-        </li>
-        <li>
-          <Link to="/react/hooks-interview-questions">React Hooks Interview Questions</Link>
-        </li>
-        <li>
-          <Link to="/react/refs-interview-questions">React Refs Interview Questions</Link>
-        </li>
-        <li>
-          <Link to="/react/render-props-interview-questions">React Render Props Interview Questions</Link>
         </li>
         <li>
           <Link to="/nextjs/deploy-nextjs-site-in-vercel-with-custom-domain">Deploy Next.js Site in Vercel with Custom Domain</Link>
