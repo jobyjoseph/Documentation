@@ -11,6 +11,7 @@ import Helmet from "react-helmet"
 import Header from "./header/header"
 import Footer from "./footer/footer";
 import styles from "./layout.module.scss"
+import AdSense from 'react-adsense';
 
 const Layout = ({ children }) => {
 
@@ -22,6 +23,13 @@ const Layout = ({ children }) => {
       </Helmet>
       <Header/>
       <div className={styles.container}>
+        <AdSense.Google
+          client='ca-pub-5942804533883970'
+          slot='9034656808'
+          style={{ display: 'block' }}
+          layout='in-article'
+          format='fluid'
+          />
         <main>{children}</main>
       </div>
       <Footer/>
