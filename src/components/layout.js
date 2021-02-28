@@ -10,7 +10,8 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import Header from "./header/header"
 import Footer from "./footer/footer";
-import styles from "./layout.module.scss"
+import GoogleAds from "./utils/GoogleAds";
+import styles from "./layout.module.scss";
 
 const Layout = ({ children }) => {
 
@@ -21,7 +22,10 @@ const Layout = ({ children }) => {
         <script src="https://chimpstatic.com/mcjs-connected/js/users/46e3529af04e73e3a37742ae8/787188458634130b24778b31b.js" async></script>
       </Helmet>
       <Header/>
-      <div className={styles.container}>
+      <div className={styles.adContainer}>
+        <GoogleAds slot="9034656808" />
+      </div>
+      <div>
         <main>{children}</main>
       </div>
       <Footer/>
