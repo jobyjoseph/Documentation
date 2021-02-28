@@ -1,11 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
 import styles from "./style.module.scss"
+import GoogleAds from "../GoogleAds";
 
 function Posts(props) {
 
   return (
     <div className={styles.postsWrapper}>
+      <GoogleAds slot="9034656808" />
       <ul>
         <li>
           <Link to="/javascript/js-daily-10-logical-or">JS Daily #10 - Logical OR</Link>{" "}
