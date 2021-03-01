@@ -1,0 +1,33 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+import Divider from "../../components/utils/Divider";
+
+<Layout>
+<SEO title="JS Daily #11 - Named Arguments" />
+<JSLayout>
+
+# JS Daily #11 - Named Arguments
+
+What is the output of following code?
+
+```javascript{numberLines: true}
+function xyz({name = "Rock", age = 20}) {
+  console.log(name, age);
+}
+xyz({name: "Joe"});
+```
+
+<Divider />
+
+Output is:
+
+```
+"Joe"
+20
+```
+
+This is an example of providing named arguments to a function. This is achieved using **object destructuring**. The value of arguments are mapped from the passed object. If a property is not passed(`age`), the default value assigned is taken.
+
+</JSLayout>
+</Layout>

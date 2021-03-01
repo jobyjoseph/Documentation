@@ -8,6 +8,14 @@ function Posts(props) {
     <div className={styles.postsWrapper}>
       <ul>
         <li>
+          <Link to="/javascript/js-daily-12-default-return-value-function">JS Daily #12 - Default Return Value of a Function</Link>{" "}
+          - Mar 1, 2021
+        </li>
+        <li>
+          <Link to="/javascript/js-daily-11-named-arguments">JS Daily #11 - Named Arguments</Link>{" "}
+          - Feb 28, 2021
+        </li>
+        <li>
           <Link to="/javascript/js-daily-10-logical-or">JS Daily #10 - Logical OR</Link>{" "}
           - Feb 27, 2021
         </li>

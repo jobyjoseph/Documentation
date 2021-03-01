@@ -1,0 +1,28 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+import Divider from "../../components/utils/Divider";
+
+<Layout>
+<SEO title="JS Daily #12 - Default Return Value of a Function" />
+<JSLayout>
+
+# JS Daily #12 - Default Return Value of a Function
+
+What is the output of following code?
+
+```javascript{numberLines: true}
+function sum(a, b) {
+  const result = a + b;
+}
+console.log(sum(2, 4));
+```
+
+<Divider />
+
+Output is `undefined`.
+
+If a function does not return a value explicitly, `undefined` is returned. Here, even though we found the sum, we did not return the `result`. Therefore, the default `undefined` is returned by `sum()`.
+
+</JSLayout>
+</Layout>
