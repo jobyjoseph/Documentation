@@ -8,6 +8,14 @@ function Posts(props) {
     <div className={styles.postsWrapper}>
       <ul>
         <li>
+          <Link to="/javascript/js-daily-14-increment-operator">JS Daily #14 - Increment Operator</Link>{" "}
+          - Mar 3, 2021
+        </li>
+        <li>
+          <Link to="/javascript/js-daily-13-settimeout-for-loop">JS Daily #13 - SetTimeout In For Loop</Link>{" "}
+          - Mar 2, 2021
+        </li>
+        <li>
           <Link to="/blog/tools-for-javascript-fullstack-developer">Tools for JavaScript Fullstack Developer</Link>{" "}
           - Mar 1, 2021
         </li>
