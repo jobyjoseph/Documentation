@@ -1,0 +1,28 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+import Divider from "../../components/utils/Divider";
+
+<Layout>
+<SEO title="JS Daily #17 - Non Existent Object Property" />
+<JSLayout>
+
+# JS Daily #17 - Non Existent Object Property
+
+What is the output of following code?
+
+```javascript{numberLines: true}
+const obj = {
+  name: "Backbencher"
+}
+console.log(obj.age);
+```
+
+<Divider />
+
+The output is `undefined`.
+
+`obj` is an object literal. We are trying to access the value of a property that is not present in `obj`. It results in `undefined`.
+
+</JSLayout>
+</Layout>

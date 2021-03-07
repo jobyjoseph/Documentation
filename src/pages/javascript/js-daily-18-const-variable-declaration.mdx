@@ -1,0 +1,28 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+import Divider from "../../components/utils/Divider";
+
+<Layout>
+<SEO title="JS Daily #18 - Variable Declaration Using Const" />
+<JSLayout>
+
+# JS Daily #18 - Variable Declaration Using Const
+
+What is the output of following code?
+
+```javascript{numberLines: true}
+const a;
+a = 10;
+a = 20;
+console.log(a);
+```
+
+<Divider />
+
+Above code throws error in line 1. The error says `SyntaxError: Missing initializer in const declaration`.
+
+A `const` variable should be initialized at the time of declaration itself like `const a = 10`.
+
+</JSLayout>
+</Layout>

@@ -7,14 +7,22 @@ function Posts(props) {
   return (
     <div className={styles.postsWrapper}>
       <ul>
-      <li>
-        <Link to="/javascript/js-daily-16-implicit-type-coercion">JS Daily #16 - Implicit Type Coercion</Link>{" "}
-        - Mar 5, 2021
-      </li>
-      <li>
-        <Link to="/javascript/js-daily-15-add-properties-to-functions">JS Daily #15 - Add Properties to Function</Link>{" "}
-        - Mar 4, 2021
-      </li>
+        <li>
+          <Link to="/javascript/js-daily-18-const-variable-declaration">JS Daily #18 - Variable Declaration Using Const</Link>{" "}
+          - Mar 7, 2021
+        </li>
+        <li>
+          <Link to="/javascript/js-daily-17-non-existent-object-property">JS Daily #17 - Non Existent Object Property</Link>{" "}
+          - Mar 6, 2021
+        </li>
+        <li>
+          <Link to="/javascript/js-daily-16-implicit-type-coercion">JS Daily #16 - Implicit Type Coercion</Link>{" "}
+          - Mar 5, 2021
+        </li>
+        <li>
+          <Link to="/javascript/js-daily-15-add-properties-to-functions">JS Daily #15 - Add Properties to Function</Link>{" "}
+          - Mar 4, 2021
+        </li>
         <li>
           <Link to="/javascript/js-daily-14-increment-operator">JS Daily #14 - Increment Operator</Link>{" "}
           - Mar 3, 2021
