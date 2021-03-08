@@ -8,6 +8,10 @@ function Posts(props) {
     <div className={styles.postsWrapper}>
       <ul>
         <li>
+          <Link to="/javascript/js-daily-19-optional-chaining">JS Daily #19 - Optional Chaining</Link>{" "}
+          - Mar 8, 2021
+        </li>
+        <li>
           <Link to="/javascript/js-daily-18-const-variable-declaration">JS Daily #18 - Variable Declaration Using Const</Link>{" "}
           - Mar 7, 2021
         </li>

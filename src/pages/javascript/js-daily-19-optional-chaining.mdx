@@ -1,0 +1,29 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+import Divider from "../../components/utils/Divider";
+
+<Layout>
+<SEO title="JS Daily #19 - Optional Chaining" />
+<JSLayout>
+
+# JS Daily #19 - Optional Chaining
+
+What is the output of following code?
+
+```javascript{numberLines: true}
+const obj = {
+  a: false
+};
+
+console.log(obj.a?.());
+```
+
+<Divider />
+
+The output is `TypeError`. It says `TypeError: obj.a is not a function`.
+
+Optional Chaining operator checks for only `null` or `undefined` on the left hand side. In this case `a` has the value `false`. So optional chaining operator continues chaining and it results in calling a function like `false()`. That results in TypeError.
+
+</JSLayout>
+</Layout>
