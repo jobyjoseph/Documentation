@@ -8,6 +8,14 @@ function Posts(props) {
     <div className={styles.postsWrapper}>
       <ul>
         <li>
+          <Link to="/javascript/js-daily-20-return-from-constructor">JS Daily #20 - Return From Constructor Function</Link>{" "}
+          - Mar 9, 2021
+        </li>
+        <li>
+          <Link to="/blog/macos-configure-ipv6-no-off-option">SOLVED: MacOS - No Off Option Under Configure IPv6</Link>{" "}
+          - Mar 9, 2021
+        </li>
+        <li>
           <Link to="/javascript/js-daily-19-optional-chaining">JS Daily #19 - Optional Chaining</Link>{" "}
           - Mar 8, 2021
         </li>
@@ -86,6 +94,26 @@ function Posts(props) {
         <li>
           <Link to="/javascript/js-daily-1-variable-redeclaration">JS Daily #1 - Variable Redeclaration</Link>{" "}
           - Feb 18, 2021
+        </li>
+        <li>
+          <Link to="/nextjs/deploy-nextjs-site-in-vercel-with-custom-domain">Deploy Next.js Site in Vercel with Custom Domain</Link>{" "}
+          - Feb 10, 2021
+        </li>
+        <li>
+          <Link to="/nextjs/hello-world-nextjs-site-for-beginners">Hello World Next.js Site for Beginners</Link>{" "}
+          - Feb 8, 2021
+        </li>
+        <li>
+          <Link to="/nextjs/interview-questions-links-redirect">Next.js Interview Questions - Link</Link>{" "}
+          - Feb 6, 2021
+        </li>
+        <li>
+          <Link to="/nextjs/interview-questions-routing-dynamic-routes-catch-all">Next.js Interview Questions - Routing, Dynamic Routes, Catch-All Routes</Link>{" "}
+          - Feb 5, 2021
+        </li>
+        <li>
+          <Link to="/nextjs/interview-questions-getting-started">Next.js Interview Questions - Getting Started</Link>{" "}
+          - Feb 4, 2021
         </li>
         <li>
           <Link to="/react/basic-interview-questions">React Basic Interview Questions</Link>{" "}
@@ -190,21 +218,6 @@ function Posts(props) {
         <li>
           <Link to="/javascript/introduction">Introduction to JavaScript</Link>{" "}
           - Nov 24, 2019
-        </li>
-        <li>
-          <Link to="/nextjs/deploy-nextjs-site-in-vercel-with-custom-domain">Deploy Next.js Site in Vercel with Custom Domain</Link>
-        </li>
-        <li>
-          <Link to="/nextjs/hello-world-nextjs-site-for-beginners">Hello World Next.js Site for Beginners</Link>
-        </li>
-        <li>
-          <Link to="/nextjs/interview-questions-getting-started">Next.js Interview Questions - Getting Started</Link>
-        </li>
-        <li>
-          <Link to="/nextjs/interview-questions-routing-dynamic-routes-catch-all">Next.js Interview Questions - Routing, Dynamic Routes, Catch-All Routes</Link>
-        </li>
-        <li>
-          <Link to="/nextjs/interview-questions-links-redirect">Next.js Interview Questions - Link</Link>
         </li>
       </ul>
     </div>

@@ -1,0 +1,33 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+import Divider from "../../components/utils/Divider";
+
+<Layout>
+<SEO title="JS Daily #20 - Return From Constructor Function" />
+<JSLayout>
+
+# JS Daily #20 - Return From Constructor Function
+
+What is the output of following code?
+
+```javascript{numberLines: true}
+function Car(name) {
+  this.name = name;
+  return "BMW";
+}
+
+const carObj = new Car("Mercedes");
+console.log(carObj.name);
+```
+
+<Divider />
+
+The output is `"Mercedes"`.
+
+Here the constructor function `Car()` is explicitly returning a string value. But that is ignored when used with `new` keyword. The newly created instance object is assigned to `carObj`. Therefore `carObj.name` outputs `"Mercedes"`.
+
+> If the returned value is an **object** instead of `"BMW"`, then that object is assigned to `carObj`. The newly created object is ignored.
+
+</JSLayout>
+</Layout>
