@@ -8,6 +8,10 @@ function Posts(props) {
     <div className={styles.postsWrapper}>
       <ul>
         <li>
+          <Link to="/javascript/js-daily-22-object-key-type">JS Daily #22 - Data Type of Object Keys</Link>{" "}
+          - Mar 11, 2021
+        </li>
+        <li>
           <Link to="/javascript/js-daily-21-tagged-template-literal">JS Daily #21 - Tagged Template Literal</Link>{" "}
           - Mar 10, 2021
         </li>
