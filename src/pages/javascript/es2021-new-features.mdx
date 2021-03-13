@@ -1,6 +1,8 @@
 import SEO from "../../components/seo.js";
 import Layout from "../../components/layout.js";
 import JSLayout from "../../components/masters/javascript-layout.js";
+import Olink from "../../components/utils/Olink";
+import GoogleAds from "../../components/utils/GoogleAds";
 import Image from "../../components/utils/image/image.js";
 import imageChromeGarbageCollector from "../../images/articles/2020/chrome-garbage-collection.png";
 import imgPromiseAnyError from "../../images/articles/2020/promise-any-error.png";
@@ -11,9 +13,9 @@ import imgPromiseAnyError from "../../images/articles/2020/promise-any-error.png
 
 # ES2021 / ES12 New Features
 
-ECMAScript 2021 version is expected to be released in the month of June 2021. Here are some of the features we can expect in ES2021 or ES12. The list prepared based on ECMAScript proposal status and the new features released by Google Chrome V8 engine.
+This article is updated on **Mar 13, 2021** based on <Olink link="https://github.com/tc39/ecma262/releases/tag/es2021-candidate-2021-03">ES2021 Release Candidate</Olink>. The features listed in the release needs to be approved by ECMA General Assembly on June 2021. That is when the features actually be a part of the standard.
 
-All the features listed below, at the time of writing is supported in Google Chrome Canary build.
+All the features listed below, at the time of writing is supported in Google Chrome Canary build. You can test it out there.
 
 ## String replaceAll() Method
 
@@ -39,55 +41,15 @@ console.log(newStr); // "Frontbencher sits at the Front"
 
 `String.prototype.replaceAll()` is trying to bring the full replacement option even when the input pattern is a **string**.
 
-## Private Methods
-
-Private methods can be accessible only inside the class where it is defined. Private method names starts with `#`.
-
 ```javascript
-class Person {
-
-  // Private method
-  #setType() {
-    console.log("I am Private");
-  }
-
-  // Public method
-  show() {
-    this.#setType();
-  }
-
-}
-
-const personObj = new Person();
-personObj.show(); // "I am Private";
-personObj.setType(); // TypeError: personObj.setType is not a function
+const str = "Backbencher sits at the Back";
+const newStr = str.replaceAll("Back", "Front");
+console.log(newStr); // "Frontbencher sits at the Front"
 ```
 
-Since `setType()` is a private method, `personObj.setType` returns `undefined`. Trying to use `undefined` as a function throws TypeError.
-
-## Private Accessors
-
-Accessor functions can be made private by prepending `#` to the function name.
-
-```javascript
-class Person {
-  // Public accessor
-  get name() { return "Backbencher" }
-  set name(value) {}
-
-  // Private accessor
-  get #age() { return 42 }
-  set #age(value) {}
-}
-```
-
-In the above code `get` and `set` keywords make `name` an accessor property. Even though `name` looks like a function, it can be read like a normal property.
-
-```javascript
-const obj = new Person();
-console.log(obj.name); // "Backbencher"
-console.log(obj.age); // undefined
-```
+<div className="inArticleAdContainer">
+  <GoogleAds slot="9195558466" />
+</div>
 
 ## WeakRef and Finalizers
 
@@ -177,6 +139,10 @@ Line 3 attaches `obj` to `registry`. When `obj` is garbage collected, the second
 When I executed above code in Google Chrome Canary console, after about 1 min, it printed `"Backbencher"` in the console. Another way to force garbage collection in chrome is to click on _Collect Garbage_ icon. We can find it in _Performance_ tab.
 
 <Image src={imageChromeGarbageCollector} style={{maxWidth: "500px", display: "block", margin: "auto"}} alt="Chrome Garbage Collection" />
+
+<div className="inArticleAdContainer">
+  <GoogleAds slot="9195558466" />
+</div>
 
 ## Promise.any() and AggregateError
 
@@ -304,6 +270,32 @@ x = x ?? (x = y)
 ```
 
 Here the value of `x` is `undefined`. So the right hand side expression is evaluated and sets `x` to `2`.
+
+<div className="inArticleAdContainer">
+  <GoogleAds slot="9195558466" />
+</div>
+
+## Underscores as Numeric Seperator
+
+Is `1000000000`, one billion? Are you finding difficult to count the number of zeros? If it is difficult to work with, ES2021 supports `_` which can be placed as numeric separator. When one billion can be written as `1000_000_000` in code, it is way easier to read.
+
+```javascript
+const billion = 1000_000_000;
+console.log(billion); // 1000000000
+```
+
+The underscore(`_`) separator also works with BigInt numbers.
+
+```javascript
+const trillion = 1000_000_000_000n;
+console.log(trillion.toString()); // "1000000000000"
+```
+
+The separator is just for readability purpose. So, it can be placed anywhere within the number.
+
+```javascript
+const amount = 178_00; // 00 after _ for cents.
+```
 
 </JSLayout>
 </Layout>
