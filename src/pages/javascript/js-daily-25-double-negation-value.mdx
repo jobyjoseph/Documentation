@@ -1,0 +1,27 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+import Divider from "../../components/utils/Divider";
+
+<Layout>
+<SEO title="JS Daily #25 - Double Negating a Value" />
+<JSLayout>
+
+# JS Daily #25 - Double Negating a Value
+
+What is the output of following code?
+
+```javascript{numberLines: true}
+const str = "Backbencher";
+console.log(!!str);
+```
+
+<Divider />
+
+The output is `true`.
+
+This is the easiest way to convert any value to its equivalent boolean value. First negation(`!`) converts the value to boolean, but it will be inversed. We then use one more negation to invert the value again.
+
+
+</JSLayout>
+</Layout>

@@ -8,6 +8,18 @@ function Posts(props) {
     <div className={styles.postsWrapper}>
       <ul>
         <li>
+          <Link to="/javascript/js-daily-25-double-negation-value">JS Daily #25 - Double Negating a Value</Link>{" "}
+          - Mar 14, 2021
+        </li>
+        <li>
+          <Link to="/javascript/js-daily-24-template-literal-expression">JS Daily #24 - Template Literal Expression</Link>{" "}
+          - Mar 13, 2021
+        </li>
+        <li>
+          <Link to="/javascript/js-daily-23-apply-on-object-method">JS Daily #23 - Function Apply() Method on Objects</Link>{" "}
+          - Mar 12, 2021
+        </li>
+        <li>
           <Link to="/javascript/js-daily-22-object-key-type">JS Daily #22 - Data Type of Object Keys</Link>{" "}
           - Mar 11, 2021
         </li>
