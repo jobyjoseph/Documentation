@@ -7,6 +7,14 @@ function Posts(props) {
   return (
     <div className={styles.postsWrapper}>
       <ul>
+      <li>
+        <Link to="/javascript/js-daily-27-comparing-string-with-string-object">JS Daily #27 - Comparing String With String Object</Link>{" "}
+        - Mar 16, 2021
+      </li>
+      <li>
+        <Link to="/javascript/js-daily-26-object-copy-reference">JS Daily #26 - Object Copy By Reference</Link>{" "}
+        - Mar 15, 2021
+      </li>
         <li>
           <Link to="/javascript/js-daily-25-double-negation-value">JS Daily #25 - Double Negating a Value</Link>{" "}
           - Mar 14, 2021
