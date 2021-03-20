@@ -8,8 +8,20 @@ function Posts(props) {
     <div className={styles.postsWrapper}>
       <ul>
         <li>
+          <Link to="/javascript/js-daily-31-optional-catch-binding">JS Daily #31 - Optional Catch Binding</Link>{" "}
+          - Mar 20, 2021
+        </li>
+        <li>
           <Link to="/blog/filter-mongoose-response-for-api">How To: Modify Mongoose Response For API</Link>{" "}
           - Mar 20, 2021
+        </li>
+        <li>
+          <Link to="/javascript/js-daily-30-numeric-separtor">JS Daily #30 - Numeric Separator</Link>{" "}
+          - Mar 19, 2021
+        </li>
+        <li>
+          <Link to="/javascript/js-daily-29-exponentiation-operator">JS Daily #29 - Exponentiation Operator</Link>{" "}
+          - Mar 18, 2021
         </li>
         <li>
           <Link to="/javascript/js-daily-28-rest-parameter-functions">JS Daily #28 - Rest Parameter in Functions</Link>{" "}
