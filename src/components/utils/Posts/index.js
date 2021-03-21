@@ -8,6 +8,10 @@ function Posts(props) {
     <div className={styles.postsWrapper}>
       <ul>
         <li>
+          <Link to="/javascript/js-daily-32-constructor-function-returing-object">JS Daily #32 - Constructor Function Returning an Object</Link>{" "}
+          - Mar 21, 2021
+        </li>
+        <li>
           <Link to="/javascript/js-daily-31-optional-catch-binding">JS Daily #31 - Optional Catch Binding</Link>{" "}
           - Mar 20, 2021
         </li>
