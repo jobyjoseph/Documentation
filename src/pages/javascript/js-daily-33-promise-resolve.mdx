@@ -1,0 +1,39 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+import Divider from "../../components/utils/Divider";
+
+<Layout>
+<SEO title="JS Daily #33 - Multiple Resolve in Promises" />
+<JSLayout>
+
+# JS Daily #33 - Multiple Resolve in Promises
+
+What is the output of following code?
+
+```javascript{numberLines: true}
+const p1 = new Promise((resolve, reject) => {
+  resolve();
+  resolve();
+  resolve();
+});
+
+p1.then(() => {
+  console.log("Resolved");
+});
+```
+
+<Divider />
+
+The output is:
+
+```
+"Resolved"
+```
+
+Even though `resolve()` is called 3 times, the code will be resolved only once. That is how promises work.
+
+Same is the case with `reject()`. Even if the code is rejected multiple times, `.catch()` will be called only once.
+
+</JSLayout>
+</Layout>
