@@ -1,0 +1,37 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+import Divider from "../../components/utils/Divider";
+
+<Layout>
+<SEO title="JS Daily #37 - Same Key in Object" />
+<JSLayout>
+
+# JS Daily #37 - Same Key in Object
+
+What is the output of following code?
+
+```javascript{numberLines: true}
+const obj = {
+  a: "Apple",
+  b: "Banana",
+  a: "Orange"
+}
+console.log(obj);
+```
+
+<Divider />
+
+The output is:
+
+```
+{
+  a: "Orange",
+  b: "Banana"
+}
+```
+
+In the example above, `"Apple"` and `"Orange"` are assigned to same object key(`a`). In such cases, last value assigned is saved to the key. That is why `"Orange"` is in key `a`.
+
+</JSLayout>
+</Layout>

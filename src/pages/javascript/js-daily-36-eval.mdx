@@ -1,0 +1,28 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+import Divider from "../../components/utils/Divider";
+
+<Layout>
+<SEO title="JS Daily #36 - Eval" />
+<JSLayout>
+
+# JS Daily #36 - Eval
+
+What is the output of following code?
+
+```javascript{numberLines: true}
+var b = 20;
+eval('var b = 10');
+console.log(b);
+```
+
+<Divider />
+
+The output is `10`.
+
+`eval()` evaluates the passed argument string as an expression. Here, the expression is changing the value of `b` from 20 to 10. That is why the output prints `10`.
+
+Since `eval()` can dynamically change the scope and flow of code, it is advised NOT to use it whenever possible.
+</JSLayout>
+</Layout>

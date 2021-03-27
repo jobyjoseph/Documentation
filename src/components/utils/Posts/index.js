@@ -8,6 +8,26 @@ function Posts(props) {
     <div className={styles.postsWrapper}>
       <ul>
         <li>
+          <Link to="/javascript/js-daily-38-adding-two-boolean-values">JS Daily #38 - Adding Two Boolean Values</Link>{" "}
+          - Mar 27, 2021
+        </li>
+        <li>
+          <Link to="/javascript/js-daily-37-same-key-in-object">JS Daily #37 - Same Key in Object</Link>{" "}
+          - Mar 26, 2021
+        </li>
+        <li>
+          <Link to="/javascript/js-daily-36-eval">JS Daily #36 - Eval</Link>{" "}
+          - Mar 25, 2021
+        </li>
+        <li>
+          <Link to="/javascript/js-daily-35-automatic-semicolon-insertion">JS Daily #35 - Automatic Semicolon Insertion</Link>{" "}
+          - Mar 24, 2021
+        </li>
+        <li>
+          <Link to="/javascript/js-daily-34-hoisting-let-variables">JS Daily #34 - Hoisting of Let Variables</Link>{" "}
+          - Mar 23, 2021
+        </li>
+        <li>
           <Link to="/javascript/js-daily-33-promise-resolve">JS Daily #33 - Multiple Resolve in Promises</Link>{" "}
           - Mar 22, 2021
         </li>

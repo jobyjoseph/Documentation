@@ -1,0 +1,25 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+import Divider from "../../components/utils/Divider";
+
+<Layout>
+<SEO title="JS Daily #38 - Adding Two Boolean Values" />
+<JSLayout>
+
+# JS Daily #38 - Adding Two Boolean Values
+
+What is the output of following code?
+
+```javascript{numberLines: true}
+console.log(true + true);
+```
+
+<Divider />
+
+The output is `2`.
+
+When both the operands for `+` is of type **Boolean**, both the operands are converted to numbers. `true` is converted to `1` and `false` is converted to `0`. That is why the result printed as `2`.
+
+</JSLayout>
+</Layout>
