@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import Version from "../Version"
 import styles from "./style.module.scss"
 
 function Posts(props) {
@@ -7,6 +8,10 @@ function Posts(props) {
   return (
     <div className={styles.postsWrapper}>
       <ul>
+        <li>
+          <Link to="/javascript/numeric-separators">Numeric Separators in JavaScript</Link>{" "}<Version number="12" />
+          - Apr 5, 2021
+        </li>
         <li>
           <Link to="/javascript/js-daily-38-adding-two-boolean-values">JS Daily #38 - Adding Two Boolean Values</Link>{" "}
           - Mar 27, 2021
