@@ -1,8 +1,15 @@
+---
+title: React Hooks Interview Questions
+id: 1002
+---
+
 import SEO from "../../components/seo.js";
 import Layout from "../../components/layout.js";
 import JSLayout from "../../components/masters/javascript-layout.js";
 import Divider from "../../components/utils/Divider";
 import Related from "../../components/utils/Posts/react";
+import { Disqus } from 'gatsby-plugin-disqus'
+
 
 <Layout>
 <SEO title="React Hooks Interview Questions" />
@@ -512,6 +519,8 @@ function ConsumerComponent() {
 ```
 
 <Related />
+
+<Disqus config={{url: "https://backbencher.dev/react/hooks-interview-questions", identifier: props.pageContext.frontmatter.id, title: props.pageContext.frontmatter.title,}} />
 
 </JSLayout>
 </Layout>
