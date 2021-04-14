@@ -8,7 +8,6 @@ import Layout from "../../components/layout.js";
 import JSLayout from "../../components/masters/javascript-layout.js";
 import Olink from "../../components/utils/Olink";
 import Version from "../../components/utils/Version";
-import { Disqus } from 'gatsby-plugin-disqus'
 
 <Layout>
 <SEO title="Numeric Separators in JavaScript" />
@@ -114,8 +113,6 @@ SyntaxError: Numeric separators are not allowed at the end of numeric literals
 ## Browser Compatibility
 
 All the major browsers support numeric separators. We can see the precise information by visiting this <Olink link="https://caniuse.com/mdn-javascript_grammar_numeric_separators">CanIuse</Olink> link.
-
-<Disqus config={{url: "https://backbencher.dev/javascript/numeric-separators", identifier: props.pageContext.frontmatter.id, title: props.pageContext.frontmatter.title,}} />
 
 </JSLayout>
 </Layout>

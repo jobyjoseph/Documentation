@@ -10,8 +10,6 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import Header from "./header/header"
 import Footer from "./footer/footer";
-import GoogleAds from "./utils/GoogleAds";
-import styles from "./layout.module.scss";
 
 const Layout = ({ children }) => {
 
