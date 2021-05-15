@@ -287,5 +287,19 @@ interface Color {
 declare const color: Color;
 ```
 
+<Divider/>
+
+** Question: **
+
+What is the purpose of `--target`, `--module` and `--watch` flags when used along with `tsc` command?
+
+** Answer: **
+
+When we use `tsc` command, TypeScript code is converted to JavaScript. The version of the generated JavaScript file can be set using `--target` flag. By default, TypeScript compiles to ES3. That might result in huge size for JavaScript file due to extra code added for backward compatibility.
+
+`--module` allows to set the module system. If our code is going to be run by Node.js, we have to explicitly set the module flag to `commonjs`.
+
+`--watch` flag enables watch mode. If watch mode is enabled, any change in TypeScript file gets compiled and reflects in JavaScript file.
+
 </JSLayout>
 </Layout>

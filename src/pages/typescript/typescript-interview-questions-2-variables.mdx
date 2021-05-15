@@ -1,0 +1,46 @@
+import SEO from "../../components/seo.js";
+import Layout from "../../components/layout.js";
+import JSLayout from "../../components/masters/javascript-layout.js";
+import Divider from "../../components/utils/Divider";
+
+<Layout>
+<SEO title="TypeScript Interview Questions Part 2 - Variables" />
+<JSLayout>
+
+# TypeScript Interview Questions Part 2 - Variables
+
+** Question: **
+
+We have a JavaScript code that declares 3 variables and later assigns value to those variables.
+
+```typescript
+let car;
+let model;
+let isSedan;
+car = "BMW";
+model = 2018;
+isSedan = true;
+```
+
+How can we add types to the declared variables using TypeScript syntax?
+
+** Answer: **
+
+We can add type information along with each variable declaration as shown below.
+
+```typescript
+let car: string;
+let model: number;
+let isSedan: boolean;
+car = "BMW";
+model = 2018;
+isSedan = true;
+```
+
+<Divider />
+
+- type inference
+- using type with const variables
+
+</JSLayout>
+</Layout>
