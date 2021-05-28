@@ -16,27 +16,31 @@ import Related from "../../components/utils/Posts/react";
 
 # React Hooks Interview Questions
 
-**Question**
+**Question:**
 
 What are hooks in React?
 
-**Answer**
+**Answer:**
 
 Hooks are a new feature added in React v16.8. It allows to use all React features without writing class components. For example, before version 16.8, we need a class component to manage state of a component. Now we can keep state in a functional component using `useState` hook.
 
-**Question**
+<Divider />
+
+**Question:**
 
 Will React hooks work inside class components?
 
-**Answer**
+**Answer:**
 
 No
 
-**Question**
+<Divider />
+
+**Question:**
 
 Why React hooks was introduced?
 
-**Answer**
+**Answer:**
 
 One reason to introduce hooks was the complexity in dealing with `this` keyword inside class components. If not handled properly, `this` will take some other value. That will result in breaking lines like `this.setState()` and other event handlers. Using hooks, we avoid that complexity when working with functional components.
 
@@ -46,11 +50,13 @@ Another reason is that, there is no specific way to reuse stateful component log
 
 Fourth reason is, in a complex class component, related code are scattered in different lifecycle methods. Example, in case of a data fetching, we do that mainly in `componentDidMount()` and `componentDidUpdate()`. Another example is, in case of event listeners, we use `componentDidMount()` to bind an event and `componentWillUnmount()` to unbind. Hooks instead helps to place related code together.
 
-**Question**
+<Divider />
+
+**Question:**
 
 How `useState` hook works? What is/are the arguments accepted by this hook and what is returned by the hook?
 
-**Solution**
+**Answer:**
 
 `useState` hook is a function which is used to store state value in a functional component. It accepts an argument as the initial value of the state. It returns an array with 2 elements. First element is the current value of state. Second element is a function to update the state.
 
@@ -66,7 +72,9 @@ Later we use `useState` like:
 const [currentStateValue, functionToUpdateState] = useState(initialStateValue);
 ```
 
-**Question**
+<Divider />
+
+**Question:**
 
 Here we have a class component with a state value. Each time the button in component is clicked, the count is incremented.
 
@@ -94,7 +102,7 @@ class Counter extends Component {
 
 Rewrite this component using React hooks.
 
-**Solution**
+**Answer:**
 
 ```javascript
 import React, { useState } from "react";
@@ -116,7 +124,9 @@ function Counter() {
 }
 ```
 
-**Question**
+<Divider />
+
+**Question:**
 
 Below we have a class component. It contains code to update the state based on previous state value.
 
@@ -156,7 +166,7 @@ class Counter extends Component {
 
 Rewrite the above code using React hooks.
 
-**Solution**
+**Answer:**
 
 One can update the value of a state variable just by passing the new value to update function or by passing a callback function. Second technique which accepts a callback function is safe to use.
 
@@ -188,7 +198,9 @@ function Counter() {
 }
 ```
 
-**Question**
+<Divider />
+
+**Question:**
 
 Here we have class component that updates the state using the input from a form.
 
@@ -237,7 +249,7 @@ export class Profile extends Component {
 
 Rewrite the same component using React hooks.
 
-**Solution**
+**Answer:**
 
 ```javascript
 import React, { useState } from "react";
@@ -274,25 +286,31 @@ The setter function of `useState()` does not automatically merge if an object is
 
 Here we are merging object properties with the help of JavaScript spread operator.
 
-**Question**
+<Divider />
+
+**Question:**
 
 What are the differences in using hooks and class components with respect to state management?
 
-**Solution**
+**Answer:**
 
 When using `setState()` in class components, always the state variable is an object. Where as, the state variable in hooks can be of any type like number, string, boolean, object or array.
 
 When state variable is an object, `setState()` in class components automatically merges the new value to the state object. But in case of setter function in `useState()`, we need to explicitly merge the updated object property using spread operator.
 
-**Question**
+<Divider />
+
+**Question:**
 
 What is the purpose of `useEffect` hook?
 
-**Solution**
+**Answer:**
 
 The Effect hook lets us to perform side effects in functional components. It helps us to avoid redundant code in different lifecycle methods of a class component. It helps to group related code.
 
-**Question**
+<Divider />
+
+**Question:**
 
 Here is a class component that prints _Boom_ in console whenever it is mounted or updated.
 
@@ -328,7 +346,7 @@ export class Banner extends Component {
 
 Remove the redundant console.log statement using React hooks.
 
-**Solution**
+**Answer:**
 
 `componentDidMount()` and `componentDidUpdate()` are lifecycle methods. Such side effects can be done using `useEffect` hook. `useEffect` hook is a function which accepts a callback function. That callback function is called every time render happens.
 
@@ -356,7 +374,9 @@ function Banner() {
 }
 ```
 
-**Question**
+<Divider />
+
+**Question:**
 
 Understand the code below:
 
@@ -384,7 +404,7 @@ function Banner() {
 
 It logs "Count is updated" message even when updating the value in textbox. How can we show the log message only when the count state is updated?
 
-**Solution**
+**Answer:**
 
 `useEffect` function accepts a second parameter which should be an array. Within this array, we need to pass the props or state we need to watch for. Only if those props or state mentioned in the array change, the effect is executed. So in our code, we add the second argument and specify only `count` value in the array.
 
@@ -396,7 +416,9 @@ useEffect(() => {
 }, [count]);
 ```
 
-**Question**
+<Divider />
+
+**Question:**
 
 We have got a class component that updates time every second. It uses `componentDidMount()` to set the timer.
 
@@ -422,7 +444,7 @@ export class Clock extends Component {
 
 Convert the above code to React hooks.
 
-**Solution**
+**Answer:**
 
 `componentDidMount()` is a lifecycle method that executes only once in a component lifecycle. We use `useEffect` to bring effects of `componentDidMount()`. But `useEffect` runs on every props or state updation. To prevent it, we make use of second array argument of `useState`. We keep that array empty. So for React, there are no props or state to watch for. Therefore `useEffect` runs only once like `componentDidMount()`.
 
@@ -442,7 +464,9 @@ function Clock() {
 }
 ```
 
-**Question**
+<Divider />
+
+**Question:**
 
 We have a code snippet from a class component which registers and remove an event listener.
 
@@ -458,7 +482,7 @@ componentWillUnmount() {
 
 Convert this code to React hooks format.
 
-**Solution**
+**Answer:**
 
 ```javascript
 useEffect(() => {
@@ -470,7 +494,9 @@ useEffect(() => {
 }, []);
 ```
 
-**Question**
+<Divider />
+
+**Question:**
 
 Here is a code snippet from a Context consumer component.
 
@@ -500,7 +526,7 @@ export class ConsumerComponent extends Component {
 
 Rewrite the `ConsumerComponent` using `useContext` React hook.
 
-**Solution**
+**Answer:**
 
 Hooks can be used only in a functional component. The `ConsumerComponent` can be re-written as:
 
