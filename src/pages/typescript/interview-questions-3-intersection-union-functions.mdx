@@ -229,5 +229,66 @@ const sum = (a: number, b: number): number => {
 };
 ```
 
+<Divider />
+
+** Question: **
+
+Here, we have a TypeScript function.
+
+```typescript
+function subscribe(accepted: "yes" | "no", email?: string): void {
+  console.log(email);
+}
+```
+
+My intention was, if the value passed to `accepted` is `"no"`, the second argument should not be passed. And if the value of `accepted` is `"yes"`, then the second argument `email` is mandatory. But the code snippet above is failing. It accepts `email`, even if the value of `accepted` is `"no"`. How can we fix it?
+
+**Answer:**
+
+Here we are talking about using the function with 2 different sets of inputs. One with only `"no"` and other with `"yes"` and `email`. So, what we need to do is function overloading. We need to define 2 separate signatures for TypeScript to understand. Here is how we need to do it:
+
+```typescript
+function subscribe(accepted: "no"): void;
+function subscribe(accepted: "yes", email: string): void;
+
+function subscribe(accepted: "yes" | "no", email?: string): void {
+  console.log(email);
+}
+```
+
+<Divider />
+
+** Question: **
+
+Here is a simple TypeScript code.
+
+```typescript
+function hello(this: string) {
+    console.log(this);
+}
+
+hello();
+```
+
+Will it throw any error? If yes, please explain and how can we solve it.
+
+** Answer: **
+
+Yes. Above code throws an error.
+
+When we define the type of `this`, TypeScript checks the value of invocation context when the function is invoked. When `hello()` is invoked, the value of `this` will be either `undefined` or `window` object. Both are not strings. That is the reason of the error.
+
+In order to solve the error, we need to set the value of `this` explicitly using `call()`, `apply()` or `bind()`. Here is an example using `call()` that clears the error.
+
+```typescript
+function hello(this: string) {
+  console.log(this);
+}
+
+hello.call("my string");
+```
+
+`call()` is a static method of `Function` object. The first parameter passed to it is set as the value of `this`.
+
 </JSLayout>
 </Layout>
